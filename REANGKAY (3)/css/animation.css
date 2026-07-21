@@ -1,0 +1,69 @@
+/* ==========================================================================
+   ANIMATION.CSS
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+}
+
+/* Fade In */
+.fade-in{ animation:fadeIn .5s ease both; }
+@keyframes fadeIn{ from{ opacity:0; } to{ opacity:1; } }
+
+/* Slide Up */
+.slide-up{ animation:slideUp .5s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes slideUp{ from{ opacity:0; transform:translateY(24px); } to{ opacity:1; transform:translateY(0); } }
+
+/* Staggered reveal helper (JS adds .in-view) */
+.reveal{ opacity:0; transform:translateY(20px); transition:opacity .5s ease, transform .5s ease; }
+.reveal.in-view{ opacity:1; transform:translateY(0); }
+
+/* Card hover (in addition to style.css hoverable) */
+.card-r.hoverable{ will-change:transform; }
+
+/* Loading Spinner */
+.spinner-r{
+  width:34px;height:34px;border-radius:50%;
+  border:4px solid var(--border); border-top-color:var(--primary);
+  animation:spin .8s linear infinite;
+}
+@keyframes spin{ to{ transform:rotate(360deg); } }
+
+/* Loading screen overlay */
+.loading-screen{
+  position:fixed; inset:0; background:var(--bg); z-index:5000;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;
+  transition:opacity .4s ease, visibility .4s ease;
+}
+.loading-screen.hide{ opacity:0; visibility:hidden; pointer-events:none; }
+.loading-screen .logo-pulse{
+  width:64px;height:64px;border-radius:20px;
+  background:linear-gradient(135deg,var(--female),var(--male));
+  animation:pulse 1.4s ease-in-out infinite;
+}
+@keyframes pulse{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.1); } }
+
+/* Floating Button Animation */
+.fab{ animation:fabFloat 3s ease-in-out infinite; }
+@keyframes fabFloat{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-6px); } }
+
+/* Toast slide handled inline via .show transform in style.css */
+
+/* Skeleton shimmer (optional loading state for cards) */
+.skeleton{
+  background:linear-gradient(90deg, #eef0f3 25%, #f7f8fa 37%, #eef0f3 63%);
+  background-size:400% 100%;
+  animation:shimmer 1.4s ease infinite;
+  border-radius:var(--radius-sm);
+}
+@keyframes shimmer{ 0%{ background-position:100% 50%; } 100%{ background-position:0 50%; } }
+
+/* Bounce for badges/achievements unlock */
+.bounce-in{ animation:bounceIn .55s cubic-bezier(.34,1.56,.64,1) both; }
+@keyframes bounceIn{ from{ opacity:0; transform:scale(.5); } to{ opacity:1; transform:scale(1); } }
+
+/* Progress bar fill animation trigger via JS setting width */
+.progress-r .bar{ transition:width 1s ease; }
+
+/* Nav underline animation already handled via position; add smooth color transition */
+.topnav .nav-link, .bottomnav .bn-item{ transition:color .2s ease; }

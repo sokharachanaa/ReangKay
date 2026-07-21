@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>REANGKAY | Home</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+<!-- App styles -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animation.css">
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div class="loading-screen"><div class="logo-pulse"></div></div>
+
+<!-- ============================= TOP NAV (Desktop) ============================= -->
+<header class="topnav">
+  <div class="container-app d-flex align-items-center justify-content-between w-100">
+    <a href="index.html" class="brand"><span class="logo-dot">រ</span> REANGKAY</a>
+    <nav class="d-none d-lg-flex gap-1">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="information.html" class="nav-link">Learn</a>
+      <a href="specialists.html" class="nav-link">Specialists</a>
+      <a href="games.html" class="nav-link">Games</a>
+      <a href="emergency.html" class="nav-link">Emergency</a>
+    </nav>
+    <div class="d-flex align-items-center gap-2">
+      <button class="btn-icon-circle position-relative" id="notifBell">
+        <i class="fa-regular fa-bell"></i>
+        <span class="notif-dot" style="position:absolute;top:8px;right:8px;width:8px;height:8px;background:var(--red-dark);border-radius:50%;"></span>
+      </button>
+      <a href="profile.html"><img src="https://i.pravatar.cc/60?img=47" class="rounded-circle" width="40" height="40" alt="profile"></a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================= MAIN ============================= -->
+<main class="container-app py-4">
+
+  <!-- Greeting Hero -->
+  <section class="hero-greeting mb-4 fade-in">
+    <div class="d-flex justify-content-between align-items-start">
+      <div>
+        <p class="mb-1" style="opacity:.8;font-size:.9rem;">Good afternoon 👋</p>
+        <h3 class="text-white mb-2">Hi, Sreymom</h3>
+        <span class="streak-pill"><i class="fa-solid fa-fire"></i> 7 day streak</span>
+      </div>
+      <div class="text-end">
+        <div class="badge-r" style="background:rgba(255,255,255,.15);color:#fff;"><i class="fa-solid fa-star"></i> 320 XP</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Health Tip -->
+  <section class="card-r tip-card p-3 mb-4 slide-up">
+    <div class="d-flex align-items-center gap-3">
+      <div class="quick-access-icon" style="background:var(--green);color:var(--green-dark);"><i class="fa-solid fa-lightbulb"></i></div>
+      <div>
+        <p class="fw-bold mb-1">Health Tip of the Day</p>
+        <p class="mb-0 text-muted-r small">Drinking enough water helps your skin, focus, and mood — aim for 6–8 glasses a day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Access -->
+  <section class="mb-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="section-title">Quick Access</h2>
+    </div>
+    <div class="quick-access-grid">
+      <a href="information.html" class="card-r hoverable text-center p-3 reveal">
+        <div class="quick-access-icon mx-auto" style="background:var(--male);color:var(--male-dark);"><i class="fa-solid fa-book-open"></i></div>
+        <p class="small fw-semibold mb-0">Learn</p>
+      </a>
+      <a href="specialists.html" class="card-r hoverable text-center p-3 reveal">
+        <div class="quick-access-icon mx-auto" style="background:var(--female);color:var(--female-dark);"><i class="fa-solid fa-user-doctor"></i></div>
+        <p class="small fw-semibold mb-0">Ask a Doctor</p>
+      </a>
+      <a href="games.html" class="card-r hoverable text-center p-3 reveal">
+        <div class="quick-access-icon mx-auto" style="background:var(--orange);color:var(--orange-dark);"><i class="fa-solid fa-gamepad"></i></div>
+        <p class="small fw-semibold mb-0">Games</p>
+      </a>
+      <a href="emergency.html" class="card-r hoverable text-center p-3 reveal">
+        <div class="quick-access-icon mx-auto" style="background:var(--red);color:var(--red-dark);"><i class="fa-solid fa-phone-volume"></i></div>
+        <p class="small fw-semibold mb-0">Emergency</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Featured Article -->
+  <section class="mb-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="section-title">Featured Article</h2>
+      <a href="information.html" class="see-all">See all <i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <a href="article.html" class="card-r hoverable d-block overflow-hidden reveal">
+      <div class="row g-0">
+        <div class="col-md-5">
+          <div style="height:180px;background:url('https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?w=600&q=60') center/cover;" class="rounded-top rounded-md-start"></div>
+        </div>
+        <div class="col-md-7 p-3">
+          <span class="badge-r badge-female mb-2">Puberty</span>
+          <h5 class="mb-2">Understanding Body Changes During Puberty</h5>
+          <p class="text-muted-r small mb-2">Everything you need to know about the changes your body goes through — explained simply and without judgment.</p>
+          <p class="text-soft-r small mb-0"><i class="fa-regular fa-clock"></i> 5 min read · By Dr. Sopheak</p>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <!-- Categories -->
+  <section class="mb-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="section-title">Categories</h2>
+      <a href="information.html" class="see-all">See all <i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <div class="category-grid">
+      <a href="information.html" class="card-r hoverable category-card reveal">
+        <div class="cat-icon mx-auto" style="background:var(--female);color:var(--female-dark);"><i class="fa-solid fa-seedling"></i></div>
+        <p class="small fw-semibold mb-0">Puberty</p>
+      </a>
+      <a href="information.html" class="card-r hoverable category-card reveal">
+        <div class="cat-icon mx-auto" style="background:var(--green);color:var(--green-dark);"><i class="fa-solid fa-apple-whole"></i></div>
+        <p class="small fw-semibold mb-0">Nutrition</p>
+      </a>
+      <a href="information.html" class="card-r hoverable category-card reveal">
+        <div class="cat-icon mx-auto" style="background:var(--male);color:var(--male-dark);"><i class="fa-solid fa-person-running"></i></div>
+        <p class="small fw-semibold mb-0">Exercise</p>
+      </a>
+      <a href="information.html" class="card-r hoverable category-card reveal">
+        <div class="cat-icon mx-auto" style="background:var(--orange);color:var(--orange-dark);"><i class="fa-solid fa-brain"></i></div>
+        <p class="small fw-semibold mb-0">Mental Health</p>
+      </a>
+      <a href="information.html" class="card-r hoverable category-card reveal">
+        <div class="cat-icon mx-auto" style="background:var(--red);color:var(--red-dark);"><i class="fa-solid fa-shield-heart"></i></div>
+        <p class="small fw-semibold mb-0">Safety</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Recent Activity -->
+  <section class="mb-4">
+    <h2 class="section-title mb-3">Recent Activity</h2>
+    <div class="card-r p-3 reveal">
+      <div class="d-flex align-items-center gap-3 py-2 border-bottom">
+        <div class="settings-icon"><i class="fa-solid fa-book"></i></div>
+        <div class="flex-grow-1">
+          <p class="mb-0 fw-semibold small">You read "Managing Exam Stress"</p>
+          <p class="mb-0 text-soft-r" style="font-size:.75rem;">2 hours ago</p>
+        </div>
+      </div>
+      <div class="d-flex align-items-center gap-3 py-2 border-bottom">
+        <div class="settings-icon"><i class="fa-solid fa-comments"></i></div>
+        <div class="flex-grow-1">
+          <p class="mb-0 fw-semibold small">Chatted with Dr. Chenda</p>
+          <p class="mb-0 text-soft-r" style="font-size:.75rem;">Yesterday</p>
+        </div>
+      </div>
+      <div class="d-flex align-items-center gap-3 py-2">
+        <div class="settings-icon"><i class="fa-solid fa-trophy"></i></div>
+        <div class="flex-grow-1">
+          <p class="mb-0 fw-semibold small">Earned "Health Champion" badge</p>
+          <p class="mb-0 text-soft-r" style="font-size:.75rem;">2 days ago</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bookmarks preview -->
+  <section class="mb-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="section-title">Your Bookmarks</h2>
+      <a href="bookmarks.html" class="see-all">See all <i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <div class="row g-3">
+      <div class="col-6 col-md-3">
+        <a href="article.html" class="card-r hoverable d-block p-2 reveal">
+          <div style="height:90px;background:url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&q=60') center/cover;border-radius:10px;"></div>
+          <p class="small fw-semibold mt-2 mb-0">Healthy Sleep Habits</p>
+        </a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="article.html" class="card-r hoverable d-block p-2 reveal">
+          <div style="height:90px;background:url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400&q=60') center/cover;border-radius:10px;"></div>
+          <p class="small fw-semibold mt-2 mb-0">Building Self-Confidence</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= FOOTER (Desktop) ============================= -->
+<footer class="site-footer d-none d-lg-block">
+  <div class="container-app">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <h6 class="fw-bold mb-2">REANGKAY (រាងកាយ)</h6>
+        <p class="small">A safe, friendly space for youth to learn about health, talk to specialists, and grow with confidence.</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="fw-bold mb-2">Explore</h6>
+        <p class="small"><a href="information.html">Learn</a></p>
+        <p class="small"><a href="specialists.html">Specialists</a></p>
+        <p class="small"><a href="games.html">Games</a></p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="fw-bold mb-2">Support</h6>
+        <p class="small"><a href="emergency.html">Emergency</a></p>
+        <p class="small"><a href="feedback.html">Feedback</a></p>
+        <p class="small"><a href="settings.html">Help</a></p>
+      </div>
+      <div class="col-lg-4">
+        <h6 class="fw-bold mb-2">Stay in touch</h6>
+        <div class="d-flex gap-2">
+          <a href="#" class="btn-icon-circle" style="background:rgba(255,255,255,.1);color:#fff;"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="btn-icon-circle" style="background:rgba(255,255,255,.1);color:#fff;"><i class="fa-brands fa-telegram"></i></a>
+          <a href="#" class="btn-icon-circle" style="background:rgba(255,255,255,.1);color:#fff;"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">© 2026 REANGKAY. This is a prototype for educational purposes.</div>
+  </div>
+</footer>
+
+<!-- ============================= BOTTOM NAV (Mobile) ============================= -->
+<nav class="bottomnav">
+  <div class="bn-items">
+    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>Home</a>
+    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>Learn</a>
+    <a href="consultation.html" class="bn-item"><div class="fab-wrap"><i class="fa-solid fa-comment-medical"></i></div></a>
+    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>Games</a>
+    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>Profile</a>
+  </div>
+</nav>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+</body>
+</html>

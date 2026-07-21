@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>REANGKAY | Log In</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animation.css">
+</head>
+<body>
+
+<div class="loading-screen"><div class="logo-pulse"></div></div>
+
+<div class="auth-shell">
+  <div class="card-r auth-card fade-in">
+    <div class="text-center mb-4">
+      <div class="auth-logo">រ</div>
+      <h3 class="mb-1">Welcome back</h3>
+      <p class="text-muted-r small">Log in to continue your health journey</p>
+    </div>
+
+    <form data-mock-submit="Welcome back, Sreymom!" data-redirect="index.html">
+      <div class="mb-3">
+        <label class="form-label small fw-semibold">Username</label>
+        <div class="input-icon-wrap">
+          <i class="fa-solid fa-user"></i>
+          <input type="text" class="form-control form-control-r" placeholder="Enter your username" required>
+        </div>
+      </div>
+      <div class="mb-2">
+        <label class="form-label small fw-semibold">Password</label>
+        <div class="input-icon-wrap">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" class="form-control form-control-r" placeholder="Enter your password" required>
+          <button type="button" class="toggle-pass"><i class="fa-solid fa-eye"></i></button>
+        </div>
+      </div>
+      <div class="text-end mb-3">
+        <a href="#" class="small fw-semibold" style="color:var(--male-dark);">Forgot password?</a>
+      </div>
+      <button type="submit" class="btn btn-primary-r btn-lg-touch w-100 ripple">Log In</button>
+    </form>
+
+    <div class="divider-text">or continue with</div>
+
+    <div class="row g-2">
+      <div class="col-6">
+        <button class="social-btn w-100 ripple" onclick="showToast('Google login — prototype only','fa-circle-info')">
+          <i class="fa-brands fa-google" style="color:#EA4335;"></i> Google
+        </button>
+      </div>
+      <div class="col-6">
+        <button class="social-btn w-100 ripple" onclick="showToast('Facebook login — prototype only','fa-circle-info')">
+          <i class="fa-brands fa-facebook-f" style="color:#1877F2;"></i> Facebook
+        </button>
+      </div>
+    </div>
+
+    <p class="text-center small text-muted-r mt-4 mb-0">
+      Don't have an account? <a href="register.html" class="fw-bold" style="color:var(--primary);">Create one</a>
+    </p>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+</body>
+</html>

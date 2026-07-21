@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>REANGKAY | Specialists</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/specialists.css">
+<style>
+  /* Fallback so cards still look right if a local photo hasn't been added yet */
+  .doctor-photo{ background:var(--gradient-soft); }
+</style>
+</head>
+<body>
+
+<div class="loading-screen"><div class="logo-pulse"></div></div>
+
+<header class="topnav">
+  <div class="container-app d-flex align-items-center justify-content-between w-100">
+    <a href="index.html" class="brand"><span class="logo-dot">រ</span> REANGKAY</a>
+    <nav class="d-none d-lg-flex gap-1">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="information.html" class="nav-link">Learn</a>
+      <a href="specialists.html" class="nav-link">Specialists</a>
+      <a href="games.html" class="nav-link">Games</a>
+      <a href="emergency.html" class="nav-link">Emergency</a>
+    </nav>
+    <a href="profile.html"><img src="https://i.pravatar.cc/60?img=47" class="rounded-circle" width="40" height="40" alt="profile"></a>
+  </div>
+</header>
+
+<main class="container-app py-4">
+  <h2 class="mb-3">Talk to a Specialist</h2>
+
+  <div class="input-icon-wrap mb-3">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" class="form-control form-control-r" placeholder="Search by name or specialty..." data-search-input=".doctor-col">
+  </div>
+
+  <div class="d-flex gap-2 mb-4 filter-chip-group" data-filter-target=".doctor-col" style="overflow-x:auto;">
+    <button class="filter-chip active" data-filter="all">All</button>
+    <button class="filter-chip" data-filter="puberty">Puberty & Growth</button>
+    <button class="filter-chip" data-filter="mental">Mental Health</button>
+    <button class="filter-chip" data-filter="nutrition">Nutrition</button>
+    <button class="filter-chip" data-filter="reproductive">Reproductive Health</button>
+  </div>
+
+  <div class="row g-3" id="doctorGrid">
+
+    <!-- ===================== Puberty & Growth ===================== -->
+    <div class="col-md-6 doctor-col" data-category="puberty">
+      <div class="card-r hoverable doctor-card reveal">
+        <div class="d-flex gap-3">
+          <img src="images/pic.jpg" class="doctor-photo" alt="Dr. Sopheak Chan">
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <p class="fw-bold mb-0">Dr. Sopheak Chan <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">Puberty & Adolescent Health</p>
+              </div>
+              <span class="rating-display"><i class="fa-solid fa-star"></i>4.9 <span class="count">(128)</span></span>
+            </div>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>8 years experience</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="small text-muted-r"><span class="avail-dot"></span>Available now</span>
+              <div class="d-flex gap-2">
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Sopheak Chan','images/pic.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
+                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">Chat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 doctor-col" data-category="puberty">
+      <div class="card-r hoverable doctor-card reveal">
+        <div class="d-flex gap-3">
+          <img src="images/pic1.jpg" class="doctor-photo" alt="Dr. Ratana Pich">
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <p class="fw-bold mb-0">Dr. Ratana Pich <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">Puberty & Growth Specialist</p>
+              </div>
+              <span class="rating-display"><i class="fa-solid fa-star"></i>4.6 <span class="count">(37)</span></span>
+            </div>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>4 years experience</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="small text-muted-r" style="color:var(--orange-dark) !important;"><span class="avail-dot" style="background:var(--orange-dark);"></span>Available in 30m</span>
+              <div class="d-flex gap-2">
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Ratana Pich','images/pic1.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
+                <a href="consultation.html" class="btn btn-outline-r btn-sm ripple">Chat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 doctor-col" data-category="puberty">
+      <div class="card-r hoverable doctor-card reveal">
+        <div class="d-flex gap-3">
+          <img src="images/pic2.jpg" class="doctor-photo" alt="Dr. Pisach Ly">
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <p class="fw-bold mb-0">Dr. Pisach Ly <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">Adolescent Development</p>
+              </div>
+              <span class="rating-display"><i class="fa-solid fa-star"></i>4.8 <span class="count">(52)</span></span>
+            </div>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>6 years experience</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="small text-muted-r"><span class="avail-dot"></span>Available now</span>
+              <div class="d-flex gap-2">
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Pisach Ly','images/pic2.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
+                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">Chat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== Mental Health ===================== -->
+    <div class="col-md-6 doctor-col" data-category="mental">
+      <div class="card-r hoverable doctor-card reveal">
+        <div class="d-flex gap-3">
+          <img src="images/pic3.jpg" class="doctor-photo" alt="Dr. Chenda Vann">
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <p class="fw-bold mb-0">Dr. Chenda Vann <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">Mental Health Counselor</p>
+              </div>
+              <span class="rating-display"><i class="fa-solid fa-star"></i>4.8 <span class="count">(96)</span></span>
+            </div>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>5 years experience</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English, French</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="small text-muted-r"><span class="avail-dot"></span>Available now</span>
+              <div class="d-flex gap-2">
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Chenda Vann','images/pic3.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
+                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">Chat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 doctor-col" data-category="mental">
+      <div class="card-r hoverable doctor-card reveal">
+        <div class="d-flex gap-3">
+          <img src="images/pic4.jpg" class="doctor-photo" alt="Dr. Vibol Ourn">
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <p class="fw-bold mb-0">Dr. Vibol Ourn <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">Youth Mental Wellness</p>
+              </div>
+              <span class="rating-display"><i class="fa-solid fa-star"></i>4.9 <span class="count">(52)</span></span>
+            </div>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>7 years experience</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="small text-muted-r"><span class="avail-dot"></span>Available now</span>
+              <div class="d-flex gap-2">
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Vibol Ourn','images/pic4.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
+                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">Chat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 doctor-col" data-category="mental">
+      <div class="card-r hoverable doctor-card reveal">
+        <div class="d-flex gap-3">
+          <img src="images/pic5.jpg" class="doctor-photo" alt="Dr. Sokunthea Meas">
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <p class="fw-bold mb-0">Dr. Sokunthea Meas <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">Anxiety & Stress Counselor</p>
+              </div>
+              <span class="rating-display"><i class="fa-solid fa-star"></i>4.7 <span class="count">(44)</span></span>
+            </div>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>3 years experience</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="small text-muted-r" style="color:var(--orange-dark) !important;"><span class="avail-dot" style="background:var(--orange-dark);"></span>Available in 20m</span>
+              <div class="d-flex gap-2">
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Sokunthea Meas','images/pic5.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
+                <a href="consultation.html" class="btn btn-outline-r btn-sm ripple">Chat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== Nutrition ===================== -->
+    <div class="col-md-6 doctor-col" data-category="nutrition">
+      <div class="card-r hoverable doctor-card reveal">
+        <div class="d-flex gap-3">
+          <img src="images/pic6.jpg" class="doctor-photo" alt="Dr. Rithy Sok">
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <p class="fw-bold mb-0">Dr. Rithy Sok <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">Nutrition Specialist</p>
+              </div>
+              <span class="rating-display"><i class="fa-solid fa-star"></i>4.7 <span class="count">(64)</span></span>
+            </div>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>10 years experience</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="small text-muted-r" style="color:var(--orange-dark) !important;"><span class="avail-dot" style="background:var(--orange-dark);"></span>Available in 1h</span>
+              <div class="d-flex gap-2">
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Rithy Sok','images/pic6.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
+                <a href="consultation.html" class="btn btn-outline-r btn-sm ripple">Chat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 doctor-col" data-category="nutrition">
+      <div class="card-r hoverable doctor-card reveal">
+        <div class="d-flex gap-3">
+          <img src="images/pic7.jpg" class="doctor-photo" alt="Dr. Sreyleak Nov">
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <p class="fw-bold mb-0">Dr. Sreyleak Nov <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">Adolescent Nutrition</p>
+              </div>
+              <span class="rating-display"><i class="fa-solid fa-star"></i>4.8 <span class="count">(29)</span></span>
+            </div>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>3 years experience</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="small text-muted-r"><span class="avail-dot"></span>Available now</span>
+              <div class="d-flex gap-2">
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Sreyleak Nov','images/pic7.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
+                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">Chat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 doctor-col" data-category="nutrition">
+      <div class="card-r hoverable doctor-card reveal">
+        <div class="d-flex gap-3">
+          <img src="images/pic8.jpg" class="doctor-photo" alt="Dr. Bunthoeun Chea">
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <p class="fw-bold mb-0">Dr. Bunthoeun Chea <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">Sports Nutrition & Diet</p>
+              </div>
+              <span class="rating-display"><i class="fa-solid fa-star"></i>4.5 <span class="count">(18)</span></span>
+            </div>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>5 years experience</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="small text-muted-r"><span class="avail-dot"></span>Available now</span>
+              <div class="d-flex gap-2">
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Bunthoeun Chea','images/pic8.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
+                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">Chat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== Reproductive Health ===================== -->
+    <div class="col-md-6 doctor-col" data-category="reproductive">
+      <div class="card-r hoverable doctor-card reveal">
+        <div class="d-flex gap-3">
+          <img src="images/pic9.jpg" class="doctor-photo" alt="Dr. Malis Heng">
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <p class="fw-bold mb-0">Dr. Malis Heng <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">Reproductive Health</p>
+              </div>
+              <span class="rating-display"><i class="fa-solid fa-star"></i>5.0 <span class="count">(41)</span></span>
+            </div>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>6 years experience</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="small text-muted-r"><span class="avail-dot"></span>Available now</span>
+              <div class="d-flex gap-2">
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Malis Heng','images/pic9.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
+                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">Chat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 doctor-col" data-category="reproductive">
+      <div class="card-r hoverable doctor-card reveal">
+        <div class="d-flex gap-3">
+          <img src="images/pic10.jpg" class="doctor-photo" alt="Dr. Kunthea Prom">
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <p class="fw-bold mb-0">Dr. Kunthea Prom <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">Reproductive Health Educator</p>
+              </div>
+              <span class="rating-display"><i class="fa-solid fa-star"></i>4.9 <span class="count">(33)</span></span>
+            </div>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>4 years experience</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="small text-muted-r" style="color:var(--orange-dark) !important;"><span class="avail-dot" style="background:var(--orange-dark);"></span>Available in 45m</span>
+              <div class="d-flex gap-2">
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Kunthea Prom','images/pic10.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
+                <a href="consultation.html" class="btn btn-outline-r btn-sm ripple">Chat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 doctor-col" data-category="reproductive">
+      <div class="card-r hoverable doctor-card reveal">
+        <div class="d-flex gap-3">
+          <img src="images/pic11.jpg" class="doctor-photo" alt="Dr. Sophea Ret">
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <p class="fw-bold mb-0">Dr. Sophea Ret <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">Gynecology & Reproductive Care</p>
+              </div>
+              <span class="rating-display"><i class="fa-solid fa-star"></i>4.8 <span class="count">(27)</span></span>
+            </div>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>9 years experience</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="small text-muted-r"><span class="avail-dot"></span>Available now</span>
+              <div class="d-flex gap-2">
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Sophea Ret','images/pic11.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
+                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">Chat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="text-center text-soft-r py-5 d-none" id="noResultsMsg"><i class="fa-solid fa-user-doctor fa-2x d-block mb-2"></i>No specialists found in this category yet.</p>
+</main>
+
+<!-- Rate Specialist Modal -->
+<div class="modal fade" id="rateModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius:var(--radius-lg);border:none;">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title">Rate Specialist</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body px-4 pb-4">
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <img id="rateModalPhoto" src="" class="doctor-photo" style="width:56px;height:56px;" alt="specialist">
+          <div>
+            <p class="fw-bold mb-0" id="rateModalName">Specialist</p>
+            <p class="text-soft-r small mb-0">Your feedback helps other youth choose confidently</p>
+          </div>
+        </div>
+        <form data-mock-submit="Thanks for rating this specialist!">
+          <div class="star-rate-group mb-3" data-value="0">
+            <i class="fa-solid fa-star star-rate" data-idx="0"></i>
+            <i class="fa-solid fa-star star-rate" data-idx="1"></i>
+            <i class="fa-solid fa-star star-rate" data-idx="2"></i>
+            <i class="fa-solid fa-star star-rate" data-idx="3"></i>
+            <i class="fa-solid fa-star star-rate" data-idx="4"></i>
+          </div>
+          <textarea class="form-control form-control-r mb-3" rows="3" placeholder="Optional: share more about your consultation..."></textarea>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="rateAnonCheck" checked>
+            <label class="form-check-label small" for="rateAnonCheck">Submit anonymously</label>
+          </div>
+          <button type="submit" class="btn btn-primary-r btn-lg-touch w-100 ripple" data-bs-dismiss="modal">Submit Rating</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="bottomnav">
+  <div class="bn-items">
+    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>Home</a>
+    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>Learn</a>
+    <a href="consultation.html" class="bn-item"><div class="fab-wrap"><i class="fa-solid fa-comment-medical"></i></div></a>
+    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>Games</a>
+    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>Profile</a>
+  </div>
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+<script>
+function openRateModal(name, photo){
+  document.getElementById('rateModalName').textContent = name;
+  document.getElementById('rateModalPhoto').src = photo;
+  document.querySelectorAll('#rateModal .star-rate').forEach(s => s.classList.remove('active'));
+  bootstrap.Modal.getOrCreateInstance(document.getElementById('rateModal')).show();
+}
+
+// Category filter chips
+document.querySelectorAll('.filter-chip-group[data-filter-target] .filter-chip').forEach(chip => {
+  chip.addEventListener('click', function(){
+    document.querySelectorAll('.filter-chip-group[data-filter-target] .filter-chip').forEach(c => c.classList.remove('active'));
+    this.classList.add('active');
+    const val = this.dataset.filter;
+    let visibleCount = 0;
+    document.querySelectorAll('.doctor-col').forEach(col => {
+      const show = (val === 'all' || col.dataset.category === val);
+      col.style.display = show ? '' : 'none';
+      if(show) visibleCount++;
+    });
+    document.getElementById('noResultsMsg').classList.toggle('d-none', visibleCount > 0);
+  });
+});
+</script>
+</body>
+</html>

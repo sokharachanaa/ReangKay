@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>REANGKAY | Emergency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animation.css">
+</head>
+<body>
+
+<div class="loading-screen"><div class="logo-pulse"></div></div>
+
+<header class="topnav">
+  <div class="container-app d-flex align-items-center justify-content-between w-100">
+    <a href="index.html" class="brand"><span class="logo-dot">រ</span> REANGKAY</a>
+    <nav class="d-none d-lg-flex gap-1">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="information.html" class="nav-link">Learn</a>
+      <a href="specialists.html" class="nav-link">Specialists</a>
+      <a href="games.html" class="nav-link">Games</a>
+      <a href="emergency.html" class="nav-link">Emergency</a>
+    </nav>
+    <a href="profile.html"><img src="https://i.pravatar.cc/60?img=47" class="rounded-circle" width="40" height="40" alt="profile"></a>
+  </div>
+</header>
+
+<main class="container-app py-4">
+
+  <div class="card-r p-4 mb-4 text-center" style="background:var(--red);border:none;">
+    <i class="fa-solid fa-hand-holding-heart fa-2x mb-2" style="color:var(--red-dark);"></i>
+    <h4 class="mb-1" style="color:var(--red-dark);">You are not alone</h4>
+    <p class="mb-0 small" style="color:var(--red-dark);">If you or someone you know is in danger or crisis, reach out immediately using the options below.</p>
+  </div>
+
+  <h2 class="section-title mb-3">Emergency Numbers</h2>
+  <div class="row g-3 mb-4">
+    <div class="col-6 col-md-3">
+      <div class="card-r emergency-num-card reveal">
+        <div class="num-icon"><i class="fa-solid fa-truck-medical"></i></div>
+        <p class="fw-bold mb-1">Ambulance</p>
+        <button class="tap-call-btn ripple" onclick="showToast('Calling 119 — prototype only','fa-phone')">119</button>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="card-r emergency-num-card reveal">
+        <div class="num-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <p class="fw-bold mb-1">Police</p>
+        <button class="tap-call-btn ripple" onclick="showToast('Calling 117 — prototype only','fa-phone')">117</button>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="card-r emergency-num-card reveal">
+        <div class="num-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <p class="fw-bold mb-1">Child Helpline</p>
+        <button class="tap-call-btn ripple" onclick="showToast('Calling 1280 — prototype only','fa-phone')">1280</button>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="card-r emergency-num-card reveal">
+        <div class="num-icon"><i class="fa-solid fa-comment-dots"></i></div>
+        <p class="fw-bold mb-1">Mental Health Line</p>
+        <button class="tap-call-btn ripple" onclick="showToast('Calling 1288 — prototype only','fa-phone')">1288</button>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title mb-3">Partner Hospitals</h2>
+  <div class="row g-3 mb-4">
+    <div class="col-md-6">
+      <div class="card-r p-3 reveal d-flex align-items-center gap-3">
+        <div class="settings-icon" style="width:52px;height:52px;"><i class="fa-solid fa-hospital"></i></div>
+        <div class="flex-grow-1">
+          <p class="fw-bold mb-0">Calmette Hospital</p>
+          <p class="text-muted-r small mb-0">Phnom Penh · Open 24/7</p>
+        </div>
+        <button class="btn-icon-circle ripple" onclick="showToast('Opening map — prototype only','fa-location-dot')"><i class="fa-solid fa-location-dot"></i></button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card-r p-3 reveal d-flex align-items-center gap-3">
+        <div class="settings-icon" style="width:52px;height:52px;"><i class="fa-solid fa-hospital"></i></div>
+        <div class="flex-grow-1">
+          <p class="fw-bold mb-0">Angkor Hospital for Children</p>
+          <p class="text-muted-r small mb-0">Siem Reap · Open 24/7</p>
+        </div>
+        <button class="btn-icon-circle ripple" onclick="showToast('Opening map — prototype only','fa-location-dot')"><i class="fa-solid fa-location-dot"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title mb-3">NGO Support</h2>
+  <div class="row g-3">
+    <div class="col-md-6">
+      <div class="card-r p-3 reveal d-flex align-items-center gap-3">
+        <div class="settings-icon" style="width:52px;height:52px;background:var(--female);color:var(--female-dark);"><i class="fa-solid fa-people-group"></i></div>
+        <div class="flex-grow-1">
+          <p class="fw-bold mb-0">Child Protection Cambodia</p>
+          <p class="text-muted-r small mb-0">Free & confidential support</p>
+        </div>
+        <button class="btn-icon-circle ripple" onclick="showToast('Calling — prototype only','fa-phone')"><i class="fa-solid fa-phone"></i></button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card-r p-3 reveal d-flex align-items-center gap-3">
+        <div class="settings-icon" style="width:52px;height:52px;background:var(--male);color:var(--male-dark);"><i class="fa-solid fa-people-group"></i></div>
+        <div class="flex-grow-1">
+          <p class="fw-bold mb-0">Youth Mental Wellness NGO</p>
+          <p class="text-muted-r small mb-0">Counseling & peer support</p>
+        </div>
+        <button class="btn-icon-circle ripple" onclick="showToast('Calling — prototype only','fa-phone')"><i class="fa-solid fa-phone"></i></button>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<nav class="bottomnav">
+  <div class="bn-items">
+    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>Home</a>
+    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>Learn</a>
+    <a href="consultation.html" class="bn-item"><div class="fab-wrap"><i class="fa-solid fa-comment-medical"></i></div></a>
+    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>Games</a>
+    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>Profile</a>
+  </div>
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+</body>
+</html>

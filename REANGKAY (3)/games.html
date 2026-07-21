@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>REANGKAY | Games</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animation.css">
+</head>
+<body>
+
+<div class="loading-screen"><div class="logo-pulse"></div></div>
+
+<header class="topnav">
+  <div class="container-app d-flex align-items-center justify-content-between w-100">
+    <a href="index.html" class="brand"><span class="logo-dot">រ</span> REANGKAY</a>
+    <nav class="d-none d-lg-flex gap-1">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="information.html" class="nav-link">Learn</a>
+      <a href="specialists.html" class="nav-link">Specialists</a>
+      <a href="games.html" class="nav-link">Games</a>
+      <a href="emergency.html" class="nav-link">Emergency</a>
+    </nav>
+    <a href="profile.html"><img src="https://i.pravatar.cc/60?img=47" class="rounded-circle" width="40" height="40" alt="profile"></a>
+  </div>
+</header>
+
+<main class="container-app py-4">
+
+  <!-- XP Card -->
+  <div class="xp-card mb-4 fade-in">
+    <div class="row align-items-center g-3">
+      <div class="col-md-4 text-center text-md-start">
+        <p class="mb-1" style="opacity:.75;">Total XP</p>
+        <h2 class="text-white mb-0">320 XP</h2>
+      </div>
+      <div class="col-md-4 text-center">
+        <p class="mb-1" style="opacity:.75;"><i class="fa-solid fa-fire"></i> Daily Streak</p>
+        <h2 class="text-white mb-0">7 days</h2>
+      </div>
+      <div class="col-md-4 text-center text-md-end">
+        <p class="mb-1" style="opacity:.75;">Next Badge</p>
+        <h2 class="text-white mb-0">80 XP away</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Achievements -->
+  <h2 class="section-title mb-3">Achievements</h2>
+  <div class="row g-3 mb-4 text-center">
+    <div class="col-4 col-md-2">
+      <div class="badge-medal bounce-in" style="background:var(--green);color:var(--green-dark);"><i class="fa-solid fa-trophy"></i></div>
+      <p class="small fw-semibold mb-0">Champion</p>
+    </div>
+    <div class="col-4 col-md-2">
+      <div class="badge-medal bounce-in" style="background:var(--male);color:var(--male-dark);"><i class="fa-solid fa-book"></i></div>
+      <p class="small fw-semibold mb-0">Bookworm</p>
+    </div>
+    <div class="col-4 col-md-2">
+      <div class="badge-medal bounce-in" style="background:var(--female);color:var(--female-dark);"><i class="fa-solid fa-fire"></i></div>
+      <p class="small fw-semibold mb-0">7-Day Streak</p>
+    </div>
+    <div class="col-4 col-md-2">
+      <div class="badge-medal" style="background:var(--border);color:var(--text-soft);"><i class="fa-solid fa-lock"></i></div>
+      <p class="small fw-semibold mb-0 text-soft-r">Locked</p>
+    </div>
+    <div class="col-4 col-md-2">
+      <div class="badge-medal" style="background:var(--border);color:var(--text-soft);"><i class="fa-solid fa-lock"></i></div>
+      <p class="small fw-semibold mb-0 text-soft-r">Locked</p>
+    </div>
+    <div class="col-4 col-md-2">
+      <div class="badge-medal" style="background:var(--border);color:var(--text-soft);"><i class="fa-solid fa-lock"></i></div>
+      <p class="small fw-semibold mb-0 text-soft-r">Locked</p>
+    </div>
+  </div>
+
+  <!-- Quiz Cards -->
+  <h2 class="section-title mb-3">Quiz Challenges</h2>
+  <div class="row g-3 mb-4">
+    <div class="col-md-4">
+      <div class="card-r hoverable quiz-card reveal" onclick="startQuiz('puberty')">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div class="quick-access-icon" style="background:var(--female);color:var(--female-dark);"><i class="fa-solid fa-seedling"></i></div>
+          <span class="badge-r badge-green">3 questions</span>
+        </div>
+        <p class="fw-bold mb-1">Puberty Basics</p>
+        <p class="text-muted-r small mb-3">Test your knowledge on body changes.</p>
+        <div class="progress-r"><div class="bar" data-target="60" style="width:0;background:var(--female-dark);"></div></div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-r hoverable quiz-card reveal" onclick="startQuiz('nutrition')">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div class="quick-access-icon" style="background:var(--green);color:var(--green-dark);"><i class="fa-solid fa-apple-whole"></i></div>
+          <span class="badge-r badge-green">2 questions</span>
+        </div>
+        <p class="fw-bold mb-1">Smart Eating</p>
+        <p class="text-muted-r small mb-3">Learn what fuels your body best.</p>
+        <div class="progress-r"><div class="bar" data-target="20" style="width:0;background:var(--green-dark);"></div></div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-r hoverable quiz-card reveal" onclick="startQuiz('mental')">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div class="quick-access-icon" style="background:var(--orange);color:var(--orange-dark);"><i class="fa-solid fa-brain"></i></div>
+          <span class="badge-r badge-green">2 questions</span>
+        </div>
+        <p class="fw-bold mb-1">Mind Matters</p>
+        <p class="text-muted-r small mb-3">Tips for coping with stress.</p>
+        <div class="progress-r"><div class="bar" data-target="0" style="width:0;background:var(--orange-dark);"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaderboard -->
+  <h2 class="section-title mb-3">Leaderboard</h2>
+  <div class="card-r p-3">
+    <div class="leaderboard-row">
+      <div class="rank-badge" style="background:var(--orange);color:var(--orange-dark);">1</div>
+      <img src="https://i.pravatar.cc/60?img=5" class="rounded-circle" width="38" height="38">
+      <div class="flex-grow-1"><p class="mb-0 fw-semibold small">Dara K.</p></div>
+      <span class="fw-bold small">540 XP</span>
+    </div>
+    <div class="leaderboard-row">
+      <div class="rank-badge">2</div>
+      <img src="https://i.pravatar.cc/60?img=8" class="rounded-circle" width="38" height="38">
+      <div class="flex-grow-1"><p class="mb-0 fw-semibold small">Ponleu S.</p></div>
+      <span class="fw-bold small">470 XP</span>
+    </div>
+    <div class="leaderboard-row" style="background:var(--bg);border-radius:10px;">
+      <div class="rank-badge">3</div>
+      <img src="https://i.pravatar.cc/60?img=47" class="rounded-circle" width="38" height="38">
+      <div class="flex-grow-1"><p class="mb-0 fw-semibold small">You (Sreymom)</p></div>
+      <span class="fw-bold small">320 XP</span>
+    </div>
+    <div class="leaderboard-row" style="border-bottom:none;">
+      <div class="rank-badge">4</div>
+      <img src="https://i.pravatar.cc/60?img=15" class="rounded-circle" width="38" height="38">
+      <div class="flex-grow-1"><p class="mb-0 fw-semibold small">Vichet L.</p></div>
+      <span class="fw-bold small">290 XP</span>
+    </div>
+  </div>
+
+</main>
+
+<!-- Quiz Modal -->
+<div class="modal fade" id="quizModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius:var(--radius-lg);border:none;">
+      <div class="modal-header border-0 pb-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body px-4 pb-4" id="quizBody"></div>
+    </div>
+  </div>
+</div>
+
+<nav class="bottomnav">
+  <div class="bn-items">
+    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>Home</a>
+    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>Learn</a>
+    <a href="consultation.html" class="bn-item"><div class="fab-wrap"><i class="fa-solid fa-comment-medical"></i></div></a>
+    <a href="games.html" class="bn-item active"><i class="fa-solid fa-gamepad"></i>Games</a>
+    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>Profile</a>
+  </div>
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>

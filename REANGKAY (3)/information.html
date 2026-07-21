@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>REANGKAY | Learn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animation.css">
+</head>
+<body>
+
+<div class="loading-screen"><div class="logo-pulse"></div></div>
+
+<header class="topnav">
+  <div class="container-app d-flex align-items-center justify-content-between w-100">
+    <a href="index.html" class="brand"><span class="logo-dot">រ</span> REANGKAY</a>
+    <nav class="d-none d-lg-flex gap-1">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="information.html" class="nav-link">Learn</a>
+      <a href="specialists.html" class="nav-link">Specialists</a>
+      <a href="games.html" class="nav-link">Games</a>
+      <a href="emergency.html" class="nav-link">Emergency</a>
+    </nav>
+    <a href="profile.html"><img src="https://i.pravatar.cc/60?img=47" class="rounded-circle" width="40" height="40" alt="profile"></a>
+  </div>
+</header>
+
+<main class="container-app py-4">
+  <h2 class="mb-3">Learn about your body</h2>
+
+  <!-- Gender Tabs -->
+  <div class="d-flex gap-2 mb-3">
+    <button class="bm-tab-btn gender-tab-btn active" data-gender="all" onclick="switchGenderTab('all')">All</button>
+    <button class="bm-tab-btn gender-tab-btn" data-gender="male" onclick="switchGenderTab('male')"><i class="fa-solid fa-mars me-1"></i>Male</button>
+    <button class="bm-tab-btn gender-tab-btn" data-gender="female" onclick="switchGenderTab('female')"><i class="fa-solid fa-venus me-1"></i>Female</button>
+  </div>
+
+  <!-- Search -->
+  <div class="input-icon-wrap mb-4">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" class="form-control form-control-r" placeholder="Search topics, e.g. sleep, nutrition..." data-search-input=".category-card-full">
+  </div>
+
+  <!-- Category Cards -->
+  <div class="row g-3">
+    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
+      <div class="card-r hoverable category-card-full p-3 text-center reveal">
+        <div class="cat-icon mx-auto" style="background:var(--female);color:var(--female-dark);"><i class="fa-solid fa-seedling"></i></div>
+        <p class="fw-semibold mb-0">Puberty</p>
+        <p class="text-soft-r small mb-0">12 articles</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
+      <div class="card-r hoverable category-card-full p-3 text-center reveal">
+        <div class="cat-icon mx-auto" style="background:var(--green);color:var(--green-dark);"><i class="fa-solid fa-apple-whole"></i></div>
+        <p class="fw-semibold mb-0">Nutrition</p>
+        <p class="text-soft-r small mb-0">9 articles</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
+      <div class="card-r hoverable category-card-full p-3 text-center reveal">
+        <div class="cat-icon mx-auto" style="background:var(--male);color:var(--male-dark);"><i class="fa-solid fa-person-running"></i></div>
+        <p class="fw-semibold mb-0">Exercise</p>
+        <p class="text-soft-r small mb-0">7 articles</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
+      <div class="card-r hoverable category-card-full p-3 text-center reveal">
+        <div class="cat-icon mx-auto" style="background:var(--orange);color:var(--orange-dark);"><i class="fa-solid fa-brain"></i></div>
+        <p class="fw-semibold mb-0">Mental Health</p>
+        <p class="text-soft-r small mb-0">14 articles</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
+      <div class="card-r hoverable category-card-full p-3 text-center reveal">
+        <div class="cat-icon mx-auto" style="background:var(--female);color:var(--female-dark);"><i class="fa-solid fa-heart-pulse"></i></div>
+        <p class="fw-semibold mb-0">Reproductive Health</p>
+        <p class="text-soft-r small mb-0">11 articles</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
+      <div class="card-r hoverable category-card-full p-3 text-center reveal">
+        <div class="cat-icon mx-auto" style="background:var(--red);color:var(--red-dark);"><i class="fa-solid fa-shield-heart"></i></div>
+        <p class="fw-semibold mb-0">Safety</p>
+        <p class="text-soft-r small mb-0">6 articles</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
+      <div class="card-r hoverable category-card-full p-3 text-center reveal">
+        <div class="cat-icon mx-auto" style="background:var(--male);color:var(--male-dark);"><i class="fa-solid fa-people-arrows"></i></div>
+        <p class="fw-semibold mb-0">Relationships</p>
+        <p class="text-soft-r small mb-0">8 articles</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
+      <div class="card-r hoverable category-card-full p-3 text-center reveal">
+        <div class="cat-icon mx-auto" style="background:var(--green);color:var(--green-dark);"><i class="fa-solid fa-hand-sparkles"></i></div>
+        <p class="fw-semibold mb-0">Hygiene</p>
+        <p class="text-soft-r small mb-0">10 articles</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
+      <div class="card-r hoverable category-card-full p-3 text-center reveal">
+        <div class="cat-icon mx-auto" style="background:var(--orange);color:var(--orange-dark);"><i class="fa-solid fa-child-reaching"></i></div>
+        <p class="fw-semibold mb-0">Child Protection</p>
+        <p class="text-soft-r small mb-0">5 articles</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article list preview -->
+  <h2 class="section-title mt-5 mb-3">Popular Articles</h2>
+  <div class="row g-3">
+    <div class="col-md-6">
+      <a href="article.html" class="card-r hoverable d-flex p-2 reveal text-decoration-none">
+        <div style="width:96px;height:96px;flex-shrink:0;background:url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&q=60') center/cover;border-radius:12px;"></div>
+        <div class="ps-3 py-1">
+          <span class="badge-r badge-green mb-1">Nutrition</span>
+          <p class="fw-semibold mb-1">Eating Well on a Student Budget</p>
+          <p class="text-soft-r small mb-0">4 min read</p>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6">
+      <a href="article.html" class="card-r hoverable d-flex p-2 reveal text-decoration-none">
+        <div style="width:96px;height:96px;flex-shrink:0;background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=300&q=60') center/cover;border-radius:12px;"></div>
+        <div class="ps-3 py-1">
+          <span class="badge-r badge-orange mb-1">Mental Health</span>
+          <p class="fw-semibold mb-1">Coping With Exam Anxiety</p>
+          <p class="text-soft-r small mb-0">6 min read</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</main>
+
+<nav class="bottomnav">
+  <div class="bn-items">
+    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>Home</a>
+    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>Learn</a>
+    <a href="consultation.html" class="bn-item"><div class="fab-wrap"><i class="fa-solid fa-comment-medical"></i></div></a>
+    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>Games</a>
+    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>Profile</a>
+  </div>
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+</body>
+</html>

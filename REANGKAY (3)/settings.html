@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>REANGKAY | Settings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animation.css">
+</head>
+<body>
+
+<div class="loading-screen"><div class="logo-pulse"></div></div>
+
+<header class="topnav">
+  <div class="container-app d-flex align-items-center justify-content-between w-100">
+    <div class="d-flex align-items-center gap-2">
+      <a href="profile.html" class="btn-icon-circle"><i class="fa-solid fa-arrow-left"></i></a>
+      <span class="brand mb-0"><span class="logo-dot">រ</span> Settings</span>
+    </div>
+  </div>
+</header>
+
+<main class="container-app py-4" style="max-width:640px;">
+
+  <div class="card-r p-3 mb-4 fade-in">
+    <p class="section-title px-2 pt-1 pb-2 mb-0">Preferences</p>
+    <div class="settings-row">
+      <div class="settings-icon"><i class="fa-solid fa-moon"></i></div>
+      <div class="flex-grow-1"><p class="mb-0 fw-semibold">Dark Mode</p><p class="mb-0 text-soft-r small">Easier on the eyes at night</p></div>
+      <button class="toggle-r" id="darkModeToggle" data-label="Dark mode"></button>
+    </div>
+    <div class="settings-row">
+      <div class="settings-icon"><i class="fa-solid fa-language"></i></div>
+      <div class="flex-grow-1"><p class="mb-0 fw-semibold">Language</p><p class="mb-0 text-soft-r small">Khmer / English</p></div>
+      <select class="form-select form-select-r" style="width:auto;">
+        <option>ខ្មែរ (Khmer)</option>
+        <option selected>English</option>
+      </select>
+    </div>
+    <div class="settings-row">
+      <div class="settings-icon"><i class="fa-solid fa-bell"></i></div>
+      <div class="flex-grow-1"><p class="mb-0 fw-semibold">Notifications</p><p class="mb-0 text-soft-r small">Reminders & health tips</p></div>
+      <button class="toggle-r on" data-label="Notifications"></button>
+    </div>
+  </div>
+
+  <div class="card-r p-3 mb-4 reveal">
+    <p class="section-title px-2 pt-1 pb-2 mb-0">Privacy</p>
+    <div class="settings-row">
+      <div class="settings-icon"><i class="fa-solid fa-user-secret"></i></div>
+      <div class="flex-grow-1"><p class="mb-0 fw-semibold">Anonymous Mode</p><p class="mb-0 text-soft-r small">Hide your identity in chats</p></div>
+      <button class="toggle-r on" data-label="Anonymous mode"></button>
+    </div>
+    <div class="settings-row">
+      <div class="settings-icon"><i class="fa-solid fa-lock"></i></div>
+      <div class="flex-grow-1"><p class="mb-0 fw-semibold">Privacy Settings</p><p class="mb-0 text-soft-r small">Manage your data & visibility</p></div>
+      <a href="#" class="text-soft-r"><i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+  </div>
+
+  <div class="card-r p-3 mb-4 reveal">
+    <p class="section-title px-2 pt-1 pb-2 mb-0">Support</p>
+    <div class="settings-row">
+      <div class="settings-icon"><i class="fa-solid fa-circle-info"></i></div>
+      <div class="flex-grow-1"><p class="mb-0 fw-semibold">About REANGKAY</p></div>
+      <a href="#" class="text-soft-r"><i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <div class="settings-row">
+      <div class="settings-icon"><i class="fa-solid fa-circle-question"></i></div>
+      <div class="flex-grow-1"><p class="mb-0 fw-semibold">Help Center</p></div>
+      <a href="#" class="text-soft-r"><i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <div class="settings-row">
+      <div class="settings-icon"><i class="fa-solid fa-star"></i></div>
+      <div class="flex-grow-1"><p class="mb-0 fw-semibold">Send Feedback</p></div>
+      <a href="feedback.html" class="text-soft-r"><i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+  </div>
+
+  <a href="login.html" class="btn btn-outline-r btn-lg-touch w-100 ripple" style="border-color:var(--red-dark);color:var(--red-dark);">
+    <i class="fa-solid fa-right-from-bracket me-2"></i>Log Out
+  </a>
+
+</main>
+
+<nav class="bottomnav">
+  <div class="bn-items">
+    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>Home</a>
+    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>Learn</a>
+    <a href="consultation.html" class="bn-item"><div class="fab-wrap"><i class="fa-solid fa-comment-medical"></i></div></a>
+    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>Games</a>
+    <a href="profile.html" class="bn-item active"><i class="fa-solid fa-user"></i>Profile</a>
+  </div>
+</nav>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+</body>
+</html>

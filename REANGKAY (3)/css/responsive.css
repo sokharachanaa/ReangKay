@@ -1,0 +1,67 @@
+/* ==========================================================================
+   RESPONSIVE.CSS — Desktop / Laptop / Tablet / Mobile
+   ========================================================================== */
+
+/* ---- Desktop default: top nav shown, bottom nav hidden ---- */
+@media (min-width: 992px){
+  .bottomnav{ display:none !important; }
+  .topnav{ display:flex !important; }
+  main{ padding-bottom:0 !important; }
+}
+
+/* ---- Tablet & below: switch to app-like mobile shell ---- */
+@media (max-width: 991.98px){
+  .topnav .nav-link-desktop{ display:none; }
+  .bottomnav{ display:block; }
+  main{ padding-bottom:calc(var(--bottomnav-h) + 16px); }
+  .container-app{ padding:0 16px; }
+  .auth-card{ padding:32px 24px; border-radius:var(--radius-lg); }
+  .hero-greeting{ padding:22px 20px; }
+}
+
+/* ---- Small tablet ---- */
+@media (max-width: 767.98px){
+  h1{ font-size:1.6rem; }
+  .article-banner{ height:200px; }
+  .doctor-card{ padding:14px; }
+  .fab{ right:16px; bottom:calc(var(--bottomnav-h) + 16px); }
+}
+
+/* ---- Mobile phones: native-app feel ---- */
+@media (max-width: 575.98px){
+  body{ font-size:.94rem; }
+  .topnav{ height:56px; }
+  .topnav .brand{ font-size:1.05rem; }
+  .auth-shell{ padding:0; align-items:stretch; }
+  .auth-card{ border-radius:0; min-height:100vh; display:flex; flex-direction:column; justify-content:center; box-shadow:none; border:none; }
+  .quick-access-grid{ grid-template-columns:repeat(4, 1fr); }
+  .category-grid{ grid-template-columns:repeat(2, 1fr); }
+  .chat-shell{ height:calc(100vh - 56px); }
+  .site-footer{ display:none; } /* mobile app style has no footer, uses bottom nav */
+  .bubble{ max-width:85%; }
+}
+
+/* ---- Landscape / small-height devices ---- */
+@media (max-height: 480px) and (max-width: 900px){
+  .auth-shell{ padding:14px; }
+  .chat-messages{ padding:12px; }
+}
+
+/* ---- Large desktop refinement ---- */
+@media (min-width: 1400px){
+  .container-app{ max-width:1280px; }
+}
+
+/* Grids that need JS-independent responsive columns */
+.quick-access-grid{
+  display:grid; grid-template-columns:repeat(4, 1fr); gap:12px;
+}
+.category-grid{
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:14px;
+}
+@media (min-width: 768px) and (max-width: 991.98px){
+  .category-grid{ grid-template-columns:repeat(4, 1fr); }
+}
+@media (min-width: 992px){
+  .category-grid{ grid-template-columns:repeat(5, 1fr); }
+}
