@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="km">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>REANGKAY | Learn</title>
+<title>REANGKAY | រៀន</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -14,143 +14,475 @@
 </head>
 <body>
 
-<div class="loading-screen"><div class="logo-pulse"></div></div>
-
 <header class="topnav">
   <div class="container-app d-flex align-items-center justify-content-between w-100">
     <a href="index.html" class="brand"><span class="logo-dot">រ</span> REANGKAY</a>
     <nav class="d-none d-lg-flex gap-1">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="information.html" class="nav-link">Learn</a>
-      <a href="specialists.html" class="nav-link">Specialists</a>
-      <a href="games.html" class="nav-link">Games</a>
-      <a href="emergency.html" class="nav-link">Emergency</a>
+      <a href="index.html" class="nav-link">ទំព័រដើម</a>
+      <a href="information.html" class="nav-link">រៀន</a>
+      <a href="specialists.html" class="nav-link">អ្នកឯកទេស</a>
+      <a href="games.html" class="nav-link">ល្បែង</a>
+      <a href="emergency.html" class="nav-link">អាសន្ន</a>
+      <a href="feedback.html" class="nav-link">មតិ</a>
     </nav>
     <a href="profile.html"><img src="https://i.pravatar.cc/60?img=47" class="rounded-circle" width="40" height="40" alt="profile"></a>
   </div>
 </header>
 
-<main class="container-app py-4">
-  <h2 class="mb-3">Learn about your body</h2>
-
-  <!-- Gender Tabs -->
-  <div class="d-flex gap-2 mb-3">
-    <button class="bm-tab-btn gender-tab-btn active" data-gender="all" onclick="switchGenderTab('all')">All</button>
-    <button class="bm-tab-btn gender-tab-btn" data-gender="male" onclick="switchGenderTab('male')"><i class="fa-solid fa-mars me-1"></i>Male</button>
-    <button class="bm-tab-btn gender-tab-btn" data-gender="female" onclick="switchGenderTab('female')"><i class="fa-solid fa-venus me-1"></i>Female</button>
+<style>
+  :root{
+  --primary:#4F8DD8;
+  --primary-light:#6FAFEA;
+  --primary-dark:#2F6CB5;
+  --female:#FBC5D8;
+  --female-dark:#E8749A;
+  --male:#CCE2FA;
+  --male-dark:#5FA3E0;
+  --bg:#ffffff;
+  --card:#FFFFFF;
+ 
+  --green:#DDF3E4;
+  --green-dark:#3FA96A;
+  --orange:#FDEBD6;
+  --orange-dark:#E8912B;
+  --red:#FBDCDC;
+  --red-dark:#E15353;
+ 
+  --text:#1B2A4A;
+  --text-muted:#6B7789;
+  --text-soft:#98A2B3;
+  --border:#EDEFF3;
+ 
+  --radius:16px;
+  --radius-sm:10px;
+  --radius-lg:24px;
+  --shadow-sm:0 2px 8px rgba(27,42,74,.06);
+  --shadow-md:0 8px 24px rgba(27,42,74,.10);
+  --shadow-lg:0 16px 40px rgba(27,42,74,.14);
+ 
+  --nav-h:64px;
+  --bottomnav-h:72px;
+}
+  /* *{box-sizing:border-box;}
+  .container-app{ max-width:900px; margin:0 auto; padding:0 20px; }
+  section{ margin-bottom:30px; } */
+  .sec-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px; }
+  .sec-title{ font-size:1.15rem; font-weight:700; margin:0; }
+  .sec-sub{ font-size:.82rem; color:var(--text-muted); margin:2px 0 0; }
+ 
+  /* topnav (reused) */ */
+  /* .topnav{ position:sticky; top:0; z-index:40; background:rgba(245,246,241,.9); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); padding:14px 0; }
+  .topnav .container-app{ display:flex; align-items:center; justify-content:space-between; max-width:900px; } */
+  .brand{ display:flex; align-items:center; gap:8px; font-weight:700; font-size:1.05rem; color:var(--primary-dark); }
+  .logo-dot{ width:34px; height:34px; border-radius:10px; background:var(--primary-dark); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; }
+  .back-btn{ width:40px; height:40px; border-radius:50%; border:1px solid var(--border); background:var(--card); display:none; align-items:center; justify-content:center; color:var(--primary-dark); cursor:pointer; }
+  .back-btn.show{ display:flex; }
+ 
+  /* ---- Explore Your Body ---- */
+  .explore-card{ background:linear-gradient(160deg,var(--primary-dark),var(--primary) 85%); border-radius:24px; padding:24px; color:#fff; margin:20px 0 26px; position:relative; overflow:hidden; }
+  .explore-card h2{ font-size:1.15rem; margin:0 0 2px; }
+  .explore-card p{ margin:0 0 18px; font-size:.85rem; opacity:.85; }
+  .body-wrap{ display:flex; justify-content:center; position:relative; }
+  .body-svg{ width:170px; height:auto; }
+  .hotspot{ cursor:pointer; }
+  .hotspot circle.ring{ fill:rgba(255,255,255,.18); stroke:rgba(255,255,255,.5); stroke-width:1.5; transition:.2s; }
+  .hotspot:hover circle.ring, .hotspot.active circle.ring{ fill:var(--orange-dark); stroke:var(--orange-dark); }
+  .hotspot text{ font-size:11px; }
+  .zone-label{ text-align:center; margin-top:12px; font-size:.85rem; min-height:20px; opacity:.9; }
+ 
+  /* ---- Category grid ---- */
+  .cat-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .cat-card{ background:var(--card); border:1px solid var(--border); border-radius:16px; padding:50px 30px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:8px; transition:.2s; cursor:pointer; }
+  .cat-card:hover, .cat-card.pulse{ transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:transparent; }
+  .cat-emoji {
+  font-size: 32px;
+}
+  .cat-card span{ font-size:.78rem; font-weight:600; line-height:1.3; }
+  @media (max-width:560px){ .cat-grid{ grid-template-columns:repeat(3,1fr); gap:8px; } .cat-card{ padding:12px 6px; } }
+ 
+  /* ---- Myth cards ---- */
+  .myth-scroll{ display:flex; gap:14px; overflow-x:auto; padding-bottom:6px; scrollbar-width:none; }
+  .myth-scroll::-webkit-scrollbar{ display:none; }
+  .myth-card{ flex:0 0 240px; height:150px; perspective:1000px; cursor:pointer; }
+  .myth-inner{ position:relative; width:100%; height:100%; transition:transform .5s; transform-style:preserve-3d; }
+  .myth-card.flipped .myth-inner{ transform:rotateY(180deg); }
+  .myth-face{ position:absolute; inset:0; border-radius:16px; padding:16px; backface-visibility:hidden; display:flex; flex-direction:column; justify-content:center; box-shadow:var(--shadow-md); }
+  .myth-front{ background:var(--red); }
+  .myth-back{ background:var(--male); transform:rotateY(180deg); }
+  .myth-tag{ font-size:.68rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; margin-bottom:6px; }
+  .myth-front .myth-tag{ color:var(--red-dark); }
+  .myth-back .myth-tag{ color:var(--primary-dark); }
+  .myth-text{ font-size:.85rem; font-weight:600; line-height:1.5; }
+  .myth-hint{ font-size:.68rem; color:var(--text-soft); margin-top:10px; }
+ 
+  /* ---- Self check ---- */
+  .check-card{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px 20px; box-shadow:var(--shadow-md); }
+  .mood-row{ display:flex; gap:10px; margin-top:12px; }
+  .mood-btn{ flex:1; border:1px solid var(--border); background:var(--bg); border-radius:14px; padding:12px 6px; text-align:center; cursor:pointer; transition:.15s; }
+  .mood-btn:hover, .mood-btn.selected{ border-color:var(--orange-dark); background:var(--orange); }
+  .mood-btn .emo{ font-size:1.3rem; display:block; }
+  .mood-btn span{ font-size:.68rem; font-weight:600; }
+  .mood-result{ margin-top:14px; padding:12px 14px; border-radius:12px; background:var(--male); font-size:.85rem; display:none; }
+  .mood-result.show{ display:block; }
+ 
+  /* ================= TOPIC VIEW ================= */
+  #topicView{ display:none; }
+  .topic-hero{ background:linear-gradient(160deg,var(--female-dark),#7364c4 85%); border-radius:24px; padding:26px; color:#fff; margin:20px 0 26px; }
+  .topic-hero .eyebrow{ font-size:.78rem; opacity:.85; margin-bottom:4px; }
+  .topic-hero h1{ font-size:1.4rem; margin:0; }
+  .story-card{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:22px 20px; box-shadow:var(--shadow-md); margin-bottom:18px; }
+  .story-num{ font-size:.7rem; font-weight:700; color:var(--female-dark); letter-spacing:.05em; text-transform:uppercase; margin-bottom:6px; }
+  .story-q{ font-size:1.05rem; font-weight:700; margin:0 0 14px; }
+ 
+  .flow-row{ display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:14px; flex-wrap:wrap; }
+  .flow-step{ text-align:center; }
+  .flow-emoji{ font-size:1.6rem; display:block; }
+  .flow-step span{ font-size:.72rem; font-weight:600; color:var(--text-muted); }
+  .flow-arrow{ color:var(--text-soft); font-size:1.1rem; }
+  .story-explain{ font-size:.86rem; color:var(--text-muted); line-height:1.7; background:var(--bg); padding:12px 14px; border-radius:12px; }
+ 
+  .ba-row{ display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:14px; }
+  .ba-box{ text-align:center; background:var(--bg); border-radius:14px; padding:14px 18px; }
+  .ba-box .emoji{ font-size:1.8rem; display:block; margin-bottom:4px; }
+  .ba-box span{ font-size:.72rem; font-weight:600; color:var(--text-muted); }
+  .ba-mid{ text-align:center; }
+  .ba-mid .emoji{ font-size:1.4rem; }
+  .ba-mid span{ display:block; font-size:.68rem; color:var(--text-soft); font-weight:600; }
+ 
+  .timeline{ display:flex; flex-direction:column; gap:12px; margin-bottom:14px; }
+  .tl-row{ display:flex; gap:14px; align-items:flex-start; }
+  .tl-dot{ width:38px; height:38px; border-radius:50%; background:var(--female); color:var(--female-dark); display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+  .tl-body .age{ font-size:.72rem; font-weight:700; color:var(--female-dark); }
+  .tl-body p{ margin:2px 0 0; font-size:.85rem; font-weight:600; }
+ 
+  .normal-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-bottom:6px; }
+  .normal-card{ background:var(--bg); border-radius:14px; padding:12px 14px; }
+  .normal-card .head{ font-size:.85rem; font-weight:700; margin-bottom:6px; }
+  .normal-card ul{ margin:0; padding-left:16px; font-size:.78rem; color:var(--text-muted); line-height:1.6; }
+ 
+  .action-list{ display:flex; flex-direction:column; gap:8px; }
+  .action-item{ display:flex; align-items:center; gap:10px; background:var(--bg); border-radius:12px; padding:10px 14px; font-size:.85rem; font-weight:600; }
+  .action-item .emo{ font-size:1.15rem; }
+ 
+  /* quiz */
+  .quiz-card{ background:linear-gradient(160deg,var(--primary-dark),var(--primary) 85%); border-radius:var(--radius); padding:22px 20px; color:#fff; }
+  .quiz-q{ font-size:1rem; font-weight:700; margin:0 0 16px; }
+  .quiz-opt{ display:block; width:100%; text-align:left; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.25); color:#fff; border-radius:12px; padding:12px 14px; margin-bottom:10px; font-size:.88rem; cursor:pointer; transition:.15s; }
+  .quiz-opt:hover{ background:rgba(255,255,255,.18); }
+  .quiz-opt.correct{ background:var(--orange-dark); border-color:var(--orange-dark); color:var(--text); font-weight:700; }
+  .quiz-opt.wrong{ background:var(--red-dark); border-color:var(--red-dark); }
+  .quiz-feedback{ margin-top:12px; font-size:.85rem; display:none; background:rgba(255,255,255,.12); padding:12px 14px; border-radius:12px; }
+  .quiz-feedback.show{ display:block; }
+  .badge-win{ display:flex; align-items:center; gap:8px; margin-top:10px; font-size:.85rem; font-weight:700; color:var(--orange-dark); }
+ 
+  .reveal{ animation:rise .45s ease both; }
+  @keyframes rise{ from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;} }
+</style>
+</head>
+<body>
+ 
+<!-- <header class="topnav">
+  <div class="container-app">
+    <button class="back-btn" id="backBtn" onclick="showHome()"><i class="fa-solid fa-arrow-left"></i></button>
+    <a href="index.html" class="brand"><span class="logo-dot">រ</span> REANGKAY</a>
+    <div style="width:40px;"></div>
   </div>
-
-  <!-- Search -->
-  <div class="input-icon-wrap mb-4">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <input type="text" class="form-control form-control-r" placeholder="Search topics, e.g. sleep, nutrition..." data-search-input=".category-card-full">
-  </div>
-
-  <!-- Category Cards -->
-  <div class="row g-3">
-    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
-      <div class="card-r hoverable category-card-full p-3 text-center reveal">
-        <div class="cat-icon mx-auto" style="background:var(--female);color:var(--female-dark);"><i class="fa-solid fa-seedling"></i></div>
-        <p class="fw-semibold mb-0">Puberty</p>
-        <p class="text-soft-r small mb-0">12 articles</p>
+</header> -->
+ 
+<main class="container-app" style="padding-top:6px;">
+ 
+  <!-- ================= HOME (Learn) VIEW ================= -->
+  <div id="homeView">
+ 
+    <!-- Explore Your Body -->
+    <section class="explore-card reveal">
+      <h2>Explore Your Body 🌱</h2>
+      <p>ចុចលើផ្នែកណាមួយនៃរាងកាយ ដើម្បីស្វែងយល់បន្ថែម</p>
+      <div class="body-wrap">
+        <svg class="body-svg" viewBox="0 0 120 220">
+          <ellipse cx="60" cy="24" rx="16" ry="18" fill="rgba(255,255,255,.35)"/>
+          <path d="M40 40 Q60 34 80 40 L86 130 Q60 140 34 130 Z" fill="rgba(255,255,255,.35)"/>
+          <path d="M40 130 L34 210 M80 130 L86 210" stroke="rgba(255,255,255,.35)" stroke-width="12" stroke-linecap="round"/>
+ 
+          <g class="hotspot" data-zone="brain" onclick="selectZone('brain')">
+            <circle class="ring" cx="60" cy="20" r="16"></circle>
+            <text x="60" y="26" text-anchor="middle">🧠</text>
+          </g>
+          <g class="hotspot" data-zone="skin" onclick="selectZone('skin')">
+            <circle class="ring" cx="60" cy="58" r="15"></circle>
+            <text x="60" y="64" text-anchor="middle">🧴</text>
+          </g>
+          <g class="hotspot" data-zone="repro" onclick="selectZone('repro')">
+            <circle class="ring" cx="60" cy="100" r="15"></circle>
+            <text x="60" y="106" text-anchor="middle">🩷</text>
+          </g>
+          <g class="hotspot" data-zone="body" onclick="selectZone('body')">
+            <circle class="ring" cx="60" cy="170" r="16"></circle>
+            <text x="60" y="176" text-anchor="middle">💪</text>
+          </g>
+        </svg>
       </div>
-    </div>
-    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
-      <div class="card-r hoverable category-card-full p-3 text-center reveal">
-        <div class="cat-icon mx-auto" style="background:var(--green);color:var(--green-dark);"><i class="fa-solid fa-apple-whole"></i></div>
-        <p class="fw-semibold mb-0">Nutrition</p>
-        <p class="text-soft-r small mb-0">9 articles</p>
-      </div>
-    </div>
-    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
-      <div class="card-r hoverable category-card-full p-3 text-center reveal">
-        <div class="cat-icon mx-auto" style="background:var(--male);color:var(--male-dark);"><i class="fa-solid fa-person-running"></i></div>
-        <p class="fw-semibold mb-0">Exercise</p>
-        <p class="text-soft-r small mb-0">7 articles</p>
-      </div>
-    </div>
-    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
-      <div class="card-r hoverable category-card-full p-3 text-center reveal">
-        <div class="cat-icon mx-auto" style="background:var(--orange);color:var(--orange-dark);"><i class="fa-solid fa-brain"></i></div>
-        <p class="fw-semibold mb-0">Mental Health</p>
-        <p class="text-soft-r small mb-0">14 articles</p>
-      </div>
-    </div>
-    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
-      <div class="card-r hoverable category-card-full p-3 text-center reveal">
-        <div class="cat-icon mx-auto" style="background:var(--female);color:var(--female-dark);"><i class="fa-solid fa-heart-pulse"></i></div>
-        <p class="fw-semibold mb-0">Reproductive Health</p>
-        <p class="text-soft-r small mb-0">11 articles</p>
-      </div>
-    </div>
-    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
-      <div class="card-r hoverable category-card-full p-3 text-center reveal">
-        <div class="cat-icon mx-auto" style="background:var(--red);color:var(--red-dark);"><i class="fa-solid fa-shield-heart"></i></div>
-        <p class="fw-semibold mb-0">Safety</p>
-        <p class="text-soft-r small mb-0">6 articles</p>
-      </div>
-    </div>
-    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
-      <div class="card-r hoverable category-card-full p-3 text-center reveal">
-        <div class="cat-icon mx-auto" style="background:var(--male);color:var(--male-dark);"><i class="fa-solid fa-people-arrows"></i></div>
-        <p class="fw-semibold mb-0">Relationships</p>
-        <p class="text-soft-r small mb-0">8 articles</p>
-      </div>
-    </div>
-    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
-      <div class="card-r hoverable category-card-full p-3 text-center reveal">
-        <div class="cat-icon mx-auto" style="background:var(--green);color:var(--green-dark);"><i class="fa-solid fa-hand-sparkles"></i></div>
-        <p class="fw-semibold mb-0">Hygiene</p>
-        <p class="text-soft-r small mb-0">10 articles</p>
-      </div>
-    </div>
-    <div class="col-6 col-md-4 col-lg-3" data-gender-panel="all">
-      <div class="card-r hoverable category-card-full p-3 text-center reveal">
-        <div class="cat-icon mx-auto" style="background:var(--orange);color:var(--orange-dark);"><i class="fa-solid fa-child-reaching"></i></div>
-        <p class="fw-semibold mb-0">Child Protection</p>
-        <p class="text-soft-r small mb-0">5 articles</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Article list preview -->
-  <h2 class="section-title mt-5 mb-3">Popular Articles</h2>
-  <div class="row g-3">
-    <div class="col-md-6">
-      <a href="article.html" class="card-r hoverable d-flex p-2 reveal text-decoration-none">
-        <div style="width:96px;height:96px;flex-shrink:0;background:url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=300&q=60') center/cover;border-radius:12px;"></div>
-        <div class="ps-3 py-1">
-          <span class="badge-r badge-green mb-1">Nutrition</span>
-          <p class="fw-semibold mb-1">Eating Well on a Student Budget</p>
-          <p class="text-soft-r small mb-0">4 min read</p>
+      <div class="zone-label" id="zoneLabel">ចុចលើសញ្ញាណណាមួយខាងលើ</div>
+    </section>
+ 
+    <!-- Categories -->
+    <section>
+      <div class="sec-head">
+        <div>
+          <h2 class="sec-title">ដំណើររាងកាយរបស់អ្នក</h2>
+          <p class="sec-sub">ជ្រើសរើសប្រធានបទដែលចង់ស្វែងយល់</p>
         </div>
-      </a>
-    </div>
-    <div class="col-md-6">
-      <a href="article.html" class="card-r hoverable d-flex p-2 reveal text-decoration-none">
-        <div style="width:96px;height:96px;flex-shrink:0;background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=300&q=60') center/cover;border-radius:12px;"></div>
-        <div class="ps-3 py-1">
-          <span class="badge-r badge-orange mb-1">Mental Health</span>
-          <p class="fw-semibold mb-1">Coping With Exam Anxiety</p>
-          <p class="text-soft-r small mb-0">6 min read</p>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-card" id="cat-repro" onclick="openTopic()">
+          <span class="cat-emoji">🌱</span><span>ការលូតលាស់រាងកាយ</span>
         </div>
-      </a>
-    </div>
+        <div class="cat-card" id="cat-body2">
+          <span class="cat-emoji">🍎</span><span>អាហារូបត្ថម្ភល្អ</span>
+        </div>
+        <div class="cat-card" id="cat-body">
+          <span class="cat-emoji">💪</span><span>កសាងកម្លាំង</span>
+        </div>
+        <div class="cat-card" id="cat-brain">
+          <span class="cat-emoji">🧠</span><span>យល់ដឹងអារម្មណ៍</span>
+        </div>
+        <div class="cat-card" id="cat-repro2">
+          <span class="cat-emoji">🩷</span><span>សុខភាពឯកជន</span>
+        </div>
+        <div class="cat-card">
+          <span class="cat-emoji">🛡️</span><span>ការពារខ្លួន</span>
+        </div>
+        <div class="cat-card">
+          <span class="cat-emoji">💬</span><span>ទំនាក់ទំនងល្អ</span>
+        </div>
+        <div class="cat-card" id="cat-skin">
+          <span class="cat-emoji">✨</span><span>ថែរក្សាខ្លួនឯង</span>
+        </div>
+        <div class="cat-card">
+          <span class="cat-emoji">🔒</span><span>សុវត្ថិភាពកុមារ</span>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- Myth vs Reality -->
+    <section>
+      <div class="sec-head">
+        <div>
+          <h2 class="sec-title">ជឿ ឬ មិនជឿ? 🔄</h2>
+          <p class="sec-sub">ចុចលើកាតដើម្បីមើលការពិត</p>
+        </div>
+      </div>
+      <div class="myth-scroll">
+        <div class="myth-card reveal" onclick="this.classList.toggle('flipped')">
+          <div class="myth-inner">
+            <div class="myth-face myth-front">
+              <div class="myth-tag">ការជឿ</div>
+              <div class="myth-text">ការញ៉ាំសូកូឡាធ្វើឱ្យមុនចេញជានិច្ច</div>
+              <div class="myth-hint">ចុចដើម្បីមើលការពិត →</div>
+            </div>
+            <div class="myth-face myth-back">
+              <div class="myth-tag">ការពិត</div>
+              <div class="myth-text">មុនកើតឡើងជាចម្បងដោយសារអរម៉ូន និងប្រេងលើស្បែក</div>
+            </div>
+          </div>
+        </div>
+        <div class="myth-card reveal" onclick="this.classList.toggle('flipped')">
+          <div class="myth-inner">
+            <div class="myth-face myth-front">
+              <div class="myth-tag">ការជឿ</div>
+              <div class="myth-text">ការមករដូវលើកដំបូងតែងតែមកទៀងទាត់</div>
+              <div class="myth-hint">ចុចដើម្បីមើលការពិត →</div>
+            </div>
+            <div class="myth-face myth-back">
+              <div class="myth-tag">ការពិត</div>
+              <div class="myth-text">ការមករដូវអាចមិនទៀងទាត់ក្នុងឆ្នាំដំបូងៗ ហើយនេះជារឿងធម្មតា</div>
+            </div>
+          </div>
+        </div>
+        <div class="myth-card reveal" onclick="this.classList.toggle('flipped')">
+          <div class="myth-inner">
+            <div class="myth-face myth-front">
+              <div class="myth-tag">ការជឿ</div>
+              <div class="myth-text">អារម្មណ៍ប្រែប្រួលមានន័យថាមានបញ្ហា</div>
+              <div class="myth-hint">ចុចដើម្បីមើលការពិត →</div>
+            </div>
+            <div class="myth-face myth-back">
+              <div class="myth-tag">ការពិត</div>
+              <div class="myth-text">អារម្មណ៍ប្រែប្រួលជាផលពីអរម៉ូន ជារឿងធម្មតាក្នុងវ័យជំទង់</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- Quick self check -->
+    <section>
+      <div class="check-card">
+        <div class="sec-title" style="font-size:1rem;">ថ្ងៃនេះអ្នកមានអារម្មណ៍យ៉ាងណា?</div>
+        <div class="mood-row">
+          <div class="mood-btn" onclick="pickMood(this,'good')"><span class="emo">😊</span><span>ល្អ</span></div>
+          <div class="mood-btn" onclick="pickMood(this,'normal')"><span class="emo">😐</span><span>ធម្មតា</span></div>
+          <div class="mood-btn" onclick="pickMood(this,'stressed')"><span class="emo">😟</span><span>តានតឹង</span></div>
+          <div class="mood-btn" onclick="pickMood(this,'tired')"><span class="emo">😴</span><span>អស់កម្លាំង</span></div>
+        </div>
+        <div class="mood-result" id="moodResult"></div>
+      </div>
+    </section>
+ 
   </div>
+ 
+  <!-- ================= TOPIC VIEW (My Growing Body / Puberty) ================= -->
+  <div id="topicView">
+ 
+    <div class="topic-hero reveal">
+      <div class="eyebrow">ការលូតលាស់រាងកាយ · My Growing Body</div>
+      <h1>ការផ្លាស់ប្តូររាងកាយក្នុងវ័យជំទង់ 🌱</h1>
+    </div>
+ 
+    <div class="story-card reveal">
+      <div class="story-num">ជំហានទី១</div>
+      <p class="story-q">តើកំពុងកើតឡើងអ្វី?</p>
+      <div class="flow-row">
+        <div class="flow-step"><span class="flow-emoji">🧠</span><span>ខួរក្បាល</span></div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step"><span class="flow-emoji">🔬</span><span>អរម៉ូន</span></div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step"><span class="flow-emoji">🌱</span><span>ការផ្លាស់ប្តូររាងកាយ</span></div>
+      </div>
+      <div class="story-explain">ក្នុងវ័យជំទង់ រាងកាយអ្នកផលិតអរម៉ូនដែលប្រាប់រាងកាយឱ្យលូតលាស់ និងអភិវឌ្ឍ។</div>
+    </div>
+ 
+    <div class="story-card reveal">
+      <div class="story-num">ជំហានទី២</div>
+      <p class="story-q">ហេតុអ្វីបានជាវាកើតឡើង?</p>
+      <div class="ba-row">
+        <div class="ba-box"><span class="emoji">🌱</span><span>រាងកាយកុមារ</span></div>
+        <div class="ba-mid"><span class="emoji">🔬</span><span>ការផ្លាស់ប្តូរអរម៉ូន</span></div>
+        <div class="ba-box"><span class="emoji">🌸</span><span>រាងកាយវ័យជំទង់</span></div>
+      </div>
+      <div class="story-explain">វាកើតឡើងព្រោះអរម៉ូនធ្វើឱ្យប្រព្រឹត្តទៅការលូតលាស់ និងការអភិវឌ្ឍតាមធម្មជាតិ។</div>
+    </div>
+ 
+    <div class="story-card reveal">
+      <div class="story-num">ជំហានទី៣</div>
+      <p class="story-q">តើកើតឡើងនៅពេលណា?</p>
+      <div class="timeline">
+        <div class="tl-row">
+          <div class="tl-dot">🌱</div>
+          <div class="tl-body"><div class="age">អាយុ ៨–១៣ឆ្នាំ</div><p>ការផ្លាស់ប្តូរដំបូងចាប់ផ្តើម</p></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-dot">🌸</div>
+          <div class="tl-body"><div class="age">អាយុ ១៣–១៦ឆ្នាំ</div><p>ការផ្លាស់ប្តូររាងកាយសំខាន់ៗ</p></div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-dot">✨</div>
+          <div class="tl-body"><div class="age">អាយុ ១៦–១៨ឆ្នាំ+</div><p>បន្តការអភិវឌ្ឍ</p></div>
+        </div>
+      </div>
+      <div class="story-explain">មនុស្សគ្រប់រូបលូតលាស់ខុសគ្នា។ អ្នកខ្លះផ្លាស់ប្តូរលឿន អ្នកខ្លះយឺត — ទាំងអស់សុទ្ធតែធម្មតា។</div>
+    </div>
+ 
+    <div class="story-card reveal">
+      <div class="story-num">ជំហានទី៤</div>
+      <p class="story-q">តើការផ្លាស់ប្តូរអ្វីខ្លះជារឿងធម្មតា?</p>
+      <div class="normal-grid">
+        <div class="normal-card"><div class="head">🧴 ស្បែក</div><ul><li>ប្រេងលើស្បែកកើនឡើង</li><li>អាចមានមុន</li></ul></div>
+        <div class="normal-card"><div class="head">📏 កម្ពស់</div><ul><li>លូតលាស់លឿនជាងមុន</li></ul></div>
+        <div class="normal-card"><div class="head">💭 អារម្មណ៍</div><ul><li>អារម្មណ៍ប្រែប្រួល</li></ul></div>
+        <div class="normal-card"><div class="head">🩷 រាងកាយ</div><ul><li>ការអភិវឌ្ឍរាងកាយ</li></ul></div>
+      </div>
+    </div>
+ 
+    <div class="story-card reveal">
+      <div class="story-num">ជំហានទី៥</div>
+      <p class="story-q">តើខ្ញុំគួរធ្វើអ្វី?</p>
+      <div class="action-list">
+        <div class="action-item"><span class="emo">💧</span> ផឹកទឹកឱ្យបានគ្រប់គ្រាន់</div>
+        <div class="action-item"><span class="emo">🥗</span> ញ៉ាំអាហារឱ្យមានតុល្យភាព</div>
+        <div class="action-item"><span class="emo">😴</span> គេងឱ្យបានគ្រប់គ្រាន់</div>
+        <div class="action-item"><span class="emo">🏃</span> ធ្វើលំហាត់ប្រាណជាប្រចាំ</div>
+        <div class="action-item"><span class="emo">💬</span> និយាយជាមួយអ្នកដែលអ្នកទុកចិត្ត</div>
+      </div>
+    </div>
+ 
+    <!-- Quiz -->
+    <div class="quiz-card reveal">
+      <div class="story-num" style="color:var(--orange-dark);">សាកល្បងចំណេះដឹង</div>
+      <p class="quiz-q">ហេតុអ្វីបានជាមុនកើតឡើងក្នុងវ័យជំទង់?</p>
+      <button class="quiz-opt" onclick="answerQuiz(this,false)">A. កខ្វក់តែប៉ុណ្ណោះ</button>
+      <button class="quiz-opt" onclick="answerQuiz(this,true)">B. ការផ្លាស់ប្តូរអរម៉ូន</button>
+      <button class="quiz-opt" onclick="answerQuiz(this,false)">C. ការផឹកទឹក</button>
+      <div class="quiz-feedback" id="quizFeedback"></div>
+    </div>
+ 
+  </div>
+ 
 </main>
-
-<nav class="bottomnav">
-  <div class="bn-items">
-    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>Home</a>
-    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>Learn</a>
-    <a href="consultation.html" class="bn-item"><div class="fab-wrap"><i class="fa-solid fa-comment-medical"></i></div></a>
-    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>Games</a>
-    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>Profile</a>
-  </div>
-</nav>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-<script src="js/main.js"></script>
-<script src="js/navigation.js"></script>
+ 
+<script>
+  const zoneNames = {
+    brain: '🧠 ខួរក្បាល / អារម្មណ៍ — ស្ត្រេស, ការគេង, អារម្មណ៍',
+    skin: '🧴 ស្បែក — មុន, អរម៉ូន, អនាម័យ',
+    repro: '🩷 សុខភាពបន្តពូជ — វ័យជំទង់, ការមករដូវ',
+    body: '💪 រាងកាយ — ការលូតលាស់, លំហាត់ប្រាណ, អាហារូបត្ថម្ភ'
+  };
+  const zoneToCard = { brain:'cat-brain', skin:'cat-skin', repro:'cat-repro', body:'cat-body' };
+ 
+  function selectZone(zone){
+    document.querySelectorAll('.hotspot').forEach(h=>h.classList.remove('active'));
+    document.querySelector(`.hotspot[data-zone="${zone}"]`).classList.add('active');
+    document.getElementById('zoneLabel').textContent = zoneNames[zone];
+    const card = document.getElementById(zoneToCard[zone]);
+    if(card){
+      card.scrollIntoView({behavior:'smooth', block:'center'});
+      card.classList.add('pulse');
+      setTimeout(()=>card.classList.remove('pulse'), 900);
+    }
+  }
+ 
+  function pickMood(el, mood){
+    document.querySelectorAll('.mood-btn').forEach(b=>b.classList.remove('selected'));
+    el.classList.add('selected');
+    const msgs = {
+      good: 'អស្ចារ្យ! សាកមើលអត្ថបទ "កសាងទំនុកចិត្តលើខ្លួនឯង" ថ្ងៃនេះ។',
+      normal: 'ថ្ងៃធម្មតាក៏ល្អដែរ។ សាកអានគន្លឹះអំពី "អាហារូបត្ថម្ភល្អ"។',
+      stressed: 'ការតានតឹងជារឿងធម្មតា។ សាកមើលប្រធានបទ "យល់ដឹងអារម្មណ៍" សម្រាប់វិធីសម្រាក។',
+      tired: 'ការគេងគឺសំខាន់ណាស់។ សាកអាន "ទម្លាប់គេងបានល្អ"។'
+    };
+    const r = document.getElementById('moodResult');
+    r.textContent = msgs[mood];
+    r.classList.add('show');
+  }
+ 
+  function openTopic(){
+    document.getElementById('homeView').style.display='none';
+    document.getElementById('topicView').style.display='block';
+    document.getElementById('backBtn').classList.add('show');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  function showHome(){
+    document.getElementById('topicView').style.display='none';
+    document.getElementById('homeView').style.display='block';
+    document.getElementById('backBtn').classList.remove('show');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+ 
+  function answerQuiz(el, isCorrect){
+    document.querySelectorAll('.quiz-opt').forEach(o=>o.disabled=true);
+    el.classList.add(isCorrect?'correct':'wrong');
+    if(!isCorrect){
+      document.querySelectorAll('.quiz-opt').forEach(o=>{
+        if(o.textContent.startsWith('B.')) o.classList.add('correct');
+      });
+    }
+    const fb = document.getElementById('quizFeedback');
+    fb.innerHTML = isCorrect
+      ? 'ត្រឹមត្រូវ! អរម៉ូនគឺជាមូលហេតុចម្បង។<div class="badge-win">🏅 +10 ពិន្ទុ — ចាប់បានផ្លាកសញ្ញា "អ្នកចេះខ្លួនឯង"</div>'
+      : 'ជិតត្រូវហើយ — ចម្លើយត្រឹមត្រូវគឺ B: ការផ្លាស់ប្តូរអរម៉ូន។<div class="badge-win">🏅 +5 ពិន្ទុ សម្រាប់ការសាកល្បង</div>';
+    fb.classList.add('show');
+  }
+</script>
+ 
 </body>
 </html>

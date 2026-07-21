@@ -3,8 +3,11 @@
    Modern healthcare UI for youth, Khmer/English bilingual
    ========================================================================== */
 
-
-:root{
+.fa-solid, .fa-regular, .fa-brands,
+[class^="fa-"], [class*=" fa-"] {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+}
+  :root{
   --primary:#4F8DD8;
   --primary-light:#6FAFEA;
   --primary-dark:#2F6CB5;
@@ -12,58 +15,94 @@
   --female-dark:#E8749A;
   --male:#CCE2FA;
   --male-dark:#5FA3E0;
-  --bg:#F8F9FA;
+  --bg:#ffffff;
   --card:#FFFFFF;
-
+ 
   --green:#DDF3E4;
   --green-dark:#3FA96A;
   --orange:#FDEBD6;
   --orange-dark:#E8912B;
   --red:#FBDCDC;
   --red-dark:#E15353;
-
+ 
   --text:#1B2A4A;
   --text-muted:#6B7789;
   --text-soft:#98A2B3;
   --border:#EDEFF3;
-
+ 
   --radius:16px;
   --radius-sm:10px;
   --radius-lg:24px;
   --shadow-sm:0 2px 8px rgba(27,42,74,.06);
   --shadow-md:0 8px 24px rgba(27,42,74,.10);
   --shadow-lg:0 16px 40px rgba(27,42,74,.14);
-
+ 
   --nav-h:64px;
   --bottomnav-h:72px;
 }
-
-*{box-sizing:border-box;}
-
-body{
-  font-family:'Inter','Kantumruy Pro',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  padding-bottom:0;
-}
-
-:lang(km), .khmer{
-  font-family:'Kantumruy Pro','Inter',sans-serif;
-}
-
-h1,h2,h3,h4,h5,h6{
-  font-weight:700;
-  color:var(--primary);
-  letter-spacing:-.01em;
-}
-
-a{ text-decoration:none; color:inherit; }
-:focus-visible{ outline:3px solid var(--male-dark); outline-offset:2px; }
-
-::-webkit-scrollbar{ width:8px; height:8px; }
-::-webkit-scrollbar-thumb{ background:#D8DEE8; border-radius:8px; }
-
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Kantumruy Pro','Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:96px;
+  }
+  a{ text-decoration:none; color:inherit; }
+  .container-app{ max-width:1080px; margin:0 auto; padding:0 20px; }
+ 
+  .topnav{
+    position:sticky; top:0; z-index:40;
+    background:rgba(245,246,241,.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+    padding:14px 0;
+  }
+  .topnav .container-app{ display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:8px; font-weight:700; font-size:1.05rem; letter-spacing:.02em; color:var(--primary-dark); }
+  .logo-dot{
+    width:34px; height:34px; border-radius:10px; background:var(--primary-dark);
+    color:#fff; display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:1.1rem;
+  }
+  .nav-links{ display:flex; gap:6px; }
+  .nav-link{ padding:9px 16px; border-radius:100px; font-size:.92rem; font-weight:600; color:var(--text-muted); transition:.2s; }
+  .nav-link:hover, .nav-link.active{ background:var(--male); color:var(--primary-dark); }
+  .nav-right{ display:flex; align-items:center; gap:10px; }
+  .icon-btn{
+    width:40px; height:40px; border-radius:50%; border:1px solid var(--border); background:var(--card);
+    display:flex; align-items:center; justify-content:center; color:var(--text-muted); position:relative; cursor:pointer;
+  }
+  .icon-btn .dot{ position:absolute; top:9px; right:9px; width:7px; height:7px; border-radius:50%; background:var(--red-dark); }
+  .avatar{ width:40px; height:40px; border-radius:50%; object-fit:cover; border:2px solid var(--card); box-shadow:0 0 0 2px var(--male); }
+ 
+  @media (max-width:991px){ .nav-links{ display:none; } }
+ 
+  .hero{
+    position:relative; overflow:hidden;
+    background:linear-gradient(160deg,var(--primary-dark),var(--primary) 78%);
+    border-radius:24px; color:#fff; padding:30px 26px; margin:22px 0 26px;
+  }
+  .hero-motif{ position:absolute; inset:0; opacity:.16; }
+  .hero-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; position:relative; z-index:1; }
+  .hero-greet{ font-size:.86rem; opacity:.85; margin:0 0 6px; }
+  .hero-name{ font-size:1.6rem; margin:0 0 12px; font-weight:700; }
+  .streak-row{ display:flex; align-items:center; gap:6px; }
+  .streak-dots{ display:flex; gap:4px; }
+  .streak-dots span{ width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,.35); }
+  .streak-dots span.on{ background:var(--orange-dark); }
+  .streak-label{ font-size:.8rem; opacity:.9; margin-left:4px; }
+/* ---------- XP progress ring (the requested circle) ---------- */
+  .xp-ring{ position:relative; width:74px; height:74px; flex-shrink:0; }
+  .xp-ring svg{ transform:rotate(-90deg); width:74px; height:74px; }
+  .xp-ring .track{ fill:none; stroke:rgba(255,255,255,.22); stroke-width:6; }
+  .xp-ring .prog{ fill:none; stroke:var(--orange-dark); stroke-width:6; stroke-linecap:round; }
+  .xp-ring .val{
+    position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    font-family:'Inter',sans-serif; font-size:.95rem; font-weight:700; line-height:1;
+  }
+  .xp-ring .val small{ font-weight:600; opacity:.8; font-size:.55rem; margin-top:2px; letter-spacing:.04em; }
 /* ==========================================================================
    TOP NAVIGATION (Desktop)
    ========================================================================== */
@@ -412,7 +451,8 @@ a{ text-decoration:none; color:inherit; }
    EMERGENCY
    ========================================================================== */
 .emergency-num-card{
-  padding:18px; text-align:center;
+  padding:18px; text-align:center; 
+  
 }
 .emergency-num-card .num-icon{
   width:60px;height:60px;border-radius:50%;
@@ -424,6 +464,153 @@ a{ text-decoration:none; color:inherit; }
   background:var(--red-dark); color:#fff; border-radius:var(--radius-sm);
   padding:12px; font-weight:700; width:100%; border:none;
 }
+/* ==========================
+   Hospital Cards
+========================== */
+@media (max-width:576px){
+
+    .hospital-image{
+        height:160px;
+    }
+
+    .hospital-content{
+        padding:15px;
+    }
+
+    .hospital-name{
+        font-size:.95rem;
+    }
+
+    .hospital-location{
+        font-size:.8rem;
+    }
+}
+.hospital-card{
+    display:flex;
+    flex-direction:column;
+    border-radius:20px;
+    overflow:hidden;
+    background:#fff;
+    padding:20px;
+    text-align:center;
+}
+
+/* Top section */
+.hospital-logo{
+    width:180px;          /* Increase width */
+    height:180px;         /* Increase height */
+    margin:0 auto 20px;   /* Center horizontally */
+    border-radius:20px;
+    overflow:hidden;
+    flex-shrink:0;
+}
+
+.hospital-logo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.hospital-content{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.hospital-card:hover{
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Top Image */
+.hospital-image{
+    width:100%;
+    height:260px;          /* Controls image height */
+    overflow:hidden;
+    border-radius:20px 20px 0 0;
+    position:relative;
+}
+
+.hospital-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;      /* Makes image fill the container */
+    object-position:center;
+    display:block;
+
+    transition:transform .5s ease;
+}
+
+/* Bottom Content */
+.hospital-content{
+    padding: 20px;
+    text-align: center;
+}
+
+.hospital-logo{
+    width:120px;
+    height:120px;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:15px;
+
+    /* Remove these */
+    /* display:flex;
+    align-items:center;
+    justify-content:center; */
+
+    background: transparent;
+}
+
+.hospital-logo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;   /* fills the container */
+    display:block;
+}
+.hospital-name{
+    font-size:1.05rem;
+    font-weight:800;
+    color:var(--text);
+    margin-bottom:8px;
+}
+
+
+.hospital-location{
+    color:var(--text-muted);
+    font-size:.9rem;
+    margin-bottom:8px;
+}
+
+
+.hospital-status{
+    color:var(--green-dark);
+    font-size:.85rem;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.hospital-image img{
+    transition:
+        transform .6s ease,
+        filter .6s ease;
+}
+
+
+
+.hospital-card:hover .hospital-image img{
+    transform:scale(1.1);
+}
+
+/* Button */
+
+.hospital-card .btn-primary-r{
+    border-radius:12px;
+    padding:12px;
+}
+
 
 /* ==========================================================================
    GAMES

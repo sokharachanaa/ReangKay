@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="km">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>REANGKAY | Home</title>
+<title>REANGKAY | ទំព័រដើម</title>
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="feedback.html">
 </head>
 <body>
 
@@ -27,11 +28,12 @@
   <div class="container-app d-flex align-items-center justify-content-between w-100">
     <a href="index.html" class="brand"><span class="logo-dot">រ</span> REANGKAY</a>
     <nav class="d-none d-lg-flex gap-1">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="information.html" class="nav-link">Learn</a>
-      <a href="specialists.html" class="nav-link">Specialists</a>
-      <a href="games.html" class="nav-link">Games</a>
-      <a href="emergency.html" class="nav-link">Emergency</a>
+      <a href="index.html" class="nav-link">ទំព័រដើម</a>
+      <a href="information.html" class="nav-link">រៀន</a>
+      <a href="specialists.html" class="nav-link">អ្នកឯកទេស</a>
+      <a href="games.html" class="nav-link">ល្បែង</a>
+      <a href="emergency.html" class="nav-link">អាសន្ន</a>
+      <a href="feedback.html" class="nav-link">មតិ</a>
     </nav>
     <div class="d-flex align-items-center gap-2">
       <button class="btn-icon-circle position-relative" id="notifBell">
@@ -50,14 +52,24 @@
   <section class="hero-greeting mb-4 fade-in">
     <div class="d-flex justify-content-between align-items-start">
       <div>
-        <p class="mb-1" style="opacity:.8;font-size:.9rem;">Good afternoon 👋</p>
-        <h3 class="text-white mb-2">Hi, Sreymom</h3>
-        <span class="streak-pill"><i class="fa-solid fa-fire"></i> 7 day streak</span>
+        <p class="mb-1" style="opacity:.8;font-size:.9rem;">សួស្តីថ្ងៃត្រង់ 👋</p>
+        <h3 class="text-white mb-2">សួស្តី ស្រីមុំ</h3>
+        <!-- <span class="streak-pill"><i class="fa-solid fa-fire"></i> ៧ ថ្ងៃជាប់គ្នា</span>
       </div>
       <div class="text-end">
-        <div class="badge-r" style="background:rgba(255,255,255,.15);color:#fff;"><i class="fa-solid fa-star"></i> 320 XP</div>
+        <div class="badge-r" style="background:rgba(255,255,255,.15);color:#fff;"><i class="fa-solid fa-star"></i> ៣២០ ពិន្ទុ</div>
+      </div>
+    </div> -->
+          <!-- XP progress ring -->
+      <div class="xp-ring">
+        <svg viewBox="0 0 74 74">
+          <circle class="track" cx="37" cy="37" r="31"></circle>
+          <circle class="prog" cx="37" cy="37" r="31" stroke-dasharray="194.8" stroke-dashoffset="49"></circle>
+        </svg>
+        <div class="val">320<small>ពិន្ទុ</small></div>
       </div>
     </div>
+  </section>
   </section>
 
   <!-- Health Tip -->
@@ -65,8 +77,8 @@
     <div class="d-flex align-items-center gap-3">
       <div class="quick-access-icon" style="background:var(--green);color:var(--green-dark);"><i class="fa-solid fa-lightbulb"></i></div>
       <div>
-        <p class="fw-bold mb-1">Health Tip of the Day</p>
-        <p class="mb-0 text-muted-r small">Drinking enough water helps your skin, focus, and mood — aim for 6–8 glasses a day.</p>
+        <p class="fw-bold mb-1">គន្លឹះសុខភាពប្រចាំថ្ងៃ</p>
+        <p class="mb-0 text-muted-r small">ការផឹកទឹកឱ្យបានគ្រប់គ្រាន់ជួយដល់ស្បែក ការផ្តោតអារម្មណ៍ និងអារម្មណ៍របស់អ្នក — គោលដៅ ៦–៨ កែវក្នុងមួយថ្ងៃ។</p>
       </div>
     </div>
   </section>
@@ -74,24 +86,24 @@
   <!-- Quick Access -->
   <section class="mb-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
-      <h2 class="section-title">Quick Access</h2>
+      <h2 class="section-title">ចូលប្រើរហ័ស</h2>
     </div>
     <div class="quick-access-grid">
       <a href="information.html" class="card-r hoverable text-center p-3 reveal">
         <div class="quick-access-icon mx-auto" style="background:var(--male);color:var(--male-dark);"><i class="fa-solid fa-book-open"></i></div>
-        <p class="small fw-semibold mb-0">Learn</p>
+        <p class="small fw-semibold mb-0">រៀន</p>
       </a>
       <a href="specialists.html" class="card-r hoverable text-center p-3 reveal">
         <div class="quick-access-icon mx-auto" style="background:var(--female);color:var(--female-dark);"><i class="fa-solid fa-user-doctor"></i></div>
-        <p class="small fw-semibold mb-0">Ask a Doctor</p>
+        <p class="small fw-semibold mb-0">សួរគ្រូពេទ្យ</p>
       </a>
       <a href="games.html" class="card-r hoverable text-center p-3 reveal">
         <div class="quick-access-icon mx-auto" style="background:var(--orange);color:var(--orange-dark);"><i class="fa-solid fa-gamepad"></i></div>
-        <p class="small fw-semibold mb-0">Games</p>
+        <p class="small fw-semibold mb-0">ល្បែង</p>
       </a>
       <a href="emergency.html" class="card-r hoverable text-center p-3 reveal">
         <div class="quick-access-icon mx-auto" style="background:var(--red);color:var(--red-dark);"><i class="fa-solid fa-phone-volume"></i></div>
-        <p class="small fw-semibold mb-0">Emergency</p>
+        <p class="small fw-semibold mb-0">អាសន្ន</p>
       </a>
     </div>
   </section>
@@ -99,8 +111,8 @@
   <!-- Featured Article -->
   <section class="mb-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
-      <h2 class="section-title">Featured Article</h2>
-      <a href="information.html" class="see-all">See all <i class="fa-solid fa-chevron-right"></i></a>
+      <h2 class="section-title">អត្ថបទពិសេស</h2>
+      <a href="information.html" class="see-all">មើលទាំងអស់ <i class="fa-solid fa-chevron-right"></i></a>
     </div>
     <a href="article.html" class="card-r hoverable d-block overflow-hidden reveal">
       <div class="row g-0">
@@ -108,10 +120,10 @@
           <div style="height:180px;background:url('https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?w=600&q=60') center/cover;" class="rounded-top rounded-md-start"></div>
         </div>
         <div class="col-md-7 p-3">
-          <span class="badge-r badge-female mb-2">Puberty</span>
-          <h5 class="mb-2">Understanding Body Changes During Puberty</h5>
-          <p class="text-muted-r small mb-2">Everything you need to know about the changes your body goes through — explained simply and without judgment.</p>
-          <p class="text-soft-r small mb-0"><i class="fa-regular fa-clock"></i> 5 min read · By Dr. Sopheak</p>
+          <span class="badge-r badge-female mb-2">វ័យជំទង់</span>
+          <h5 class="mb-2">ការស្វែងយល់អំពីការផ្លាស់ប្តូររាងកាយក្នុងវ័យជំទង់</h5>
+          <p class="text-muted-r small mb-2">អ្វីៗគ្រប់យ៉ាងដែលអ្នកគួរដឹងអំពីការផ្លាស់ប្តូរដែលរាងកាយអ្នកឆ្លងកាត់ — ពន្យល់យ៉ាងសាមញ្ញ និងគ្មានការវិនិច្ឆ័យ។</p>
+          <p class="text-soft-r small mb-0"><i class="fa-regular fa-clock"></i> អាន ៥ នាទី · ដោយ លោកគ្រូពេទ្យ សុភាព</p>
         </div>
       </div>
     </a>
@@ -120,56 +132,56 @@
   <!-- Categories -->
   <section class="mb-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
-      <h2 class="section-title">Categories</h2>
-      <a href="information.html" class="see-all">See all <i class="fa-solid fa-chevron-right"></i></a>
+      <h2 class="section-title">ប្រភេទ</h2>
+      <a href="information.html" class="see-all">មើលទាំងអស់ <i class="fa-solid fa-chevron-right"></i></a>
     </div>
     <div class="category-grid">
       <a href="information.html" class="card-r hoverable category-card reveal">
         <div class="cat-icon mx-auto" style="background:var(--female);color:var(--female-dark);"><i class="fa-solid fa-seedling"></i></div>
-        <p class="small fw-semibold mb-0">Puberty</p>
+        <p class="small fw-semibold mb-0">វ័យជំទង់</p>
       </a>
       <a href="information.html" class="card-r hoverable category-card reveal">
         <div class="cat-icon mx-auto" style="background:var(--green);color:var(--green-dark);"><i class="fa-solid fa-apple-whole"></i></div>
-        <p class="small fw-semibold mb-0">Nutrition</p>
+        <p class="small fw-semibold mb-0">អាហារូបត្ថម្ភ</p>
       </a>
       <a href="information.html" class="card-r hoverable category-card reveal">
         <div class="cat-icon mx-auto" style="background:var(--male);color:var(--male-dark);"><i class="fa-solid fa-person-running"></i></div>
-        <p class="small fw-semibold mb-0">Exercise</p>
+        <p class="small fw-semibold mb-0">លំហាត់ប្រាណ</p>
       </a>
       <a href="information.html" class="card-r hoverable category-card reveal">
         <div class="cat-icon mx-auto" style="background:var(--orange);color:var(--orange-dark);"><i class="fa-solid fa-brain"></i></div>
-        <p class="small fw-semibold mb-0">Mental Health</p>
+        <p class="small fw-semibold mb-0">សុខភាពផ្លូវចិត្ត</p>
       </a>
       <a href="information.html" class="card-r hoverable category-card reveal">
         <div class="cat-icon mx-auto" style="background:var(--red);color:var(--red-dark);"><i class="fa-solid fa-shield-heart"></i></div>
-        <p class="small fw-semibold mb-0">Safety</p>
+        <p class="small fw-semibold mb-0">សុវត្ថិភាព</p>
       </a>
     </div>
   </section>
 
   <!-- Recent Activity -->
   <section class="mb-4">
-    <h2 class="section-title mb-3">Recent Activity</h2>
+    <h2 class="section-title mb-3">សកម្មភាពថ្មីៗ</h2>
     <div class="card-r p-3 reveal">
       <div class="d-flex align-items-center gap-3 py-2 border-bottom">
         <div class="settings-icon"><i class="fa-solid fa-book"></i></div>
         <div class="flex-grow-1">
-          <p class="mb-0 fw-semibold small">You read "Managing Exam Stress"</p>
-          <p class="mb-0 text-soft-r" style="font-size:.75rem;">2 hours ago</p>
+          <p class="mb-0 fw-semibold small">អ្នកបានអាន "ការគ្រប់គ្រងភាពតានតឹងពេលប្រឡង"</p>
+          <p class="mb-0 text-soft-r" style="font-size:.75rem;">២ ម៉ោងមុន</p>
         </div>
       </div>
       <div class="d-flex align-items-center gap-3 py-2 border-bottom">
         <div class="settings-icon"><i class="fa-solid fa-comments"></i></div>
         <div class="flex-grow-1">
-          <p class="mb-0 fw-semibold small">Chatted with Dr. Chenda</p>
-          <p class="mb-0 text-soft-r" style="font-size:.75rem;">Yesterday</p>
+          <p class="mb-0 fw-semibold small">បានជជែកជាមួយលោកគ្រូពេទ្យ ចិន្តា</p>
+          <p class="mb-0 text-soft-r" style="font-size:.75rem;">ម្សិលមិញ</p>
         </div>
       </div>
       <div class="d-flex align-items-center gap-3 py-2">
         <div class="settings-icon"><i class="fa-solid fa-trophy"></i></div>
         <div class="flex-grow-1">
-          <p class="mb-0 fw-semibold small">Earned "Health Champion" badge</p>
-          <p class="mb-0 text-soft-r" style="font-size:.75rem;">2 days ago</p>
+          <p class="mb-0 fw-semibold small">ទទួលបានផ្លាកសញ្ញា "កំពូលសុខភាព"</p>
+          <p class="mb-0 text-soft-r" style="font-size:.75rem;">២ ថ្ងៃមុន</p>
         </div>
       </div>
     </div>
@@ -178,20 +190,20 @@
   <!-- Bookmarks preview -->
   <section class="mb-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
-      <h2 class="section-title">Your Bookmarks</h2>
-      <a href="bookmarks.html" class="see-all">See all <i class="fa-solid fa-chevron-right"></i></a>
+      <h2 class="section-title">ចំណាំរបស់អ្នក</h2>
+      <a href="bookmarks.html" class="see-all">មើលទាំងអស់ <i class="fa-solid fa-chevron-right"></i></a>
     </div>
     <div class="row g-3">
       <div class="col-6 col-md-3">
         <a href="article.html" class="card-r hoverable d-block p-2 reveal">
           <div style="height:90px;background:url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&q=60') center/cover;border-radius:10px;"></div>
-          <p class="small fw-semibold mt-2 mb-0">Healthy Sleep Habits</p>
+          <p class="small fw-semibold mt-2 mb-0">ទម្លាប់គេងបានល្អ</p>
         </a>
       </div>
       <div class="col-6 col-md-3">
         <a href="article.html" class="card-r hoverable d-block p-2 reveal">
           <div style="height:90px;background:url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400&q=60') center/cover;border-radius:10px;"></div>
-          <p class="small fw-semibold mt-2 mb-0">Building Self-Confidence</p>
+          <p class="small fw-semibold mt-2 mb-0">កសាងទំនុកចិត្តលើខ្លួនឯង</p>
         </a>
       </div>
     </div>
@@ -205,22 +217,22 @@
     <div class="row g-4">
       <div class="col-lg-4">
         <h6 class="fw-bold mb-2">REANGKAY (រាងកាយ)</h6>
-        <p class="small">A safe, friendly space for youth to learn about health, talk to specialists, and grow with confidence.</p>
+        <p class="small">លំហដ៏មានសុវត្ថិភាព និងជាមិត្តភាព សម្រាប់យុវជនក្នុងការសិក្សាអំពីសុខភាព ពិភាក្សាជាមួយអ្នកឯកទេស និងលូតលាស់ដោយទំនុកចិត្ត។</p>
       </div>
       <div class="col-6 col-lg-2">
-        <h6 class="fw-bold mb-2">Explore</h6>
-        <p class="small"><a href="information.html">Learn</a></p>
-        <p class="small"><a href="specialists.html">Specialists</a></p>
-        <p class="small"><a href="games.html">Games</a></p>
+        <h6 class="fw-bold mb-2">ស្វែងរក</h6>
+        <p class="small"><a href="information.html">រៀន</a></p>
+        <p class="small"><a href="specialists.html">អ្នកឯកទេស</a></p>
+        <p class="small"><a href="games.html">ល្បែង</a></p>
       </div>
       <div class="col-6 col-lg-2">
-        <h6 class="fw-bold mb-2">Support</h6>
-        <p class="small"><a href="emergency.html">Emergency</a></p>
-        <p class="small"><a href="feedback.html">Feedback</a></p>
-        <p class="small"><a href="settings.html">Help</a></p>
+        <h6 class="fw-bold mb-2">ជំនួយ</h6>
+        <p class="small"><a href="emergency.html">អាសន្ន</a></p>
+        <p class="small"><a href="feedback.html">មតិកែលម្អ</a></p>
+        <p class="small"><a href="settings.html">ជំនួយ</a></p>
       </div>
       <div class="col-lg-4">
-        <h6 class="fw-bold mb-2">Stay in touch</h6>
+        <h6 class="fw-bold mb-2">ទាក់ទងជាមួយយើង</h6>
         <div class="d-flex gap-2">
           <a href="#" class="btn-icon-circle" style="background:rgba(255,255,255,.1);color:#fff;"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" class="btn-icon-circle" style="background:rgba(255,255,255,.1);color:#fff;"><i class="fa-brands fa-telegram"></i></a>
@@ -228,18 +240,18 @@
         </div>
       </div>
     </div>
-    <div class="footer-bottom text-center">© 2026 REANGKAY. This is a prototype for educational purposes.</div>
+    <div class="footer-bottom text-center">© ២០២៦ REANGKAY។ នេះគឺជាគំរូសាកល្បងសម្រាប់គោលបំណងអប់រំ។</div>
   </div>
 </footer>
 
 <!-- ============================= BOTTOM NAV (Mobile) ============================= -->
 <nav class="bottomnav">
   <div class="bn-items">
-    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>Home</a>
-    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>Learn</a>
+    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>ទំព័រដើម</a>
+    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>រៀន</a>
     <a href="consultation.html" class="bn-item"><div class="fab-wrap"><i class="fa-solid fa-comment-medical"></i></div></a>
-    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>Games</a>
-    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>Profile</a>
+    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>ល្បែង</a>
+    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>ប្រវត្តិរូប</a>
   </div>
 </nav>
 

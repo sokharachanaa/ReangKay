@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="km">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>REANGKAY | Specialists</title>
+<title>REANGKAY | អ្នកឯកទេស</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -25,30 +25,31 @@
   <div class="container-app d-flex align-items-center justify-content-between w-100">
     <a href="index.html" class="brand"><span class="logo-dot">រ</span> REANGKAY</a>
     <nav class="d-none d-lg-flex gap-1">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="information.html" class="nav-link">Learn</a>
-      <a href="specialists.html" class="nav-link">Specialists</a>
-      <a href="games.html" class="nav-link">Games</a>
-      <a href="emergency.html" class="nav-link">Emergency</a>
+      <a href="index.html" class="nav-link">ទំព័រដើម</a>
+      <a href="information.html" class="nav-link">រៀន</a>
+      <a href="specialists.html" class="nav-link">អ្នកឯកទេស</a>
+      <a href="games.html" class="nav-link">ល្បែង</a>
+      <a href="emergency.html" class="nav-link">អាសន្ន</a>
+      <a href="feedback.html" class="nav-link">មតិ</a>
     </nav>
     <a href="profile.html"><img src="https://i.pravatar.cc/60?img=47" class="rounded-circle" width="40" height="40" alt="profile"></a>
   </div>
 </header>
 
 <main class="container-app py-4">
-  <h2 class="mb-3">Talk to a Specialist</h2>
+  <h2 class="mb-3">និយាយជាមួយអ្នកឯកទេស</h2>
 
   <div class="input-icon-wrap mb-3">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <input type="text" class="form-control form-control-r" placeholder="Search by name or specialty..." data-search-input=".doctor-col">
+    <input type="text" class="form-control form-control-r" placeholder="ស្វែងរកតាមឈ្មោះ ឬឯកទេស..." data-search-input=".doctor-col">
   </div>
 
   <div class="d-flex gap-2 mb-4 filter-chip-group" data-filter-target=".doctor-col" style="overflow-x:auto;">
-    <button class="filter-chip active" data-filter="all">All</button>
-    <button class="filter-chip" data-filter="puberty">Puberty & Growth</button>
-    <button class="filter-chip" data-filter="mental">Mental Health</button>
-    <button class="filter-chip" data-filter="nutrition">Nutrition</button>
-    <button class="filter-chip" data-filter="reproductive">Reproductive Health</button>
+    <button class="filter-chip active" data-filter="all">ទាំងអស់</button>
+    <button class="filter-chip" data-filter="puberty">វ័យជំទង់ និងកំណើន</button>
+    <button class="filter-chip" data-filter="mental">សុខភាពផ្លូវចិត្ត</button>
+    <button class="filter-chip" data-filter="nutrition">អាហារូបត្ថម្ភ</button>
+    <button class="filter-chip" data-filter="reproductive">សុខភាពបន្តពូជ</button>
   </div>
 
   <div class="row g-3" id="doctorGrid">
@@ -61,18 +62,18 @@
           <div class="flex-grow-1">
             <div class="d-flex justify-content-between align-items-start">
               <div>
-                <p class="fw-bold mb-0">Dr. Sopheak Chan <i class="fa-solid fa-circle-check verified-tick"></i></p>
-                <p class="text-muted-r small mb-1">Puberty & Adolescent Health</p>
+                <p class="fw-bold mb-0">លោកគ្រូពេទ្យ សុភាព ចាន់ <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">វ័យជំទង់ និងសុខភាពក្មេងជំទង់</p>
               </div>
               <span class="rating-display"><i class="fa-solid fa-star"></i>4.9 <span class="count">(128)</span></span>
             </div>
-            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>8 years experience</p>
-            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>បទពិសោធន៍ ៨ ឆ្នាំ</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>ខ្មែរ អង់គ្លេស</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="small text-muted-r"><span class="avail-dot"></span>Available now</span>
+              <span class="small text-muted-r"><span class="avail-dot"></span>អាចប្រឹក្សាបានឥឡូវនេះ</span>
               <div class="d-flex gap-2">
-                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Sopheak Chan','images/pic.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
-                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">Chat</a>
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('លោកគ្រូពេទ្យ សុភាព ចាន់','images/pic.jpg')"><i class="fa-regular fa-star me-1"></i>វាយតម្លៃ</button>
+                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">ជជែក</a>
               </div>
             </div>
           </div>
@@ -87,18 +88,18 @@
           <div class="flex-grow-1">
             <div class="d-flex justify-content-between align-items-start">
               <div>
-                <p class="fw-bold mb-0">Dr. Ratana Pich <i class="fa-solid fa-circle-check verified-tick"></i></p>
-                <p class="text-muted-r small mb-1">Puberty & Growth Specialist</p>
+                <p class="fw-bold mb-0">លោកគ្រូពេទ្យ រតនា ពេជ្រ <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">អ្នកឯកទេសវ័យជំទង់ និងកំណើន</p>
               </div>
               <span class="rating-display"><i class="fa-solid fa-star"></i>4.6 <span class="count">(37)</span></span>
             </div>
-            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>4 years experience</p>
-            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>បទពិសោធន៍ ៤ ឆ្នាំ</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>ខ្មែរ អង់គ្លេស</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="small text-muted-r" style="color:var(--orange-dark) !important;"><span class="avail-dot" style="background:var(--orange-dark);"></span>Available in 30m</span>
+              <span class="small text-muted-r" style="color:var(--orange-dark) !important;"><span class="avail-dot" style="background:var(--orange-dark);"></span>អាចប្រឹក្សាបានក្នុង ៣០នាទី</span>
               <div class="d-flex gap-2">
-                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Ratana Pich','images/pic1.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
-                <a href="consultation.html" class="btn btn-outline-r btn-sm ripple">Chat</a>
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('លោកគ្រូពេទ្យ រតនា ពេជ្រ','images/pic1.jpg')"><i class="fa-regular fa-star me-1"></i>វាយតម្លៃ</button>
+                <a href="consultation.html" class="btn btn-outline-r btn-sm ripple">ជជែក</a>
               </div>
             </div>
           </div>
@@ -113,18 +114,18 @@
           <div class="flex-grow-1">
             <div class="d-flex justify-content-between align-items-start">
               <div>
-                <p class="fw-bold mb-0">Dr. Pisach Ly <i class="fa-solid fa-circle-check verified-tick"></i></p>
-                <p class="text-muted-r small mb-1">Adolescent Development</p>
+                <p class="fw-bold mb-0">លោកគ្រូពេទ្យ ពិសាច លី <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">ការលូតលាស់ក្មេងជំទង់</p>
               </div>
               <span class="rating-display"><i class="fa-solid fa-star"></i>4.8 <span class="count">(52)</span></span>
             </div>
-            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>6 years experience</p>
-            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>បទពិសោធន៍ ៦ ឆ្នាំ</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>ខ្មែរ អង់គ្លេស</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="small text-muted-r"><span class="avail-dot"></span>Available now</span>
+              <span class="small text-muted-r"><span class="avail-dot"></span>អាចប្រឹក្សាបានឥឡូវនេះ</span>
               <div class="d-flex gap-2">
-                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Pisach Ly','images/pic2.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
-                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">Chat</a>
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('លោកគ្រូពេទ្យ ពិសាច លី','images/pic2.jpg')"><i class="fa-regular fa-star me-1"></i>វាយតម្លៃ</button>
+                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">ជជែក</a>
               </div>
             </div>
           </div>
@@ -140,18 +141,18 @@
           <div class="flex-grow-1">
             <div class="d-flex justify-content-between align-items-start">
               <div>
-                <p class="fw-bold mb-0">Dr. Chenda Vann <i class="fa-solid fa-circle-check verified-tick"></i></p>
-                <p class="text-muted-r small mb-1">Mental Health Counselor</p>
+                <p class="fw-bold mb-0">លោកគ្រូពេទ្យ ចិន្តា វណ្ណ <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">ទីប្រឹក្សាសុខភាពផ្លូវចិត្ត</p>
               </div>
               <span class="rating-display"><i class="fa-solid fa-star"></i>4.8 <span class="count">(96)</span></span>
             </div>
-            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>5 years experience</p>
-            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English, French</p>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>បទពិសោធន៍ ៥ ឆ្នាំ</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>ខ្មែរ អង់គ្លេស បារាំង</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="small text-muted-r"><span class="avail-dot"></span>Available now</span>
+              <span class="small text-muted-r"><span class="avail-dot"></span>អាចប្រឹក្សាបានឥឡូវនេះ</span>
               <div class="d-flex gap-2">
-                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Chenda Vann','images/pic3.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
-                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">Chat</a>
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('លោកគ្រូពេទ្យ ចិន្តា វណ្ណ','images/pic3.jpg')"><i class="fa-regular fa-star me-1"></i>វាយតម្លៃ</button>
+                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">ជជែក</a>
               </div>
             </div>
           </div>
@@ -166,18 +167,18 @@
           <div class="flex-grow-1">
             <div class="d-flex justify-content-between align-items-start">
               <div>
-                <p class="fw-bold mb-0">Dr. Vibol Ourn <i class="fa-solid fa-circle-check verified-tick"></i></p>
-                <p class="text-muted-r small mb-1">Youth Mental Wellness</p>
+                <p class="fw-bold mb-0">លោកគ្រូពេទ្យ វិបុល អូន <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">សុខុមាលភាពផ្លូវចិត្តយុវជន</p>
               </div>
               <span class="rating-display"><i class="fa-solid fa-star"></i>4.9 <span class="count">(52)</span></span>
             </div>
-            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>7 years experience</p>
-            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>បទពិសោធន៍ ៧ ឆ្នាំ</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>ខ្មែរ អង់គ្លេស</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="small text-muted-r"><span class="avail-dot"></span>Available now</span>
+              <span class="small text-muted-r"><span class="avail-dot"></span>អាចប្រឹក្សាបានឥឡូវនេះ</span>
               <div class="d-flex gap-2">
-                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Vibol Ourn','images/pic4.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
-                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">Chat</a>
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('លោកគ្រូពេទ្យ វិបុល អូន','images/pic4.jpg')"><i class="fa-regular fa-star me-1"></i>វាយតម្លៃ</button>
+                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">ជជែក</a>
               </div>
             </div>
           </div>
@@ -192,18 +193,18 @@
           <div class="flex-grow-1">
             <div class="d-flex justify-content-between align-items-start">
               <div>
-                <p class="fw-bold mb-0">Dr. Sokunthea Meas <i class="fa-solid fa-circle-check verified-tick"></i></p>
-                <p class="text-muted-r small mb-1">Anxiety & Stress Counselor</p>
+                <p class="fw-bold mb-0">លោកគ្រូពេទ្យ សុគន្ធា មាស <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">ទីប្រឹក្សាភាពថប់បារម្ភ និងតានតឹង</p>
               </div>
               <span class="rating-display"><i class="fa-solid fa-star"></i>4.7 <span class="count">(44)</span></span>
             </div>
-            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>3 years experience</p>
-            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>បទពិសោធន៍ ៣ ឆ្នាំ</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>ខ្មែរ អង់គ្លេស</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="small text-muted-r" style="color:var(--orange-dark) !important;"><span class="avail-dot" style="background:var(--orange-dark);"></span>Available in 20m</span>
+              <span class="small text-muted-r" style="color:var(--orange-dark) !important;"><span class="avail-dot" style="background:var(--orange-dark);"></span>អាចប្រឹក្សាបានក្នុង ២០នាទី</span>
               <div class="d-flex gap-2">
-                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Sokunthea Meas','images/pic5.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
-                <a href="consultation.html" class="btn btn-outline-r btn-sm ripple">Chat</a>
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('លោកគ្រូពេទ្យ សុគន្ធា មាស','images/pic5.jpg')"><i class="fa-regular fa-star me-1"></i>វាយតម្លៃ</button>
+                <a href="consultation.html" class="btn btn-outline-r btn-sm ripple">ជជែក</a>
               </div>
             </div>
           </div>
@@ -219,18 +220,18 @@
           <div class="flex-grow-1">
             <div class="d-flex justify-content-between align-items-start">
               <div>
-                <p class="fw-bold mb-0">Dr. Rithy Sok <i class="fa-solid fa-circle-check verified-tick"></i></p>
-                <p class="text-muted-r small mb-1">Nutrition Specialist</p>
+                <p class="fw-bold mb-0">លោកគ្រូពេទ្យ រិទ្ធី សុខ <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">អ្នកឯកទេសអាហារូបត្ថម្ភ</p>
               </div>
               <span class="rating-display"><i class="fa-solid fa-star"></i>4.7 <span class="count">(64)</span></span>
             </div>
-            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>10 years experience</p>
-            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>បទពិសោធន៍ ១០ ឆ្នាំ</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>ខ្មែរ អង់គ្លេស</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="small text-muted-r" style="color:var(--orange-dark) !important;"><span class="avail-dot" style="background:var(--orange-dark);"></span>Available in 1h</span>
+              <span class="small text-muted-r" style="color:var(--orange-dark) !important;"><span class="avail-dot" style="background:var(--orange-dark);"></span>អាចប្រឹក្សាបានក្នុង ១ម៉ោង</span>
               <div class="d-flex gap-2">
-                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Rithy Sok','images/pic6.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
-                <a href="consultation.html" class="btn btn-outline-r btn-sm ripple">Chat</a>
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('លោកគ្រូពេទ្យ រិទ្ធី សុខ','images/pic6.jpg')"><i class="fa-regular fa-star me-1"></i>វាយតម្លៃ</button>
+                <a href="consultation.html" class="btn btn-outline-r btn-sm ripple">ជជែក</a>
               </div>
             </div>
           </div>
@@ -245,18 +246,18 @@
           <div class="flex-grow-1">
             <div class="d-flex justify-content-between align-items-start">
               <div>
-                <p class="fw-bold mb-0">Dr. Sreyleak Nov <i class="fa-solid fa-circle-check verified-tick"></i></p>
-                <p class="text-muted-r small mb-1">Adolescent Nutrition</p>
+                <p class="fw-bold mb-0">លោកគ្រូពេទ្យ ស្រីលក្ខណ៍ ណូវ <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">អាហារូបត្ថម្ភសម្រាប់ក្មេងជំទង់</p>
               </div>
               <span class="rating-display"><i class="fa-solid fa-star"></i>4.8 <span class="count">(29)</span></span>
             </div>
-            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>3 years experience</p>
-            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>បទពិសោធន៍ ៣ ឆ្នាំ</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>ខ្មែរ អង់គ្លេស</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="small text-muted-r"><span class="avail-dot"></span>Available now</span>
+              <span class="small text-muted-r"><span class="avail-dot"></span>អាចប្រឹក្សាបានឥឡូវនេះ</span>
               <div class="d-flex gap-2">
-                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Sreyleak Nov','images/pic7.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
-                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">Chat</a>
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('លោកគ្រូពេទ្យ ស្រីលក្ខណ៍ ណូវ','images/pic7.jpg')"><i class="fa-regular fa-star me-1"></i>វាយតម្លៃ</button>
+                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">ជជែក</a>
               </div>
             </div>
           </div>
@@ -271,18 +272,18 @@
           <div class="flex-grow-1">
             <div class="d-flex justify-content-between align-items-start">
               <div>
-                <p class="fw-bold mb-0">Dr. Bunthoeun Chea <i class="fa-solid fa-circle-check verified-tick"></i></p>
-                <p class="text-muted-r small mb-1">Sports Nutrition & Diet</p>
+                <p class="fw-bold mb-0">លោកគ្រូពេទ្យ ប៊ុនធឿន ជា <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">អាហារូបត្ថម្ភកីឡា និងរបបអាហារ</p>
               </div>
               <span class="rating-display"><i class="fa-solid fa-star"></i>4.5 <span class="count">(18)</span></span>
             </div>
-            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>5 years experience</p>
-            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>បទពិសោធន៍ ៥ ឆ្នាំ</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>ខ្មែរ អង់គ្លេស</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="small text-muted-r"><span class="avail-dot"></span>Available now</span>
+              <span class="small text-muted-r"><span class="avail-dot"></span>អាចប្រឹក្សាបានឥឡូវនេះ</span>
               <div class="d-flex gap-2">
-                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Bunthoeun Chea','images/pic8.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
-                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">Chat</a>
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('លោកគ្រូពេទ្យ ប៊ុនធឿន ជា','images/pic8.jpg')"><i class="fa-regular fa-star me-1"></i>វាយតម្លៃ</button>
+                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">ជជែក</a>
               </div>
             </div>
           </div>
@@ -298,18 +299,18 @@
           <div class="flex-grow-1">
             <div class="d-flex justify-content-between align-items-start">
               <div>
-                <p class="fw-bold mb-0">Dr. Malis Heng <i class="fa-solid fa-circle-check verified-tick"></i></p>
-                <p class="text-muted-r small mb-1">Reproductive Health</p>
+                <p class="fw-bold mb-0">លោកគ្រូពេទ្យ ម៉ាលីស ហេង <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">សុខភាពបន្តពូជ</p>
               </div>
               <span class="rating-display"><i class="fa-solid fa-star"></i>5.0 <span class="count">(41)</span></span>
             </div>
-            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>6 years experience</p>
-            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>បទពិសោធន៍ ៦ ឆ្នាំ</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>ខ្មែរ អង់គ្លេស</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="small text-muted-r"><span class="avail-dot"></span>Available now</span>
+              <span class="small text-muted-r"><span class="avail-dot"></span>អាចប្រឹក្សាបានឥឡូវនេះ</span>
               <div class="d-flex gap-2">
-                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Malis Heng','images/pic9.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
-                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">Chat</a>
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('លោកគ្រូពេទ្យ ម៉ាលីស ហេង','images/pic9.jpg')"><i class="fa-regular fa-star me-1"></i>វាយតម្លៃ</button>
+                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">ជជែក</a>
               </div>
             </div>
           </div>
@@ -324,18 +325,18 @@
           <div class="flex-grow-1">
             <div class="d-flex justify-content-between align-items-start">
               <div>
-                <p class="fw-bold mb-0">Dr. Kunthea Prom <i class="fa-solid fa-circle-check verified-tick"></i></p>
-                <p class="text-muted-r small mb-1">Reproductive Health Educator</p>
+                <p class="fw-bold mb-0">លោកគ្រូពេទ្យ គន្ធា ព្រំ <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">អ្នកអប់រំសុខភាពបន្តពូជ</p>
               </div>
               <span class="rating-display"><i class="fa-solid fa-star"></i>4.9 <span class="count">(33)</span></span>
             </div>
-            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>4 years experience</p>
-            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>បទពិសោធន៍ ៤ ឆ្នាំ</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>ខ្មែរ អង់គ្លេស</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="small text-muted-r" style="color:var(--orange-dark) !important;"><span class="avail-dot" style="background:var(--orange-dark);"></span>Available in 45m</span>
+              <span class="small text-muted-r" style="color:var(--orange-dark) !important;"><span class="avail-dot" style="background:var(--orange-dark);"></span>អាចប្រឹក្សាបានក្នុង ៤៥នាទី</span>
               <div class="d-flex gap-2">
-                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Kunthea Prom','images/pic10.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
-                <a href="consultation.html" class="btn btn-outline-r btn-sm ripple">Chat</a>
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('លោកគ្រូពេទ្យ គន្ធា ព្រំ','images/pic10.jpg')"><i class="fa-regular fa-star me-1"></i>វាយតម្លៃ</button>
+                <a href="consultation.html" class="btn btn-outline-r btn-sm ripple">ជជែក</a>
               </div>
             </div>
           </div>
@@ -350,18 +351,18 @@
           <div class="flex-grow-1">
             <div class="d-flex justify-content-between align-items-start">
               <div>
-                <p class="fw-bold mb-0">Dr. Sophea Ret <i class="fa-solid fa-circle-check verified-tick"></i></p>
-                <p class="text-muted-r small mb-1">Gynecology & Reproductive Care</p>
+                <p class="fw-bold mb-0">លោកគ្រូពេទ្យ សុភា រិទ្ធ <i class="fa-solid fa-circle-check verified-tick"></i></p>
+                <p class="text-muted-r small mb-1">រោគស្ត្រី និងការថែទាំសុខភាពបន្តពូជ</p>
               </div>
               <span class="rating-display"><i class="fa-solid fa-star"></i>4.8 <span class="count">(27)</span></span>
             </div>
-            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>9 years experience</p>
-            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>Khmer, English</p>
+            <p class="small mb-1"><i class="fa-solid fa-briefcase text-soft-r me-1"></i>បទពិសោធន៍ ៩ ឆ្នាំ</p>
+            <p class="small mb-2"><i class="fa-solid fa-language text-soft-r me-1"></i>ខ្មែរ អង់គ្លេស</p>
             <div class="d-flex justify-content-between align-items-center">
-              <span class="small text-muted-r"><span class="avail-dot"></span>Available now</span>
+              <span class="small text-muted-r"><span class="avail-dot"></span>អាចប្រឹក្សាបានឥឡូវនេះ</span>
               <div class="d-flex gap-2">
-                <button type="button" class="rate-btn ripple" onclick="openRateModal('Dr. Sophea Ret','images/pic11.jpg')"><i class="fa-regular fa-star me-1"></i>Rate</button>
-                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">Chat</a>
+                <button type="button" class="rate-btn ripple" onclick="openRateModal('លោកគ្រូពេទ្យ សុភា រិទ្ធ','images/pic11.jpg')"><i class="fa-regular fa-star me-1"></i>វាយតម្លៃ</button>
+                <a href="consultation.html" class="btn btn-primary-r btn-sm ripple">ជជែក</a>
               </div>
             </div>
           </div>
@@ -371,7 +372,7 @@
 
   </div>
 
-  <p class="text-center text-soft-r py-5 d-none" id="noResultsMsg"><i class="fa-solid fa-user-doctor fa-2x d-block mb-2"></i>No specialists found in this category yet.</p>
+  <p class="text-center text-soft-r py-5 d-none" id="noResultsMsg"><i class="fa-solid fa-user-doctor fa-2x d-block mb-2"></i>មិនទាន់មានអ្នកឯកទេសនៅក្នុងប្រភេទនេះនៅឡើយទេ។</p>
 </main>
 
 <!-- Rate Specialist Modal -->
@@ -379,18 +380,18 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content" style="border-radius:var(--radius-lg);border:none;">
       <div class="modal-header border-0 pb-0">
-        <h5 class="modal-title">Rate Specialist</h5>
+        <h5 class="modal-title">វាយតម្លៃអ្នកឯកទេស</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body px-4 pb-4">
         <div class="d-flex align-items-center gap-3 mb-3">
           <img id="rateModalPhoto" src="" class="doctor-photo" style="width:56px;height:56px;" alt="specialist">
           <div>
-            <p class="fw-bold mb-0" id="rateModalName">Specialist</p>
-            <p class="text-soft-r small mb-0">Your feedback helps other youth choose confidently</p>
+            <p class="fw-bold mb-0" id="rateModalName">អ្នកឯកទេស</p>
+            <p class="text-soft-r small mb-0">មតិកែលម្អរបស់អ្នកជួយឱ្យយុវជនផ្សេងទៀតជ្រើសរើសដោយទំនុកចិត្ត</p>
           </div>
         </div>
-        <form data-mock-submit="Thanks for rating this specialist!">
+        <form data-mock-submit="អរគុណសម្រាប់ការវាយតម្លៃអ្នកឯកទេសនេះ!">
           <div class="star-rate-group mb-3" data-value="0">
             <i class="fa-solid fa-star star-rate" data-idx="0"></i>
             <i class="fa-solid fa-star star-rate" data-idx="1"></i>
@@ -398,12 +399,12 @@
             <i class="fa-solid fa-star star-rate" data-idx="3"></i>
             <i class="fa-solid fa-star star-rate" data-idx="4"></i>
           </div>
-          <textarea class="form-control form-control-r mb-3" rows="3" placeholder="Optional: share more about your consultation..."></textarea>
+          <textarea class="form-control form-control-r mb-3" rows="3" placeholder="ស្រេចចិត្ត៖ ចែករំលែកបន្ថែមអំពីការពិគ្រោះយោបល់របស់អ្នក..."></textarea>
           <div class="form-check mb-3">
             <input class="form-check-input" type="checkbox" id="rateAnonCheck" checked>
-            <label class="form-check-label small" for="rateAnonCheck">Submit anonymously</label>
+            <label class="form-check-label small" for="rateAnonCheck">ដាក់ស្នើដោយអនាមិក</label>
           </div>
-          <button type="submit" class="btn btn-primary-r btn-lg-touch w-100 ripple" data-bs-dismiss="modal">Submit Rating</button>
+          <button type="submit" class="btn btn-primary-r btn-lg-touch w-100 ripple" data-bs-dismiss="modal">ដាក់ស្នើការវាយតម្លៃ</button>
         </form>
       </div>
     </div>
@@ -412,11 +413,11 @@
 
 <nav class="bottomnav">
   <div class="bn-items">
-    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>Home</a>
-    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>Learn</a>
+    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>ទំព័រដើម</a>
+    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>រៀន</a>
     <a href="consultation.html" class="bn-item"><div class="fab-wrap"><i class="fa-solid fa-comment-medical"></i></div></a>
-    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>Games</a>
-    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>Profile</a>
+    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>ល្បែង</a>
+    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>ប្រវត្តិរូប</a>
   </div>
 </nav>
 
@@ -449,3 +450,7 @@ document.querySelectorAll('.filter-chip-group[data-filter-target] .filter-chip')
 </script>
 </body>
 </html>
+
+
+
+

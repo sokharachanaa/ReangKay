@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="km">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>REANGKAY | Emergency</title>
+<title>REANGKAY | អាសន្ន</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -20,11 +20,12 @@
   <div class="container-app d-flex align-items-center justify-content-between w-100">
     <a href="index.html" class="brand"><span class="logo-dot">រ</span> REANGKAY</a>
     <nav class="d-none d-lg-flex gap-1">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="information.html" class="nav-link">Learn</a>
-      <a href="specialists.html" class="nav-link">Specialists</a>
-      <a href="games.html" class="nav-link">Games</a>
-      <a href="emergency.html" class="nav-link">Emergency</a>
+      <a href="index.html" class="nav-link">ទំព័រដើម</a>
+      <a href="information.html" class="nav-link">រៀន</a>
+      <a href="specialists.html" class="nav-link">អ្នកឯកទេស</a>
+      <a href="games.html" class="nav-link">ល្បែង</a>
+      <a href="emergency.html" class="nav-link">អាសន្ន</a>
+      <a href="feedback.html" class="nav-link">មតិ</a>
     </nav>
     <a href="profile.html"><img src="https://i.pravatar.cc/60?img=47" class="rounded-circle" width="40" height="40" alt="profile"></a>
   </div>
@@ -34,99 +35,220 @@
 
   <div class="card-r p-4 mb-4 text-center" style="background:var(--red);border:none;">
     <i class="fa-solid fa-hand-holding-heart fa-2x mb-2" style="color:var(--red-dark);"></i>
-    <h4 class="mb-1" style="color:var(--red-dark);">You are not alone</h4>
-    <p class="mb-0 small" style="color:var(--red-dark);">If you or someone you know is in danger or crisis, reach out immediately using the options below.</p>
+    <h4 class="mb-1" style="color:var(--red-dark);">អ្នកមិនឯកឯងទេ</h4>
+    <p class="mb-0 small" style="color:var(--red-dark);">ប្រសិនបើអ្នក ឬនរណាម្នាក់ដែលអ្នកស្គាល់កំពុងស្ថិតក្នុងគ្រោះថ្នាក់ ឬវិបត្តិ សូមទាក់ទងភ្លាមៗដោយប្រើជម្រើសខាងក្រោម។</p>
   </div>
 
-  <h2 class="section-title mb-3">Emergency Numbers</h2>
+  <h2 class="section-title mb-3">លេខទូរស័ព្ទអាសន្ន</h2>
   <div class="row g-3 mb-4">
     <div class="col-6 col-md-3">
       <div class="card-r emergency-num-card reveal">
         <div class="num-icon"><i class="fa-solid fa-truck-medical"></i></div>
-        <p class="fw-bold mb-1">Ambulance</p>
-        <button class="tap-call-btn ripple" onclick="showToast('Calling 119 — prototype only','fa-phone')">119</button>
+        <p class="fw-bold mb-1">រថយន្តសង្គ្រោះបន្ទាន់</p>
+        <button class="tap-call-btn ripple" onclick="showToast('កំពុងហៅលេខ 119 — សម្រាប់គំរូតែប៉ុណ្ណោះ','fa-phone')">119</button>
       </div>
     </div>
     <div class="col-6 col-md-3">
       <div class="card-r emergency-num-card reveal">
         <div class="num-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <p class="fw-bold mb-1">Police</p>
-        <button class="tap-call-btn ripple" onclick="showToast('Calling 117 — prototype only','fa-phone')">117</button>
+        <p class="fw-bold mb-1">ប៉ូលិស</p>
+        <button class="tap-call-btn ripple" onclick="showToast('កំពុងហៅលេខ 117 — សម្រាប់គំរូតែប៉ុណ្ណោះ','fa-phone')">117</button>
       </div>
     </div>
     <div class="col-6 col-md-3">
       <div class="card-r emergency-num-card reveal">
         <div class="num-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
-        <p class="fw-bold mb-1">Child Helpline</p>
-        <button class="tap-call-btn ripple" onclick="showToast('Calling 1280 — prototype only','fa-phone')">1280</button>
+        <p class="fw-bold mb-1">ខ្សែទូរស័ព្ទជំនួយកុមារ</p>
+        <button class="tap-call-btn ripple" onclick="showToast('កំពុងហៅលេខ 1280 — សម្រាប់គំរូតែប៉ុណ្ណោះ','fa-phone')">1280</button>
       </div>
     </div>
     <div class="col-6 col-md-3">
       <div class="card-r emergency-num-card reveal">
         <div class="num-icon"><i class="fa-solid fa-comment-dots"></i></div>
-        <p class="fw-bold mb-1">Mental Health Line</p>
-        <button class="tap-call-btn ripple" onclick="showToast('Calling 1288 — prototype only','fa-phone')">1288</button>
+        <p class="fw-bold mb-1">ខ្សែទូរស័ព្ទសុខភាពផ្លូវចិត្ត</p>
+        <button class="tap-call-btn ripple" onclick="showToast('កំពុងហៅលេខ 1288 — សម្រាប់គំរូតែប៉ុណ្ណោះ','fa-phone')">1288</button>
       </div>
     </div>
   </div>
 
-  <h2 class="section-title mb-3">Partner Hospitals</h2>
-  <div class="row g-3 mb-4">
-    <div class="col-md-6">
-      <div class="card-r p-3 reveal d-flex align-items-center gap-3">
-        <div class="settings-icon" style="width:52px;height:52px;"><i class="fa-solid fa-hospital"></i></div>
-        <div class="flex-grow-1">
-          <p class="fw-bold mb-0">Calmette Hospital</p>
-          <p class="text-muted-r small mb-0">Phnom Penh · Open 24/7</p>
-        </div>
-        <button class="btn-icon-circle ripple" onclick="showToast('Opening map — prototype only','fa-location-dot')"><i class="fa-solid fa-location-dot"></i></button>
+<h2 class="section-title mb-3">មន្ទីរពេទ្យដៃគូ</h2>
+
+<div class="row g-4 hospital-list">
+
+  <!-- Calmette Hospital -->
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="card-r hospital-card">
+      <div class="hospital-image">
+        <img src="images/calmatte.jpeg" alt="Calmette Hospital">
       </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card-r p-3 reveal d-flex align-items-center gap-3">
-        <div class="settings-icon" style="width:52px;height:52px;"><i class="fa-solid fa-hospital"></i></div>
-        <div class="flex-grow-1">
-          <p class="fw-bold mb-0">Angkor Hospital for Children</p>
-          <p class="text-muted-r small mb-0">Siem Reap · Open 24/7</p>
-        </div>
-        <button class="btn-icon-circle ripple" onclick="showToast('Opening map — prototype only','fa-location-dot')"><i class="fa-solid fa-location-dot"></i></button>
+      <div class="hospital-content">
+        <h5 class="hospital-name">មន្ទីរពេទ្យកាល់ម៉ែត</h5>
+        <p class="hospital-location"><i class="fa-solid fa-location-dot"></i> ដូនពេញ, ភ្នំពេញ</p>
+        <p class="hospital-status">បើកគ្រប់ម៉ោង ២៤/៧</p>
+        <button class="btn btn-primary-r w-100 ripple" onclick="showToast('កំពុងបើកផែនទី — សម្រាប់គំរូតែប៉ុណ្ណោះ','fa-location-dot')">
+          <i class="fa-solid fa-location-dot me-2"></i> មើលទីតាំង
+        </button>
       </div>
     </div>
   </div>
 
-  <h2 class="section-title mb-3">NGO Support</h2>
+  <!-- Sunrise Japan Hospital -->
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="card-r hospital-card">
+      <div class="hospital-image">
+        <img src="images/sunrise.webp" alt="Sunrise Japan Hospital">
+      </div>
+      <div class="hospital-content">
+        <h5 class="hospital-name">មន្ទីរពេទ្យសាន់រ៉ាយជប៉ុន</h5>
+        <p class="hospital-location"><i class="fa-solid fa-location-dot"></i> ជ្រោយចង្វារ, ភ្នំពេញ</p>
+        <p class="hospital-status">បើក ២៤/៧</p>
+        <button class="btn btn-primary-r w-100 ripple" onclick="showToast('កំពុងបើកផែនទី — សម្រាប់គំរូតែប៉ុណ្ណោះ','fa-location-dot')">
+          <i class="fa-solid fa-location-dot me-2"></i> មើលទីតាំង
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Royal Phnom Penh -->
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="card-r hospital-card">
+      <div class="hospital-image">
+        <img src="images/royal-phnom-penh.jpg" alt="Royal Phnom Penh Hospital">
+      </div>
+      <div class="hospital-content">
+        <h5 class="hospital-name">មន្ទីរពេទ្យរ៉ូយ៉ាល់ភ្នំពេញ</h5>
+        <p class="hospital-location"><i class="fa-solid fa-location-dot"></i> សែនសុខ, ភ្នំពេញ</p>
+        <p class="hospital-status">បើក ២៤/៧</p>
+        <button class="btn btn-primary-r w-100 ripple" onclick="showToast('កំពុងបើកផែនទី — សម្រាប់គំរូតែប៉ុណ្ណោះ','fa-location-dot')">
+          <i class="fa-solid fa-location-dot me-2"></i> មើលទីតាំង
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Khmer Soviet -->
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="card-r hospital-card">
+      <div class="hospital-image">
+        <img src="images/khmer-soviet.png" alt="Khmer Soviet Friendship Hospital">
+      </div>
+      <div class="hospital-content">
+        <h5 class="hospital-name">មន្ទីរពេទ្យមិត្តភាពខ្មែរ-សូវៀត</h5>
+        <p class="hospital-location"><i class="fa-solid fa-location-dot"></i> ទួលគោក, ភ្នំពេញ</p>
+        <p class="hospital-status">សេវាបន្ទាន់ ២៤/៧</p>
+        <button class="btn btn-primary-r w-100 ripple" onclick="showToast('កំពុងបើកផែនទី — សម្រាប់គំរូតែប៉ុណ្ណោះ','fa-location-dot')">
+          <i class="fa-solid fa-location-dot me-2"></i> មើលទីតាំង
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ang Duong -->
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="card-r hospital-card">
+      <div class="hospital-image">
+        <img src="images/ang-duong.jpg" alt="Ang Duong Hospital">
+      </div>
+      <div class="hospital-content">
+        <h5 class="hospital-name">មន្ទីរពេទ្យព្រះអង្គឌួង</h5>
+        <p class="hospital-location"><i class="fa-solid fa-location-dot"></i> ដូនពេញ, ភ្នំពេញ</p>
+        <p class="hospital-status">សេវាបន្ទាន់ ២៤/៧</p>
+        <button class="btn btn-primary-r w-100 ripple" onclick="showToast('កំពុងបើកផែនទី — សម្រាប់គំរូតែប៉ុណ្ណោះ','fa-location-dot')">
+          <i class="fa-solid fa-location-dot me-2"></i> មើលទីតាំង
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- National Pediatric -->
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="card-r hospital-card">
+      <div class="hospital-image">
+        <img src="images/national-pediatric.jpg" alt="National Pediatric Hospital">
+      </div>
+      <div class="hospital-content">
+        <h5 class="hospital-name">មន្ទីរពេទ្យជាតិកុមារ</h5>
+        <p class="hospital-location"><i class="fa-solid fa-location-dot"></i> ទួលគោក, ភ្នំពេញ</p>
+        <p class="hospital-status">សេវាបន្ទាន់ ២៤/៧</p>
+        <button class="btn btn-primary-r w-100 ripple" onclick="showToast('កំពុងបើកផែនទី — សម្រាប់គំរូតែប៉ុណ្ណោះ','fa-location-dot')">
+          <i class="fa-solid fa-location-dot me-2"></i> មើលទីតាំង
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kantha Bopha -->
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="card-r hospital-card">
+      <div class="hospital-image">
+        <img src="images/kantha-bopha.jpg" alt="Kantha Bopha Hospital">
+      </div>
+      <div class="hospital-content">
+        <h5 class="hospital-name">មន្ទីរពេទ្យគន្ធបុប្ផា</h5>
+        <p class="hospital-location"><i class="fa-solid fa-location-dot"></i> ដូនពេញ, ភ្នំពេញ</p>
+        <p class="hospital-status">បើក ២៤/៧</p>
+        <button class="btn btn-primary-r w-100 ripple" onclick="showToast('កំពុងបើកផែនទី — សម្រាប់គំរូតែប៉ុណ្ណោះ','fa-location-dot')">
+          <i class="fa-solid fa-location-dot me-2"></i> មើលទីតាំង
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Preah Ket Mealea -->
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="card-r hospital-card">
+      <div class="hospital-image">
+        <img src="images/preah-ket-mealea.jpg" alt="Preah Ket Mealea Hospital">
+      </div>
+      <div class="hospital-content">
+        <h5 class="hospital-name">មន្ទីរពេទ្យព្រះកេតុមាលា</h5>
+        <p class="hospital-location"><i class="fa-solid fa-location-dot"></i> សែនសុខ, ភ្នំពេញ</p>
+        <p class="hospital-status">សេវាបន្ទាន់ ២៤/៧</p>
+        <button class="btn btn-primary-r w-100 ripple " onclick="showToast('កំពុងបើកផែនទី — សម្រាប់គំរូតែប៉ុណ្ណោះ','fa-location-dot')">
+          <i class="fa-solid fa-location-dot me-2"></i> មើលទីតាំង
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<br>
+
+  <h2 class="section-title mb-3">ជំនួយអង្គការក្រៅរដ្ឋាភិបាល</h2>
   <div class="row g-3">
     <div class="col-md-6">
       <div class="card-r p-3 reveal d-flex align-items-center gap-3">
         <div class="settings-icon" style="width:52px;height:52px;background:var(--female);color:var(--female-dark);"><i class="fa-solid fa-people-group"></i></div>
         <div class="flex-grow-1">
-          <p class="fw-bold mb-0">Child Protection Cambodia</p>
-          <p class="text-muted-r small mb-0">Free & confidential support</p>
+          <p class="fw-bold mb-0">ការពារកុមារកម្ពុជា</p>
+          <p class="text-muted-r small mb-0">ជំនួយឥតគិតថ្លៃ និងសម្ងាត់</p>
         </div>
-        <button class="btn-icon-circle ripple" onclick="showToast('Calling — prototype only','fa-phone')"><i class="fa-solid fa-phone"></i></button>
+        <button class="btn-icon-circle ripple" onclick="showToast('កំពុងហៅទូរស័ព្ទ — សម្រាប់គំរូតែប៉ុណ្ណោះ','fa-phone')"><i class="fa-solid fa-phone"></i></button>
       </div>
     </div>
     <div class="col-md-6">
       <div class="card-r p-3 reveal d-flex align-items-center gap-3">
         <div class="settings-icon" style="width:52px;height:52px;background:var(--male);color:var(--male-dark);"><i class="fa-solid fa-people-group"></i></div>
         <div class="flex-grow-1">
-          <p class="fw-bold mb-0">Youth Mental Wellness NGO</p>
-          <p class="text-muted-r small mb-0">Counseling & peer support</p>
+          <p class="fw-bold mb-0">អង្គការសុខភាពផ្លូវចិត្តយុវជន</p>
+          <p class="text-muted-r small mb-0">ការប្រឹក្សា និងជំនួយពីមិត្តភក្តិ</p>
         </div>
-        <button class="btn-icon-circle ripple" onclick="showToast('Calling — prototype only','fa-phone')"><i class="fa-solid fa-phone"></i></button>
+        <button class="btn-icon-circle ripple" onclick="showToast('កំពុងហៅទូរស័ព្ទ — សម្រាប់គំរូតែប៉ុណ្ណោះ','fa-phone')"><i class="fa-solid fa-phone"></i></button>
       </div>
     </div>
   </div>
+
+  
 
 </main>
 
 <nav class="bottomnav">
   <div class="bn-items">
-    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>Home</a>
-    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>Learn</a>
+    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>ទំព័រដើម</a>
+    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>រៀន</a>
     <a href="consultation.html" class="bn-item"><div class="fab-wrap"><i class="fa-solid fa-comment-medical"></i></div></a>
-    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>Games</a>
-    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>Profile</a>
+    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>ល្បែង</a>
+    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>ប្រវត្តិរូប</a>
   </div>
 </nav>
 

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="km">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>REANGKAY | Consultation</title>
+<title>REANGKAY | ការពិគ្រោះយោបល់</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -20,11 +20,12 @@
   <div class="container-app d-flex align-items-center justify-content-between w-100">
     <a href="index.html" class="brand"><span class="logo-dot">រ</span> REANGKAY</a>
     <nav class="d-none d-lg-flex gap-1">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="information.html" class="nav-link">Learn</a>
-      <a href="specialists.html" class="nav-link">Specialists</a>
-      <a href="games.html" class="nav-link">Games</a>
-      <a href="emergency.html" class="nav-link">Emergency</a>
+      <a href="index.html" class="nav-link">ទំព័រដើម</a>
+      <a href="information.html" class="nav-link">រៀន</a>
+      <a href="specialists.html" class="nav-link">អ្នកឯកទេស</a>
+      <a href="games.html" class="nav-link">ល្បែង</a>
+      <a href="emergency.html" class="nav-link">អាសន្ន</a>
+      <a href="feedback.html" class="nav-link">មតិ</a>
     </nav>
     <a href="profile.html"><img src="https://i.pravatar.cc/60?img=47" class="rounded-circle" width="40" height="40" alt="profile"></a>
   </div>
@@ -35,7 +36,7 @@
   <!-- Emergency Banner -->
   <div class="emergency-banner">
     <i class="fa-solid fa-triangle-exclamation"></i>
-    In crisis? <a href="emergency.html" class="fw-bold" style="color:var(--red-dark);text-decoration:underline;">Get emergency help now</a>
+    កំពុងស្ថិតក្នុងវិបត្តិ? <a href="emergency.html" class="fw-bold" style="color:var(--red-dark);text-decoration:underline;">ទទួលជំនួយបន្ទាន់ឥឡូវនេះ</a>
   </div>
 
   <!-- Chat Header -->
@@ -46,30 +47,30 @@
       <span class="online-dot"></span>
     </div>
     <div class="flex-grow-1">
-      <p class="fw-bold mb-0">Dr. Chenda Vann</p>
-      <p class="text-soft-r mb-0" style="font-size:.78rem;">Mental Health Counselor · Online</p>
+      <p class="fw-bold mb-0">លោកគ្រូពេទ្យ ចិន្តា វណ្ណ</p>
+      <p class="text-soft-r mb-0" style="font-size:.78rem;">ទីប្រឹក្សាសុខភាពផ្លូវចិត្ត · កំពុងលើបណ្តាញ</p>
     </div>
-    <span class="anon-badge"><i class="fa-solid fa-user-secret me-1"></i>Anonymous</span>
+    <span class="anon-badge"><i class="fa-solid fa-user-secret me-1"></i>អនាមិក</span>
   </div>
 
   <!-- Messages -->
   <div class="chat-messages" id="chatMessages">
     <div class="msg-row them">
       <div>
-        <div class="bubble them">Hi there 👋 This is a safe, confidential space. What's on your mind today?</div>
-        <div class="msg-time">9:02 AM</div>
+        <div class="bubble them">សួស្តី 👋 នេះគឺជាកន្លែងមានសុវត្ថិភាព និងសម្ងាត់។ តើថ្ងៃនេះអ្នកកំពុងគិតអំពីអ្វី?</div>
+        <div class="msg-time">៩:០២ ព្រឹក</div>
       </div>
     </div>
     <div class="msg-row me">
       <div>
-        <div class="bubble me">Hi doctor, I've been feeling really stressed about my exams lately and I can't sleep well.</div>
-        <div class="msg-time text-end">9:03 AM</div>
+        <div class="bubble me">សួស្តីលោកគ្រូពេទ្យ ថ្មីៗនេះខ្ញុំមានអារម្មណ៍តានតឹងខ្លាំងអំពីការប្រឡង ហើយខ្ញុំគេងមិនលក់ស្រួលទេ។</div>
+        <div class="msg-time text-end">៩:០៣ ព្រឹក</div>
       </div>
     </div>
     <div class="msg-row them">
       <div>
-        <div class="bubble them">That sounds tough. Exam stress is very common — let's talk through what's been happening and find some ways to help you rest better.</div>
-        <div class="msg-time">9:04 AM</div>
+        <div class="bubble them">ស្តាប់ទៅពិបាកមែន។ ភាពតានតឹងពេលប្រឡងគឺជារឿងធម្មតាណាស់ — តោះនិយាយគ្នាអំពីអ្វីដែលកំពុងកើតឡើង ហើយស្វែងរកវិធីជួយឱ្យអ្នកសម្រាកបានប្រសើរជាងមុន។</div>
+        <div class="msg-time">៩:០៤ ព្រឹក</div>
       </div>
     </div>
   </div>
@@ -78,7 +79,7 @@
   <form id="chatForm" class="chat-input-bar">
     <button type="button" class="btn-icon-circle chat-tool-btn" data-tool="Attachment"><i class="fa-solid fa-paperclip"></i></button>
     <button type="button" class="btn-icon-circle chat-tool-btn" data-tool="Camera"><i class="fa-solid fa-camera"></i></button>
-    <input type="text" id="chatInput" placeholder="Type your message..." autocomplete="off">
+    <input type="text" id="chatInput" placeholder="វាយបញ្ចូលសាររបស់អ្នក..." autocomplete="off">
     <button type="button" class="btn-icon-circle chat-tool-btn" data-tool="Emoji"><i class="fa-regular fa-face-smile"></i></button>
     <button type="submit" class="chat-send-btn ripple"><i class="fa-solid fa-paper-plane"></i></button>
   </form>
@@ -86,11 +87,11 @@
 
 <nav class="bottomnav">
   <div class="bn-items">
-    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>Home</a>
-    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>Learn</a>
+    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>ទំព័រដើម</a>
+    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>រៀន</a>
     <a href="consultation.html" class="bn-item active"><div class="fab-wrap"><i class="fa-solid fa-comment-medical"></i></div></a>
-    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>Games</a>
-    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>Profile</a>
+    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>ល្បែង</a>
+    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>ប្រវត្តិរូប</a>
   </div>
 </nav>
 

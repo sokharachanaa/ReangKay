@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="km">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>REANGKAY | Feedback</title>
+<title>REANGKAY | មតិកែលម្អ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -20,37 +20,38 @@
   <div class="container-app d-flex align-items-center justify-content-between w-100">
     <a href="index.html" class="brand"><span class="logo-dot">រ</span> REANGKAY</a>
     <nav class="d-none d-lg-flex gap-1">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="information.html" class="nav-link">Learn</a>
-      <a href="specialists.html" class="nav-link">Specialists</a>
-      <a href="games.html" class="nav-link">Games</a>
-      <a href="emergency.html" class="nav-link">Emergency</a>
+      <a href="index.html" class="nav-link">ទំព័រដើម</a>
+      <a href="information.html" class="nav-link">រៀន</a>
+      <a href="specialists.html" class="nav-link">អ្នកឯកទេស</a>
+      <a href="games.html" class="nav-link">ល្បែង</a>
+      <a href="emergency.html" class="nav-link">អាសន្ន</a>
+      <a href="feedback.html" class="nav-link">មតិ</a>
     </nav>
     <a href="profile.html"><img src="https://i.pravatar.cc/60?img=47" class="rounded-circle" width="40" height="40" alt="profile"></a>
   </div>
 </header>
 
 <main class="container-app py-4" style="max-width:760px;">
-  <h2 class="mb-1">We'd love your feedback</h2>
-  <p class="text-muted-r mb-4">Help us make REANGKAY better for everyone.</p>
+  <h2 class="mb-1">យើងចង់ស្តាប់មតិកែលម្អពីអ្នក</h2>
+  <p class="text-muted-r mb-4">ជួយយើងធ្វើឱ្យ REANGKAY កាន់តែប្រសើរឡើងសម្រាប់មនុស្សគ្រប់គ្នា។</p>
 
   <div class="card-r p-4 mb-4 fade-in">
     <div class="target-toggle mb-4" id="feedbackToggle">
-      <button type="button" class="active" data-target="app">Rate the App</button>
-      <button type="button" data-target="specialist">Rate a Specialist</button>
+      <button type="button" class="active" data-target="app">វាយតម្លៃកម្មវិធី</button>
+      <button type="button" data-target="specialist">វាយតម្លៃអ្នកឯកទេស</button>
     </div>
 
     <div id="specialistSelectWrap" class="mb-3" style="display:none;">
-      <label class="form-label small fw-semibold">Choose a specialist</label>
+      <label class="form-label small fw-semibold">ជ្រើសរើសអ្នកឯកទេស</label>
       <select class="form-select form-select-r">
-        <option>Dr. Sopheak Chan — Puberty & Adolescent Health</option>
-        <option>Dr. Chenda Vann — Mental Health Counselor</option>
-        <option>Dr. Rithy Sok — Nutrition Specialist</option>
-        <option>Dr. Malis Heng — Reproductive Health</option>
+        <option>លោកគ្រូពេទ្យ សុភាព ចាន់ — វ័យជំទង់ និងសុខភាពក្មេងជំទង់</option>
+        <option>លោកគ្រូពេទ្យ ចិន្តា វណ្ណ — ទីប្រឹក្សាសុខភាពផ្លូវចិត្ត</option>
+        <option>លោកគ្រូពេទ្យ រិទ្ធី សុខ — អ្នកឯកទេសអាហារូបត្ថម្ភ</option>
+        <option>លោកគ្រូពេទ្យ ម៉ាលីស ហេង — សុខភាពបន្តពូជ</option>
       </select>
     </div>
 
-    <p class="fw-semibold mb-2" id="ratingPromptText">How was your experience?</p>
+    <p class="fw-semibold mb-2" id="ratingPromptText">តើបទពិសោធន៍របស់អ្នកយ៉ាងណាដែរ?</p>
     <div class="star-rate-group mb-3" data-value="0">
       <i class="fa-solid fa-star star-rate" data-idx="0"></i>
       <i class="fa-solid fa-star star-rate" data-idx="1"></i>
@@ -58,52 +59,52 @@
       <i class="fa-solid fa-star star-rate" data-idx="3"></i>
       <i class="fa-solid fa-star star-rate" data-idx="4"></i>
     </div>
-    <form data-mock-submit="Thank you for your feedback! 💙">
+    <form data-mock-submit="សូមអរគុណសម្រាប់មតិកែលម្អរបស់អ្នក! 💙">
       <div class="mb-3">
-        <label class="form-label small fw-semibold">Your comments</label>
-        <textarea class="form-control form-control-r" rows="4" placeholder="Tell us what you liked or what could be improved..."></textarea>
+        <label class="form-label small fw-semibold">មតិយោបល់របស់អ្នក</label>
+        <textarea class="form-control form-control-r" rows="4" placeholder="ប្រាប់យើងអំពីអ្វីដែលអ្នកចូលចិត្ត ឬអ្វីដែលអាចធ្វើឱ្យប្រសើរឡើង..."></textarea>
       </div>
       <div class="form-check mb-3">
         <input class="form-check-input" type="checkbox" id="anonCheck" checked>
-        <label class="form-check-label small" for="anonCheck">Submit anonymously</label>
+        <label class="form-check-label small" for="anonCheck">ដាក់ស្នើដោយអនាមិក</label>
       </div>
-      <button type="submit" class="btn btn-primary-r btn-lg-touch w-100 ripple">Submit Feedback</button>
+      <button type="submit" class="btn btn-primary-r btn-lg-touch w-100 ripple">ដាក់ស្នើមតិកែលម្អ</button>
     </form>
   </div>
 
-  <h2 class="section-title mb-3">What others are saying</h2>
+  <h2 class="section-title mb-3">អ្វីដែលអ្នកដទៃកំពុងនិយាយ</h2>
   <div class="d-flex flex-column gap-3">
     <div class="card-r review-card reveal">
       <div class="d-flex justify-content-between mb-2">
-        <p class="fw-semibold mb-0"><i class="fa-solid fa-user-secret text-soft-r me-2"></i>Anonymous</p>
+        <p class="fw-semibold mb-0"><i class="fa-solid fa-user-secret text-soft-r me-2"></i>អនាមិក</p>
         <span class="text-orange" style="color:var(--orange-dark);">★★★★★</span>
       </div>
-      <p class="text-muted-r small mb-0">The consultation feature helped me talk about something I was too scared to bring up with my parents. Thank you.</p>
+      <p class="text-muted-r small mb-0">មុខងារពិគ្រោះយោបល់បានជួយខ្ញុំនិយាយអំពីរឿងមួយដែលខ្ញុំខ្លាចពេកក្នុងការលើកឡើងជាមួយឪពុកម្តាយ។ សូមអរគុណ។</p>
     </div>
     <div class="card-r review-card reveal">
       <div class="d-flex justify-content-between mb-2">
-        <p class="fw-semibold mb-0"><i class="fa-solid fa-user-secret text-soft-r me-2"></i>Anonymous</p>
+        <p class="fw-semibold mb-0"><i class="fa-solid fa-user-secret text-soft-r me-2"></i>អនាមិក</p>
         <span style="color:var(--orange-dark);">★★★★☆</span>
       </div>
-      <p class="text-muted-r small mb-0">Love the games and quizzes — learning about health feels fun instead of boring.</p>
+      <p class="text-muted-r small mb-0">ចូលចិត្តល្បែង និងសំណួរប្រកួតណាស់ — ការសិក្សាអំពីសុខភាពមានអារម្មណ៍សប្បាយជាងធុញទ្រាន់។</p>
     </div>
     <div class="card-r review-card reveal">
       <div class="d-flex justify-content-between mb-2">
-        <p class="fw-semibold mb-0"><i class="fa-solid fa-user-secret text-soft-r me-2"></i>Anonymous</p>
+        <p class="fw-semibold mb-0"><i class="fa-solid fa-user-secret text-soft-r me-2"></i>អនាមិក</p>
         <span style="color:var(--orange-dark);">★★★★★</span>
       </div>
-      <p class="text-muted-r small mb-0">Articles are easy to understand and not judgmental at all. Exactly what I needed.</p>
+      <p class="text-muted-r small mb-0">អត្ថបទងាយស្រួលយល់ និងគ្មានការវិនិច្ឆ័យទាល់តែសោះ។ ជាអ្វីដែលខ្ញុំត្រូវការពិតប្រាកដ។</p>
     </div>
   </div>
 </main>
 
 <nav class="bottomnav">
   <div class="bn-items">
-    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>Home</a>
-    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>Learn</a>
+    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>ទំព័រដើម</a>
+    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>រៀន</a>
     <a href="consultation.html" class="bn-item"><div class="fab-wrap"><i class="fa-solid fa-comment-medical"></i></div></a>
-    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>Games</a>
-    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>Profile</a>
+    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>ល្បែង</a>
+    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>ប្រវត្តិរូប</a>
   </div>
 </nav>
 
@@ -118,8 +119,8 @@ document.querySelectorAll('#feedbackToggle button').forEach(btn => {
     const isSpecialist = this.dataset.target === 'specialist';
     document.getElementById('specialistSelectWrap').style.display = isSpecialist ? '' : 'none';
     document.getElementById('ratingPromptText').textContent = isSpecialist
-      ? 'How was your consultation?'
-      : 'How was your experience?';
+      ? 'តើការពិគ្រោះយោបល់របស់អ្នកយ៉ាងណាដែរ?'
+      : 'តើបទពិសោធន៍របស់អ្នកយ៉ាងណាដែរ?';
   });
 });
 </script>
