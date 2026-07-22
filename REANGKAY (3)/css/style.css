@@ -85,8 +85,14 @@
     border-radius:24px; color:#fff; padding:30px 26px; margin:22px 0 26px;
   }
   .hero-motif{ position:absolute; inset:0; opacity:.16; }
-  .hero-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:16px; position:relative; z-index:1; }
-  .hero-greet{ font-size:.86rem; opacity:.85; margin:0 0 6px; }
+.hero-top {
+    display: flex;
+    justify-content: space-between; /* Pushes text left, ring right */
+    align-items: center;            /* Vertically centers them */
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+  }  .hero-greet{ font-size:.86rem; opacity:.85; margin:0 0 6px; }
   .hero-name{ font-size:1.6rem; margin:0 0 12px; font-weight:700; }
   .streak-row{ display:flex; align-items:center; gap:6px; }
   .streak-dots{ display:flex; gap:4px; }
@@ -106,6 +112,41 @@
 /* ==========================================================================
    TOP NAVIGATION (Desktop)
    ========================================================================== */
+@media (max-width:768px){
+
+.explore-content{
+    flex-direction:column;
+    text-align:center;
+}
+
+.explore-image img{
+    width:200px;
+}
+
+}
+.explore-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.explore-text{
+    flex:1;
+}
+
+.explore-image{
+    flex: 1;
+    display: flex;
+    justify-content: flex-start; /* Move image to the left */
+    align-items: center;
+}
+
+.explore-image img{
+    width: 150px;
+    height: auto;
+    margin-left: -10px;
+}
 .topnav{
   height:var(--nav-h);
   background:var(--card);
@@ -607,7 +648,7 @@
 /* Button */
 
 .hospital-card .btn-primary-r{
-    border-radius:12px;
+    border-radius:20px;
     padding:12px;
 }
 
@@ -805,3 +846,4 @@
     border-color:#3B82F6;
     color:#fff !important;
 }
+

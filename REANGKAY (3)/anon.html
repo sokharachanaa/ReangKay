@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REANGKAY | អត្ថបទ</title>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/anon.css">
+</head>
+<body class="private-space-page">
+
+<!-- ==========================================================================
+     TOP NAV (reuses existing topnav pattern)
+     ========================================================================== -->
+<header class="topnav">
+  <div class="container-app d-flex align-items-center justify-content-between w-100">
+    <a href="index.html" class="brand"><span class="logo-dot">រ</span> REANGKAY</a>
+    <nav class="d-none d-lg-flex gap-1">
+      <a href="index.html" class="nav-link">ទំព័រដើម</a>
+      <a href="information.html" class="nav-link">រៀន</a>
+      <a href="specialists.html" class="nav-link">អ្នកឯកទេស</a>
+      <a href="games.html" class="nav-link">ល្បែង</a>
+      <a href="emergency.html" class="nav-link">អាសន្ន</a>
+      <!-- <a href="feedback.html" class="nav-link">មតិ</a> -->
+      <a href="anon.html" class="nav-link">ប្រអប់ចម្ងល់</a>
+    </nav>
+    <a href="profile.html"><img src="https://i.pravatar.cc/60?img=47" class="rounded-circle" width="40" height="40" alt="profile"></a>
+  </div>
+</header>
+
+<main class="container-app ps-wrap">
+
+  <!-- ==========================================================================
+       1. HERO SECTION
+       ========================================================================== -->
+  <section class="ps-hero card-r card-r-lg fade-up">
+    <div class="ps-hero-glow"></div>
+    <div class="ps-hero-inner">
+      <div class="ps-lock-illustration">
+        <div class="lock-ring">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <span class="lock-spark s1"></span>
+        <span class="lock-spark s2"></span>
+        <span class="lock-spark s3"></span>
+      </div>
+      <h1 class="ps-hero-title">កន្លែងឯកជន</h1>
+      <p class="ps-hero-sub">
+        កន្លែងស្ងប់ស្ងាត់មួយ សម្រាប់សួរអ្វីៗដែលអ្នកខ្មាស់អៀនពេកមិនអាចនិយាយចេញមាត់បាន។
+សំណួររបស់អ្នកនឹងនៅឯកជន មានតែអ្នកជំនាញដែលបានផ្ទៀងផ្ទាត់ប៉ុណ្ណោះអាចអានបាន។
+ការឆ្លើយតបគ្រប់មួយនឹងត្រឡប់មកវិញដោយអនាមិក — សម្រាប់អ្នកតែម្នាក់។
+      </p>
+      <div class="ps-trust-row">
+        <span class="ps-trust-pill"><i class="fa-solid fa-user-secret"></i> អនាមិក</span>
+        <span class="ps-trust-pill"><i class="fa-solid fa-shield-halved"></i>រក្សាទុកយ៉ាងសម្ងាត់</span>
+        <span class="ps-trust-pill"><i class="fa-solid fa-user-doctor"></i> ត្រូវបានឆ្លើយតបដោយអ្នកជំនាញ</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FORM START
+       ========================================================================== -->
+  <form id="concernForm" novalidate>
+
+    <!-- ========================================================
+         2. GENDER SELECTION
+         ======================================================== -->
+    <section class="ps-section fade-up" style="--d:.05s">
+      <h2 class="section-title mb-1">អ្នកណាសួរ?</h2>
+      <p class="text-muted-r ps-section-sub">វាជួយយើងបន្តិចក្នុងការធ្វើឱ្យសំឡេងឆ្លើយតបទន់ភ្លន់។ វាមិនត្រូវបានបង្ហាញឲ្យនរណាម្នាក់ឮឡើយ។</p>
+
+      <div class="row g-3">
+        <div class="col-6">
+          <input type="radio" name="gender" id="genderBoy" value="boy" class="gender-input">
+          <label for="genderBoy" class="gender-card card-r g-boy">
+            <span class="gender-icon"><i class="fa-solid fa-person"></i></span>
+            <span class="gender-title">ប្រុស</span>
+            <span class="gender-check"><i class="fa-solid fa-circle-check"></i></span>
+          </label>
+        </div>
+        <div class="col-6">
+          <input type="radio" name="gender" id="genderGirl" value="girl" class="gender-input">
+          <label for="genderGirl" class="gender-card card-r g-girl">
+            <span class="gender-icon"><i class="fa-solid fa-person-dress"></i></span>
+            <span class="gender-title">ស្រី</span>
+            <span class="gender-check"><i class="fa-solid fa-circle-check"></i></span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         3. CONCERN CATEGORY
+         ======================================================== -->
+    <section class="ps-section fade-up" style="--d:.1s">
+      <h2 class="section-title mb-1">អំពីអ្វីនេះ?</h2>
+      <p class="text-muted-r ps-section-sub">ជ្រើសរើសប្រធានបទដែលសមស្របបំផុត</p>
+
+      <div class="row g-3" id="categoryGrid">
+        <div class="col-6 col-md-4">
+          <input type="radio" name="category" id="catMental" value="Mental Health" class="cat-input">
+          <label for="catMental" class="cat-card card-r">
+            <span class="cat-emoji">🧠</span>
+            <span class="cat-title">សុខភាពផ្លូវចិត្ត </span>
+            <span class="cat-desc">ស្ត្រេស ការព្រួយបារម្ភ អារម្មណ៍</span>
+          </label>
+        </div>
+        <div class="col-6 col-md-4">
+          <input type="radio" name="category" id="catRelationships" value="Relationships" class="cat-input">
+          <label for="catRelationships" class="cat-card card-r">
+            <span class="cat-emoji">❤️</span>
+            <span class="cat-title">ទំនាក់ទំនង</span>
+            <span class="cat-desc">មិត្តភក្តិ ការចូលចិត្ត អ្នកក្នុងគ្រួសារ</span>
+          </label>
+        </div>
+        <div class="col-6 col-md-4">
+          <input type="radio" name="category" id="catNutrition" value="Nutrition" class="cat-input">
+          <label for="catNutrition" class="cat-card card-r">
+            <span class="cat-emoji">🍎</span>
+            <span class="cat-title">អាហារូបត្ថម្ភ</span>
+            <span class="cat-desc">ទម្លាប់បរិភោគ អាហារូបត្ថម្ភ</span>
+          </label>
+        </div>
+        <div class="col-6 col-md-4">
+          <input type="radio" name="category" id="catBody" value="Body Changes" class="cat-input">
+          <label for="catBody" class="cat-card card-r">
+            <span class="cat-emoji">🩺</span>
+            <span class="cat-title">ការផ្លាស់ប្តូររាងកាយ</span>
+            <span class="cat-desc">ការលូតលាស់ ការចូលវ័យជំទង់</span>
+          </label>
+        </div>
+        <div class="col-6 col-md-4">
+          <input type="radio" name="category" id="catReproductive" value="Reproductive Health" class="cat-input">
+          <label for="catReproductive" class="cat-card card-r">
+            <span class="cat-emoji">🌸</span>
+            <span class="cat-title">សុខភាពបន្តពូជ</span>
+            <span class="cat-desc">រដូវ ប្រធានបទឯកជន</span>
+          </label>
+        </div>
+        <div class="col-6 col-md-4">
+          <input type="radio" name="category" id="catSleep" value="Sleep" class="cat-input">
+          <label for="catSleep" class="cat-card card-r">
+            <span class="cat-emoji">😴</span>
+            <span class="cat-title">ការគេង</span>
+            <span class="cat-desc">ការសម្រាក ការធុញនឿយ</span>
+          </label>
+        </div>
+        <div class="col-6 col-md-4">
+          <input type="radio" name="category" id="catExercise" value="Exercise" class="cat-input">
+          <label for="catExercise" class="cat-card card-r">
+            <span class="cat-emoji">🏃</span>
+            <span class="cat-title">ការធ្វើលំហាត់ប្រាណ</span>
+            <span class="cat-desc">សមរម្យភាព ថាមពល</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+<!-- ========================================================
+     4. URGENCY
+     ======================================================== -->
+<section class="ps-section fade-up" style="--d:.15s">
+
+  <h2 class="section-title mb-1">
+    តើកង្វល់របស់អ្នកមានកម្រិតណា?
+  </h2>
+
+  <p class="text-muted-r ps-section-sub">
+    កុំបារម្ភ! មិនមានចម្លើយត្រូវ ឬខុសទេ។ វាគ្រាន់តែជួយឱ្យអ្នកជំនាញយល់ពីតម្រូវការរបស់អ្នកបានកាន់តែប្រសើរ។
+  </p>
+
+  <div class="row g-3">
+
+    <!-- Low -->
+    <div class="col-12 col-md-4">
+
+      <input
+        type="radio"
+        name="urgency"
+        id="urgLow"
+        value="ចង់ដឹងបន្ថែម"
+        class="urg-input">
+
+      <label for="urgLow" class="urg-card card-r urg-green">
+
+        <span class="urg-dot"></span>
+
+        <span class="urg-title">
+          🟢 ចង់ដឹងបន្ថែម
+        </span>
+
+        <span class="urg-sub">
+          គ្រាន់តែចង់សួរ ឬចង់ដឹងបន្ថែម
+        </span>
+
+      </label>
+
+    </div>
+
+    <!-- Medium -->
+    <div class="col-12 col-md-4">
+
+      <input
+        type="radio"
+        name="urgency"
+        id="urgMed"
+        value="ត្រូវការការណែនាំ"
+        class="urg-input">
+
+      <label for="urgMed" class="urg-card card-r urg-orange">
+
+        <span class="urg-dot"></span>
+
+        <span class="urg-title">
+          🟡 ត្រូវការការណែនាំ
+        </span>
+
+        <span class="urg-sub">
+          ខ្ញុំចង់ទទួលបានដំបូន្មានពីអ្នកជំនាញ
+        </span>
+
+      </label>
+
+    </div>
+
+    <!-- High -->
+    <div class="col-12 col-md-4">
+
+      <input
+        type="radio"
+        name="urgency"
+        id="urgHigh"
+        value="ត្រូវការជំនួយឆាប់ៗ"
+        class="urg-input">
+
+      <label for="urgHigh" class="urg-card card-r urg-red">
+
+        <span class="urg-dot"></span>
+
+        <span class="urg-title">
+          🔴 ត្រូវការជំនួយឆាប់ៗ
+        </span>
+
+        <span class="urg-sub">
+          កង្វល់នេះកំពុងប៉ះពាល់ដល់ខ្ញុំ ហើយខ្ញុំចង់ទទួលបានជំនួយឆាប់ៗ
+        </span>
+
+      </label>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ========================================================
+     5. QUESTION BOX
+     ======================================================== -->
+<section class="ps-section fade-up" style="--d:.2s">
+  <div class="card-r card-r-lg ps-question-card">
+    <div class="floating-field">
+      <textarea
+        id="concernText"
+        class="form-control-r ps-textarea"
+        placeholder="សរសេរសំណួរ ឬកង្វល់របស់អ្នកនៅទីនេះ... ឧទាហរណ៍៖ 'តើវាជារឿងធម្មតាទេ ដែលខ្ញុំមានអារម្មណ៍ភ័យខ្លាំងមុនពេលប្រឡង?'"
+        maxlength="600"
+        rows="1"></textarea>
+      <label for="concernText" class="floating-label">សំណួរ ឬកង្វល់របស់អ្នក</label>
+    </div>
+
+    <div class="ps-char-row">
+      <span class="ps-hint">
+        <i class="fa-solid fa-circle-info"></i>
+        អ្នកអាចរៀបរាប់លម្អិតបានតាមដែលអ្នកមានអារម្មណ៍ស្រួល
+      </span>
+
+      <span class="ps-char-count">
+        <span id="charCount">0</span>/600
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     6. PRIVACY INFORMATION
+     ======================================================== -->
+<section class="ps-section fade-up" style="--d:.25s">
+  <div class="card-r card-r-lg ps-privacy-card">
+
+    <div class="ps-privacy-head">
+      <span class="ps-privacy-icon">
+        <i class="fa-solid fa-shield-heart"></i>
+      </span>
+
+      <div>
+        <h3 class="ps-privacy-title">
+          ឯកជនភាពរបស់អ្នក ត្រូវបានការពារ
+        </h3>
+
+        <p class="ps-privacy-sub">
+          នេះជាវិធីដែល REANGKAY ការពារព័ត៌មានរបស់អ្នក
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-3 ps-privacy-grid">
+
+      <div class="col-6 col-md-3">
+        <div class="ps-privacy-item">
+          <i class="fa-solid fa-user-secret"></i>
+
+          <span>អនាមិក</span>
+
+          <small>
+            ឈ្មោះ ឬអត្តសញ្ញាណរបស់អ្នកមិនត្រូវបានបង្ហាញឡើយ
+          </small>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="ps-privacy-item">
+          <i class="fa-solid fa-lock"></i>
+
+          <span>ការពារដោយសុវត្ថិភាព</span>
+
+          <small>
+            ព័ត៌មានរបស់អ្នកត្រូវបានរក្សាទុកយ៉ាងមានសុវត្ថិភាព
+          </small>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="ps-privacy-item">
+          <i class="fa-solid fa-user-doctor"></i>
+
+          <span>អ្នកជំនាញដែលបានផ្ទៀងផ្ទាត់</span>
+
+          <small>
+            មានតែអ្នកជំនាញដែលបានផ្ទៀងផ្ទាត់ប៉ុណ្ណោះដែលអាចឆ្លើយតប
+          </small>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="ps-privacy-item">
+          <i class="fa-solid fa-eye-slash"></i>
+
+          <span>លាក់អត្តសញ្ញាណ</span>
+
+          <small>
+            សូម្បីតែអ្នកជំនាញក៏មិនអាចដឹងថាអ្នកជានរណាដែរ
+          </small>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+   <!-- ========================================================
+     7. SUBMIT BUTTON
+     ======================================================== -->
+<section class="ps-section fade-up" style="--d:.3s">
+
+  <button type="submit" id="submitBtn"
+    class="btn-r btn-primary-r btn-lg-touch w-100 ripple ps-submit-btn">
+
+    <span class="btn-state btn-state-idle">
+      <i class="fa-solid fa-paper-plane"></i>
+      ផ្ញើសំណួររបស់ខ្ញុំដោយអនាមិក
+    </span>
+
+    <span class="btn-state btn-state-loading d-none">
+      <span class="ps-spinner"></span>
+      កំពុងផ្ញើដោយសុវត្ថិភាព...
+    </span>
+
+    <span class="btn-state btn-state-success d-none">
+      <i class="fa-solid fa-circle-check"></i>
+      បានផ្ញើដោយជោគជ័យ!
+    </span>
+
+  </button>
+
+  <p class="ps-submit-note text-muted-r">
+    <i class="fa-solid fa-lock"></i>
+    សំណួររបស់អ្នកនឹងត្រូវបានផ្ញើដោយអនាមិក ហើយគ្មាននរណាម្នាក់អាចដឹងថាវាជារបស់អ្នកឡើយ។
+  </p>
+
+</section>
+
+</form>
+
+<!-- ==========================================================================
+     8. MY ANONYMOUS QUESTIONS
+     ========================================================================== -->
+<section class="ps-section fade-up" style="--d:.35s">
+
+  <div class="d-flex align-items-center justify-content-between mb-2">
+
+    <h2 class="section-title mb-0">
+      សំណួររបស់ខ្ញុំ
+    </h2>
+
+    <span class="see-all" id="questionCountLabel">
+      ៣ សំណួរ
+    </span>
+
+  </div>
+
+  <div id="questionsTimeline" class="ps-timeline">
+
+    <!-- ================= Replied ================= -->
+
+    <div class="card-r ps-q-card" data-status="replied">
+
+      <div class="ps-q-top">
+
+        <span class="badge-r badge-green">
+          <i class="fa-solid fa-circle-check"></i>
+          បានឆ្លើយតប
+        </span>
+
+        <span class="ps-q-date">
+          ១៨ កក្កដា ២០២៦
+        </span>
+
+      </div>
+
+      <div class="ps-q-tags">
+
+        <span class="badge-r badge-primary">
+          🧠 សុខភាពផ្លូវចិត្ត
+        </span>
+
+        <span class="badge-r badge-orange">
+          🟡 ត្រូវការការណែនាំ
+        </span>
+
+      </div>
+
+      <p class="ps-q-preview">
+        "តើវាជារឿងធម្មតាទេ ដែលខ្ញុំមានអារម្មណ៍ភ័យខ្លាំងមុនពេលប្រឡង ទោះបីខ្ញុំបានត្រៀមខ្លួនរួចហើយ?"
+      </p>
+
+      <!-- ========================================================
+           9. EXPERT REPLY
+           ======================================================== -->
+
+      <div class="ps-reply-wrap">
+
+        <div class="ps-reply-header">
+
+          <div class="ps-doc-avatar">
+            <i class="fa-solid fa-user-doctor"></i>
+          </div>
+
+          <div class="ps-reply-meta">
+
+            <span class="ps-doc-name">
+              អ្នកជំនាញផ្នែកសុខភាព
+              <i class="fa-solid fa-badge-check ps-verified"></i>
+            </span>
+
+            <span class="ps-reply-time">
+              បានឆ្លើយតប ២ ថ្ងៃមុន
+            </span>
+
+          </div>
+
+        </div>
+
+        <div class="ps-reply-bubble">
+
+          អារម្មណ៍ភ័យមុនពេលប្រឡងគឺជារឿងធម្មតា ហើយកើតឡើងចំពោះសិស្សជាច្រើន។
+          សូមសាកល្បងដកដង្ហើមជ្រៅៗ បន្ធូរអារម្មណ៍ និងជឿជាក់លើការត្រៀមខ្លួនរបស់អ្នក។
+          ប្រសិនបើអារម្មណ៍នេះបន្តប៉ះពាល់ដល់ការគេង ឬជីវិតប្រចាំថ្ងៃ សូមបន្តពិគ្រោះជាមួយអ្នកជំនាញ។ 💙
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ================= Reviewing ================= -->
+
+    <div class="card-r ps-q-card" data-status="reviewing">
+
+      <div class="ps-q-top">
+
+        <span class="badge-r badge-primary">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          កំពុងពិនិត្យ
+        </span>
+
+        <span class="ps-q-date">
+          ២០ កក្កដា ២០២៦
+        </span>
+
+      </div>
+
+      <div class="ps-q-tags">
+
+        <span class="badge-r badge-primary">
+          🌸 សុខភាពបន្តពូជ
+        </span>
+
+        <span class="badge-r badge-orange">
+          🟡 ត្រូវការការណែនាំ
+        </span>
+
+      </div>
+
+      <p class="ps-q-preview">
+        "រយៈពេលពីរខែចុងក្រោយនេះ វដ្តរដូវរបស់ខ្ញុំមិនទៀងទាត់ទេ។ តើខ្ញុំគួរព្រួយបារម្ភទេ?"
+      </p>
+
+    </div>
+
+    <!-- ================= Waiting ================= -->
+
+    <div class="card-r ps-q-card" data-status="waiting">
+
+      <div class="ps-q-top">
+
+        <span class="badge-r badge-orange">
+          <i class="fa-solid fa-hourglass-half"></i>
+          កំពុងរង់ចាំ
+        </span>
+
+        <span class="ps-q-date">
+          ២១ កក្កដា ២០២៦
+        </span>
+
+      </div>
+
+      <div class="ps-q-tags">
+
+        <span class="badge-r badge-primary">
+          😴 ការគេង
+        </span>
+
+        <span class="badge-r badge-green">
+          🟢 ចង់ដឹងបន្ថែម
+        </span>
+
+      </div>
+
+      <p class="ps-q-preview">
+        "ខ្ញុំតែងតែភ្ញាក់នៅម៉ោង ៣ ព្រឹក ហើយពិបាកគេងវិញ។ តើនេះជាទម្លាប់មិនល្អមែនទេ?"
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- ========================================================
+       10. EMPTY STATE
+       ======================================================== -->
+
+  <div id="emptyState" class="ps-empty-state d-none">
+
+    <div class="ps-empty-illustration">
+      <i class="fa-regular fa-comment-dots"></i>
+    </div>
+
+    <h3>
+      អ្នកមិនទាន់បានផ្ញើសំណួរណាមួយនៅឡើយទេ
+    </h3>
+
+    <p class="text-muted-r">
+      ប្រសិនបើអ្នកមានកង្វល់ ឬសំណួរណាមួយ អ្នកអាចសួរបានគ្រប់ពេល។
+      REANGKAY នឹងរក្សាអត្តសញ្ញាណរបស់អ្នកជាអនាមិកជានិច្ច។
+    </p>
+
+  </div>
+
+</section>
+
+
+
+</main>
+
+<!-- ==========================================================================
+     BOTTOM NAV (mobile, reuses existing pattern)
+     ========================================================================== -->
+<nav class="bottomnav">
+  <div class="bn-items">
+    <a href="home.html" class="bn-item"><i class="fa-solid fa-house"></i>Home</a>
+    <a href="articles.html" class="bn-item"><i class="fa-solid fa-book-open"></i>Learn</a>
+    <a href="consultation.html" class="bn-item active"><i class="fa-solid fa-lock"></i>Private</a>
+    <a href="specialists.html" class="bn-item"><i class="fa-solid fa-user-doctor"></i>Experts</a>
+    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>Profile</a>
+  </div>
+</nav>
+
+<!-- Toast -->
+<div id="toast" class="toast-r"><i class="fa-solid fa-circle-check"></i><span id="toastMsg">Sent!</span></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/chat.js"></script>
+<script src="js/anon.js"></script>
+</body>
+</html>

@@ -23,7 +23,8 @@
       <a href="specialists.html" class="nav-link">អ្នកឯកទេស</a>
       <a href="games.html" class="nav-link">ល្បែង</a>
       <a href="emergency.html" class="nav-link">អាសន្ន</a>
-      <a href="feedback.html" class="nav-link">មតិ</a>
+      <a href="anon.html" class="nav-link">ប្រអប់ចម្ងល់</a>
+      <!-- <a href="feedback.html" class="nav-link">មតិ</a> -->
     </nav>
     <a href="profile.html"><img src="https://i.pravatar.cc/60?img=47" class="rounded-circle" width="40" height="40" alt="profile"></a>
   </div>
@@ -31,53 +32,27 @@
 
 <style>
   :root{
-  --primary:#4F8DD8;
-  --primary-light:#6FAFEA;
-  --primary-dark:#2F6CB5;
-  --female:#FBC5D8;
-  --female-dark:#E8749A;
-  --male:#CCE2FA;
-  --male-dark:#5FA3E0;
-  --bg:#ffffff;
-  --card:#FFFFFF;
- 
-  --green:#DDF3E4;
-  --green-dark:#3FA96A;
-  --orange:#FDEBD6;
-  --orange-dark:#E8912B;
-  --red:#FBDCDC;
-  --red-dark:#E15353;
- 
-  --text:#1B2A4A;
-  --text-muted:#6B7789;
-  --text-soft:#98A2B3;
-  --border:#EDEFF3;
- 
-  --radius:16px;
-  --radius-sm:10px;
-  --radius-lg:24px;
+  --primary:#4F8DD8; --primary-light:#6FAFEA; --primary-dark:#2F6CB5;
+  --female:#FBC5D8; --female-dark:#E8749A;
+  --male:#CCE2FA; --male-dark:#5FA3E0;
+  --bg:#ffffff; --card:#FFFFFF;
+  --green:#DDF3E4; --green-dark:#3FA96A;
+  --orange:#FDEBD6; --orange-dark:#E8912B;
+  --red:#FBDCDC; --red-dark:#E15353;
+  --text:#1B2A4A; --text-muted:#6B7789; --text-soft:#98A2B3; --border:#EDEFF3;
+  --radius:16px; --radius-sm:10px; --radius-lg:24px;
   --shadow-sm:0 2px 8px rgba(27,42,74,.06);
   --shadow-md:0 8px 24px rgba(27,42,74,.10);
   --shadow-lg:0 16px 40px rgba(27,42,74,.14);
- 
-  --nav-h:64px;
-  --bottomnav-h:72px;
+  --nav-h:64px; --bottomnav-h:72px;
 }
-  /* *{box-sizing:border-box;}
-  .container-app{ max-width:900px; margin:0 auto; padding:0 20px; }
-  section{ margin-bottom:30px; } */
   .sec-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px; }
   .sec-title{ font-size:1.15rem; font-weight:700; margin:0; }
   .sec-sub{ font-size:.82rem; color:var(--text-muted); margin:2px 0 0; }
- 
-  /* topnav (reused) */ */
-  /* .topnav{ position:sticky; top:0; z-index:40; background:rgba(245,246,241,.9); backdrop-filter:blur(10px); border-bottom:1px solid var(--border); padding:14px 0; }
-  .topnav .container-app{ display:flex; align-items:center; justify-content:space-between; max-width:900px; } */
   .brand{ display:flex; align-items:center; gap:8px; font-weight:700; font-size:1.05rem; color:var(--primary-dark); }
   .logo-dot{ width:34px; height:34px; border-radius:10px; background:var(--primary-dark); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; }
-  .back-btn{ width:40px; height:40px; border-radius:50%; border:1px solid var(--border); background:var(--card); display:none; align-items:center; justify-content:center; color:var(--primary-dark); cursor:pointer; }
-  .back-btn.show{ display:flex; }
- 
+  .back-btn{ width:40px; height:40px; border-radius:50%; border:1px solid var(--border); background:var(--card); display:flex; align-items:center; justify-content:center; color:var(--primary-dark); cursor:pointer; margin-bottom:10px; }
+
   /* ---- Explore Your Body ---- */
   .explore-card{ background:linear-gradient(160deg,var(--primary-dark),var(--primary) 85%); border-radius:24px; padding:24px; color:#fff; margin:20px 0 26px; position:relative; overflow:hidden; }
   .explore-card h2{ font-size:1.15rem; margin:0 0 2px; }
@@ -89,32 +64,15 @@
   .hotspot:hover circle.ring, .hotspot.active circle.ring{ fill:var(--orange-dark); stroke:var(--orange-dark); }
   .hotspot text{ font-size:11px; }
   .zone-label{ text-align:center; margin-top:12px; font-size:.85rem; min-height:20px; opacity:.9; }
- 
+
   /* ---- Category grid ---- */
   .cat-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
   .cat-card{ background:var(--card); border:1px solid var(--border); border-radius:16px; padding:50px 30px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:8px; transition:.2s; cursor:pointer; }
   .cat-card:hover, .cat-card.pulse{ transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:transparent; }
-  .cat-emoji {
-  font-size: 32px;
-}
-  .cat-card span{ font-size:.78rem; font-weight:600; line-height:1.3; }
+  .cat-emoji { font-size: 30px; }
+  .cat-card span{ font-size:0.99rem; font-weight:600; line-height:1.3; }
   @media (max-width:560px){ .cat-grid{ grid-template-columns:repeat(3,1fr); gap:8px; } .cat-card{ padding:12px 6px; } }
- 
-  /* ---- Myth cards ---- */
-  .myth-scroll{ display:flex; gap:14px; overflow-x:auto; padding-bottom:6px; scrollbar-width:none; }
-  .myth-scroll::-webkit-scrollbar{ display:none; }
-  .myth-card{ flex:0 0 240px; height:150px; perspective:1000px; cursor:pointer; }
-  .myth-inner{ position:relative; width:100%; height:100%; transition:transform .5s; transform-style:preserve-3d; }
-  .myth-card.flipped .myth-inner{ transform:rotateY(180deg); }
-  .myth-face{ position:absolute; inset:0; border-radius:16px; padding:16px; backface-visibility:hidden; display:flex; flex-direction:column; justify-content:center; box-shadow:var(--shadow-md); }
-  .myth-front{ background:var(--red); }
-  .myth-back{ background:var(--male); transform:rotateY(180deg); }
-  .myth-tag{ font-size:.68rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; margin-bottom:6px; }
-  .myth-front .myth-tag{ color:var(--red-dark); }
-  .myth-back .myth-tag{ color:var(--primary-dark); }
-  .myth-text{ font-size:.85rem; font-weight:600; line-height:1.5; }
-  .myth-hint{ font-size:.68rem; color:var(--text-soft); margin-top:10px; }
- 
+
   /* ---- Self check ---- */
   .check-card{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px 20px; box-shadow:var(--shadow-md); }
   .mood-row{ display:flex; gap:10px; margin-top:12px; }
@@ -124,108 +82,131 @@
   .mood-btn span{ font-size:.68rem; font-weight:600; }
   .mood-result{ margin-top:14px; padding:12px 14px; border-radius:12px; background:var(--male); font-size:.85rem; display:none; }
   .mood-result.show{ display:block; }
- 
-  /* ================= TOPIC VIEW ================= */
-  #topicView{ display:none; }
-  .topic-hero{ background:linear-gradient(160deg,var(--female-dark),#7364c4 85%); border-radius:24px; padding:26px; color:#fff; margin:20px 0 26px; }
+
+  /* ================= GROWING BODY TOPIC (gender toggle) ================= */
+  #topicView, #genericTopicView{ display:none; }
+  .topic-hero{ background:linear-gradient(160deg,var(--hero-a,var(--female-dark)),var(--hero-b,#7364c4) 85%); border-radius:24px; padding:26px; color:#fff; margin:20px 0 22px; }
   .topic-hero .eyebrow{ font-size:.78rem; opacity:.85; margin-bottom:4px; }
   .topic-hero h1{ font-size:1.4rem; margin:0; }
-  .story-card{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:22px 20px; box-shadow:var(--shadow-md); margin-bottom:18px; }
-  .story-num{ font-size:.7rem; font-weight:700; color:var(--female-dark); letter-spacing:.05em; text-transform:uppercase; margin-bottom:6px; }
-  .story-q{ font-size:1.05rem; font-weight:700; margin:0 0 14px; }
- 
-  .flow-row{ display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:14px; flex-wrap:wrap; }
-  .flow-step{ text-align:center; }
-  .flow-emoji{ font-size:1.6rem; display:block; }
-  .flow-step span{ font-size:.72rem; font-weight:600; color:var(--text-muted); }
-  .flow-arrow{ color:var(--text-soft); font-size:1.1rem; }
-  .story-explain{ font-size:.86rem; color:var(--text-muted); line-height:1.7; background:var(--bg); padding:12px 14px; border-radius:12px; }
- 
-  .ba-row{ display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:14px; }
-  .ba-box{ text-align:center; background:var(--bg); border-radius:14px; padding:14px 18px; }
-  .ba-box .emoji{ font-size:1.8rem; display:block; margin-bottom:4px; }
-  .ba-box span{ font-size:.72rem; font-weight:600; color:var(--text-muted); }
-  .ba-mid{ text-align:center; }
-  .ba-mid .emoji{ font-size:1.4rem; }
-  .ba-mid span{ display:block; font-size:.68rem; color:var(--text-soft); font-weight:600; }
- 
-  .timeline{ display:flex; flex-direction:column; gap:12px; margin-bottom:14px; }
-  .tl-row{ display:flex; gap:14px; align-items:flex-start; }
-  .tl-dot{ width:38px; height:38px; border-radius:50%; background:var(--female); color:var(--female-dark); display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
-  .tl-body .age{ font-size:.72rem; font-weight:700; color:var(--female-dark); }
-  .tl-body p{ margin:2px 0 0; font-size:.85rem; font-weight:600; }
- 
-  .normal-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-bottom:6px; }
-  .normal-card{ background:var(--bg); border-radius:14px; padding:12px 14px; }
-  .normal-card .head{ font-size:.85rem; font-weight:700; margin-bottom:6px; }
-  .normal-card ul{ margin:0; padding-left:16px; font-size:.78rem; color:var(--text-muted); line-height:1.6; }
- 
-  .action-list{ display:flex; flex-direction:column; gap:8px; }
-  .action-item{ display:flex; align-items:center; gap:10px; background:var(--bg); border-radius:12px; padding:10px 14px; font-size:.85rem; font-weight:600; }
-  .action-item .emo{ font-size:1.15rem; }
- 
-  /* quiz */
-  .quiz-card{ background:linear-gradient(160deg,var(--primary-dark),var(--primary) 85%); border-radius:var(--radius); padding:22px 20px; color:#fff; }
-  .quiz-q{ font-size:1rem; font-weight:700; margin:0 0 16px; }
-  .quiz-opt{ display:block; width:100%; text-align:left; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.25); color:#fff; border-radius:12px; padding:12px 14px; margin-bottom:10px; font-size:.88rem; cursor:pointer; transition:.15s; }
-  .quiz-opt:hover{ background:rgba(255,255,255,.18); }
-  .quiz-opt.correct{ background:var(--orange-dark); border-color:var(--orange-dark); color:var(--text); font-weight:700; }
-  .quiz-opt.wrong{ background:var(--red-dark); border-color:var(--red-dark); }
-  .quiz-feedback{ margin-top:12px; font-size:.85rem; display:none; background:rgba(255,255,255,.12); padding:12px 14px; border-radius:12px; }
-  .quiz-feedback.show{ display:block; }
-  .badge-win{ display:flex; align-items:center; gap:8px; margin-top:10px; font-size:.85rem; font-weight:700; color:var(--orange-dark); }
- 
+  .topic-hero p{ font-size:.85rem; margin:8px 0 0; opacity:.9; }
+
+  .gender-toggle{ display:flex; gap:10px; margin-bottom:22px; }
+  .gtab{ flex:1; border:none; border-radius:16px; padding:14px 10px; font-weight:700; font-size:.9rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; transition:.2s; opacity:.55; transform:scale(.98); }
+  .gtab .gicon{ font-size:1.2rem; }
+  .gtab.girl{ background:linear-gradient(160deg,var(--female-dark),#f19bb8); color:#fff; }
+  .gtab.boy{ background:linear-gradient(160deg,var(--male-dark),var(--primary)); color:#fff; }
+  .gtab.active{ opacity:1; transform:scale(1); box-shadow:var(--shadow-md); }
+
+  .gender-section{ display:none; }
+  .gender-section.active{ display:block; }
+  .gender-section.girl-theme .g-card{ background:#FFF6FA; border:1px solid #F7D6E4; }
+  .gender-section.girl-theme .g-num{ background:var(--female-dark); }
+  .gender-section.girl-theme .g-title{ color:var(--female-dark); }
+  .gender-section.girl-theme .g-chip{ background:var(--female); color:var(--female-dark); }
+  .gender-section.girl-theme .g-age-fill{ background:linear-gradient(90deg,var(--female-dark),#f4a9c4); }
+
+  .gender-section.boy-theme .g-card{ background:#F3F9FF; border:1px solid #CFE4FA; }
+  .gender-section.boy-theme .g-num{ background:var(--male-dark); }
+  .gender-section.boy-theme .g-title{ color:var(--primary-dark); }
+  .gender-section.boy-theme .g-chip{ background:var(--male); color:var(--primary-dark); }
+  .gender-section.boy-theme .g-age-fill{ background:linear-gradient(90deg,var(--male-dark),var(--primary-light)); }
+
+  .g-card{ border-radius:var(--radius); padding:20px 18px; box-shadow:var(--shadow-sm); margin-bottom:14px; }
+  .g-head{ display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+  .g-num{ width:30px; height:30px; border-radius:50%; color:#fff; font-weight:700; font-size:.85rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .g-title{ font-size:1rem; font-weight:700; margin:0; }
+  .g-en{ font-size:.72rem; color:var(--text-soft); font-weight:600; margin-left:auto; }
+  .g-body p{ font-size:.85rem; color:var(--text-muted); line-height:1.7; margin:0; }
+  .g-flow{ display:flex; align-items:center; justify-content:center; gap:10px; margin:10px 0 14px; flex-wrap:wrap; }
+  .g-flow-step{ text-align:center; }
+  .g-flow-step .em{ font-size:1.5rem; display:block; }
+  .g-flow-step span{ font-size:.7rem; font-weight:600; color:var(--text-muted); }
+  .g-flow-arrow{ color:var(--text-soft); }
+  .g-age-track{ height:8px; border-radius:6px; background:var(--border); position:relative; margin:10px 0 6px; }
+  .g-age-fill{ position:absolute; top:0; bottom:0; border-radius:6px; }
+  .g-age-labels{ display:flex; justify-content:space-between; font-size:.65rem; color:var(--text-soft); margin-bottom:10px; }
+  .g-chip{ display:inline-block; font-size:.78rem; font-weight:700; padding:6px 14px; border-radius:20px; }
+  .g-changes-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .g-change-item{ text-align:center; padding:0; border-radius:14px; }
+  .g-inner{ background:#fff; border-radius:14px; padding:12px 6px; }
+  .g-change-item .em{ font-size:1.4rem; display:block; margin-bottom:6px; }
+  .g-change-item span{ font-size:.68rem; font-weight:600; color:var(--text-muted); line-height:1.3; display:block; }
+  .g-do-list, .g-help-list{ display:flex; flex-direction:column; gap:8px; }
+  .g-do-item{ display:flex; align-items:center; gap:10px; border-radius:12px; padding:10px 12px; font-size:.83rem; font-weight:600; color:var(--text); }
+  .g-do-item .em{ font-size:1.1rem; }
+  .g-help-item{ display:flex; align-items:flex-start; gap:10px; border-radius:12px; padding:10px 12px; font-size:.82rem; color:var(--text); }
+  .g-help-item i{ margin-top:2px; }
+  .g-summary{ display:flex; flex-direction:column; gap:8px; padding-left:18px; margin:0; }
+  .g-summary li{ font-size:.83rem; color:var(--text); line-height:1.6; }
+
+  /* ================= GENERIC THEMED TOPIC (8 categories) ================= */
+  .t-card{ background:var(--t-bg); border:1px solid var(--t-border); border-radius:var(--radius); padding:20px 18px; box-shadow:var(--shadow-sm); margin-bottom:14px; }
+  .t-head{ display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+  .t-num{ width:30px; height:30px; border-radius:50%; background:var(--t-accent); color:#fff; font-weight:700; font-size:.85rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .t-title{ font-size:1rem; font-weight:700; margin:0; color:var(--t-accent); }
+  .t-en{ font-size:.72rem; color:var(--text-soft); font-weight:600; margin-left:auto; }
+  .t-body p{ font-size:.85rem; color:var(--text-muted); line-height:1.7; margin:0; }
+  .t-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .t-grid-item{ text-align:center; background:#fff; border-radius:14px; padding:12px 6px; }
+  .t-grid-item .em{ font-size:1.4rem; display:block; margin-bottom:6px; }
+  .t-grid-item span{ font-size:.68rem; font-weight:600; color:var(--text-muted); line-height:1.3; display:block; }
+  .t-list{ display:flex; flex-direction:column; gap:8px; }
+  .t-do-item{ display:flex; align-items:center; gap:10px; background:#fff; border-radius:12px; padding:10px 12px; font-size:.83rem; font-weight:600; color:var(--text); }
+  .t-do-item .em{ font-size:1.1rem; }
+  .t-help-item{ display:flex; align-items:flex-start; gap:10px; background:#fff; border-radius:12px; padding:10px 12px; font-size:.82rem; color:var(--text); }
+  .t-help-item i{ margin-top:2px; color:var(--t-accent); }
+  .t-summary{ display:flex; flex-direction:column; gap:8px; padding-left:18px; margin:0; }
+  .t-summary li{ font-size:.83rem; color:var(--text); line-height:1.6; }
+  .t-note{ margin-top:6px; font-size:.75rem; color:var(--text-soft); background:#fff; border-radius:10px; padding:8px 10px; }
+
+  .theme-nutrition{ --t-bg:#F2FBF4; --t-border:#CFEED9; --t-accent:#2E9E5B; }
+  .theme-strength{ --t-bg:#FFF7ED; --t-border:#FBE3C0; --t-accent:#D97C0B; }
+  .theme-emotions{ --t-bg:#F5F3FF; --t-border:#DCD6FA; --t-accent:#7364C4; }
+  .theme-privacy{ --t-bg:#FFF6FA; --t-border:#F7D6E4; --t-accent:#E8749A; }
+  .theme-protection{ --t-bg:#FFF2F2; --t-border:#F9CFCF; --t-accent:#D64545; }
+  .theme-communication{ --t-bg:#F3F9FF; --t-border:#CFE4FA; --t-accent:#2F6CB5; }
+  .theme-selfcare{ --t-bg:#F0FBF9; --t-border:#C9EEE6; --t-accent:#1B9C8B; }
+  .theme-childsafety{ --t-bg:#FFF4EC; --t-border:#FBD9BC; --t-accent:#D9731A; }
+
   .reveal{ animation:rise .45s ease both; }
   @keyframes rise{ from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;} }
+
+  .explore-content{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.explore-image{
+    flex:0 0 180px;
+    margin-left:-40px;
+}
+
+.explore-text{
+    flex:1;
+}
 </style>
-</head>
-<body>
- 
-<!-- <header class="topnav">
-  <div class="container-app">
-    <button class="back-btn" id="backBtn" onclick="showHome()"><i class="fa-solid fa-arrow-left"></i></button>
-    <a href="index.html" class="brand"><span class="logo-dot">រ</span> REANGKAY</a>
-    <div style="width:40px;"></div>
-  </div>
-</header> -->
- 
+
 <main class="container-app" style="padding-top:6px;">
- 
+
   <!-- ================= HOME (Learn) VIEW ================= -->
   <div id="homeView">
- 
-    <!-- Explore Your Body -->
+
     <section class="explore-card reveal">
-      <h2>Explore Your Body 🌱</h2>
-      <p>ចុចលើផ្នែកណាមួយនៃរាងកាយ ដើម្បីស្វែងយល់បន្ថែម</p>
-      <div class="body-wrap">
-        <svg class="body-svg" viewBox="0 0 120 220">
-          <ellipse cx="60" cy="24" rx="16" ry="18" fill="rgba(255,255,255,.35)"/>
-          <path d="M40 40 Q60 34 80 40 L86 130 Q60 140 34 130 Z" fill="rgba(255,255,255,.35)"/>
-          <path d="M40 130 L34 210 M80 130 L86 210" stroke="rgba(255,255,255,.35)" stroke-width="12" stroke-linecap="round"/>
- 
-          <g class="hotspot" data-zone="brain" onclick="selectZone('brain')">
-            <circle class="ring" cx="60" cy="20" r="16"></circle>
-            <text x="60" y="26" text-anchor="middle">🧠</text>
-          </g>
-          <g class="hotspot" data-zone="skin" onclick="selectZone('skin')">
-            <circle class="ring" cx="60" cy="58" r="15"></circle>
-            <text x="60" y="64" text-anchor="middle">🧴</text>
-          </g>
-          <g class="hotspot" data-zone="repro" onclick="selectZone('repro')">
-            <circle class="ring" cx="60" cy="100" r="15"></circle>
-            <text x="60" y="106" text-anchor="middle">🩷</text>
-          </g>
-          <g class="hotspot" data-zone="body" onclick="selectZone('body')">
-            <circle class="ring" cx="60" cy="170" r="16"></circle>
-            <text x="60" y="176" text-anchor="middle">💪</text>
-          </g>
-        </svg>
+      <div class="explore-content">
+
+          <div class="explore-text">
+              <h1>ស្វែងយល់ពីរាងកាយរបស់អ្នក</h2>
+              <p>ចុចលើផ្នែកណាមួយនៃរាងកាយ ដើម្បីស្វែងយល់បន្ថែម</p>
+          </div>
+
+          <div class="explore-image">
+              <img src="images/Mscot.png" alt="Mascot">
+          </div>
+
       </div>
-      <div class="zone-label" id="zoneLabel">ចុចលើសញ្ញាណណាមួយខាងលើ</div>
     </section>
- 
-    <!-- Categories -->
+
     <section>
       <div class="sec-head">
         <div>
@@ -234,88 +215,36 @@
         </div>
       </div>
       <div class="cat-grid">
-        <div class="cat-card" id="cat-repro" onclick="openTopic()">
+        <div class="cat-card" id="cat-repro" onclick="openTopic('growing')">
           <span class="cat-emoji">🌱</span><span>ការលូតលាស់រាងកាយ</span>
         </div>
-        <div class="cat-card" id="cat-body2">
+        <div class="cat-card" id="cat-body2" onclick="openTopic('nutrition')">
           <span class="cat-emoji">🍎</span><span>អាហារូបត្ថម្ភល្អ</span>
         </div>
-        <div class="cat-card" id="cat-body">
+        <div class="cat-card" id="cat-body" onclick="openTopic('strength')">
           <span class="cat-emoji">💪</span><span>កសាងកម្លាំង</span>
         </div>
-        <div class="cat-card" id="cat-brain">
+        <div class="cat-card" id="cat-brain" onclick="openTopic('emotions')">
           <span class="cat-emoji">🧠</span><span>យល់ដឹងអារម្មណ៍</span>
         </div>
-        <div class="cat-card" id="cat-repro2">
+        <div class="cat-card" id="cat-repro2" onclick="openTopic('privacy')">
           <span class="cat-emoji">🩷</span><span>សុខភាពឯកជន</span>
         </div>
-        <div class="cat-card">
+        <div class="cat-card" id="cat-protect" onclick="openTopic('protection')">
           <span class="cat-emoji">🛡️</span><span>ការពារខ្លួន</span>
         </div>
-        <div class="cat-card">
+        <div class="cat-card" id="cat-comm" onclick="openTopic('communication')">
           <span class="cat-emoji">💬</span><span>ទំនាក់ទំនងល្អ</span>
         </div>
-        <div class="cat-card" id="cat-skin">
+        <div class="cat-card" id="cat-skin" onclick="openTopic('selfcare')">
           <span class="cat-emoji">✨</span><span>ថែរក្សាខ្លួនឯង</span>
         </div>
-        <div class="cat-card">
+        <div class="cat-card" id="cat-childsafety" onclick="openTopic('childsafety')">
           <span class="cat-emoji">🔒</span><span>សុវត្ថិភាពកុមារ</span>
         </div>
       </div>
     </section>
- 
-    <!-- Myth vs Reality -->
-    <section>
-      <div class="sec-head">
-        <div>
-          <h2 class="sec-title">ជឿ ឬ មិនជឿ? 🔄</h2>
-          <p class="sec-sub">ចុចលើកាតដើម្បីមើលការពិត</p>
-        </div>
-      </div>
-      <div class="myth-scroll">
-        <div class="myth-card reveal" onclick="this.classList.toggle('flipped')">
-          <div class="myth-inner">
-            <div class="myth-face myth-front">
-              <div class="myth-tag">ការជឿ</div>
-              <div class="myth-text">ការញ៉ាំសូកូឡាធ្វើឱ្យមុនចេញជានិច្ច</div>
-              <div class="myth-hint">ចុចដើម្បីមើលការពិត →</div>
-            </div>
-            <div class="myth-face myth-back">
-              <div class="myth-tag">ការពិត</div>
-              <div class="myth-text">មុនកើតឡើងជាចម្បងដោយសារអរម៉ូន និងប្រេងលើស្បែក</div>
-            </div>
-          </div>
-        </div>
-        <div class="myth-card reveal" onclick="this.classList.toggle('flipped')">
-          <div class="myth-inner">
-            <div class="myth-face myth-front">
-              <div class="myth-tag">ការជឿ</div>
-              <div class="myth-text">ការមករដូវលើកដំបូងតែងតែមកទៀងទាត់</div>
-              <div class="myth-hint">ចុចដើម្បីមើលការពិត →</div>
-            </div>
-            <div class="myth-face myth-back">
-              <div class="myth-tag">ការពិត</div>
-              <div class="myth-text">ការមករដូវអាចមិនទៀងទាត់ក្នុងឆ្នាំដំបូងៗ ហើយនេះជារឿងធម្មតា</div>
-            </div>
-          </div>
-        </div>
-        <div class="myth-card reveal" onclick="this.classList.toggle('flipped')">
-          <div class="myth-inner">
-            <div class="myth-face myth-front">
-              <div class="myth-tag">ការជឿ</div>
-              <div class="myth-text">អារម្មណ៍ប្រែប្រួលមានន័យថាមានបញ្ហា</div>
-              <div class="myth-hint">ចុចដើម្បីមើលការពិត →</div>
-            </div>
-            <div class="myth-face myth-back">
-              <div class="myth-tag">ការពិត</div>
-              <div class="myth-text">អារម្មណ៍ប្រែប្រួលជាផលពីអរម៉ូន ជារឿងធម្មតាក្នុងវ័យជំទង់</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
- 
-    <!-- Quick self check -->
+    <br>
     <section>
       <div class="check-card">
         <div class="sec-title" style="font-size:1rem;">ថ្ងៃនេះអ្នកមានអារម្មណ៍យ៉ាងណា?</div>
@@ -328,119 +257,168 @@
         <div class="mood-result" id="moodResult"></div>
       </div>
     </section>
- 
+
   </div>
- 
-  <!-- ================= TOPIC VIEW (My Growing Body / Puberty) ================= -->
+
+  <!-- ================= TOPIC: GROWING BODY (gender toggle) ================= -->
   <div id="topicView">
- 
+    <button class="back-btn" onclick="showHome()"><i class="fa-solid fa-arrow-left"></i></button>
+
     <div class="topic-hero reveal">
       <div class="eyebrow">ការលូតលាស់រាងកាយ · My Growing Body</div>
       <h1>ការផ្លាស់ប្តូររាងកាយក្នុងវ័យជំទង់ 🌱</h1>
+      <p>ដឹងពីរាងកាយរបស់អ្នក ស្រឡាញ់ចិត្ត និងទុកចិត្តលើការតាំច្រៃ 💛</p>
     </div>
- 
-    <div class="story-card reveal">
-      <div class="story-num">ជំហានទី១</div>
-      <p class="story-q">តើកំពុងកើតឡើងអ្វី?</p>
-      <div class="flow-row">
-        <div class="flow-step"><span class="flow-emoji">🧠</span><span>ខួរក្បាល</span></div>
-        <span class="flow-arrow">→</span>
-        <div class="flow-step"><span class="flow-emoji">🔬</span><span>អរម៉ូន</span></div>
-        <span class="flow-arrow">→</span>
-        <div class="flow-step"><span class="flow-emoji">🌱</span><span>ការផ្លាស់ប្តូររាងកាយ</span></div>
+
+    <div class="gender-toggle reveal">
+      <button class="gtab girl active" id="tabGirl" onclick="switchGender('girl')"><span class="gicon">👧</span> ស្រី</button>
+      <button class="gtab boy" id="tabBoy" onclick="switchGender('boy')"><span class="gicon">👦</span> ប្រុស</button>
+    </div>
+
+    <div class="gender-section girl-theme active" id="sectionGirl">
+      <div class="g-card reveal">
+        <div class="g-head"><div class="g-num">1</div><p class="g-title">តើវាជាអ្វី?</p><span class="g-en">What is it?</span></div>
+        <div class="g-body"><p>ការលូតលាស់រាងកាយគឺជាដំណើរការធម្មជាតិដែលរាងកាយរបស់អ្នកជំទង់ស្រី ផ្លាស់ប្តូរពីរូបរាងកុមារទៅជារូបរាងវ័យជំទង់។ រួមមាន កម្ពស់ ទម្ងន់ ស្បែក សុដន់ និងការអភិវឌ្ឍផ្សេងៗទៀត។</p></div>
       </div>
-      <div class="story-explain">ក្នុងវ័យជំទង់ រាងកាយអ្នកផលិតអរម៉ូនដែលប្រាប់រាងកាយឱ្យលូតលាស់ និងអភិវឌ្ឍ។</div>
-    </div>
- 
-    <div class="story-card reveal">
-      <div class="story-num">ជំហានទី២</div>
-      <p class="story-q">ហេតុអ្វីបានជាវាកើតឡើង?</p>
-      <div class="ba-row">
-        <div class="ba-box"><span class="emoji">🌱</span><span>រាងកាយកុមារ</span></div>
-        <div class="ba-mid"><span class="emoji">🔬</span><span>ការផ្លាស់ប្តូរអរម៉ូន</span></div>
-        <div class="ba-box"><span class="emoji">🌸</span><span>រាងកាយវ័យជំទង់</span></div>
+      <div class="g-card reveal">
+        <div class="g-head"><div class="g-num">2</div><p class="g-title">ហេតុអ្វីបានជាវាកើតឡើង?</p><span class="g-en"></span></div>
+        <div class="g-flow">
+          <div class="g-flow-step"><span class="em">🧠</span><span>ខួរក្បាល</span></div><span class="g-flow-arrow">→</span>
+          <div class="g-flow-step"><span class="em">🔬</span><span>Hormones អរម៉ូន</span></div><span class="g-flow-arrow">→</span>
+          <div class="g-flow-step"><span class="em">🌸</span><span>ការផ្លាស់ប្តូររាងកាយ</span></div>
+        </div>
+        <div class="g-body"><p>នៅពេលចូលវ័យជំទង់ ខួរក្បាលបញ្ជូនសញ្ញាឲ្យរាងកាយចាប់ផ្តើមផលិតអរម៉ូន ដែលដឹកនាំរាងកាយឲ្យលូតលាស់ និងអភិវឌ្ឍតាមធម្មជាតិ។</p></div>
       </div>
-      <div class="story-explain">វាកើតឡើងព្រោះអរម៉ូនធ្វើឱ្យប្រព្រឹត្តទៅការលូតលាស់ និងការអភិវឌ្ឍតាមធម្មជាតិ។</div>
-    </div>
- 
-    <div class="story-card reveal">
-      <div class="story-num">ជំហានទី៣</div>
-      <p class="story-q">តើកើតឡើងនៅពេលណា?</p>
-      <div class="timeline">
-        <div class="tl-row">
-          <div class="tl-dot">🌱</div>
-          <div class="tl-body"><div class="age">អាយុ ៨–១៣ឆ្នាំ</div><p>ការផ្លាស់ប្តូរដំបូងចាប់ផ្តើម</p></div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-dot">🌸</div>
-          <div class="tl-body"><div class="age">អាយុ ១៣–១៦ឆ្នាំ</div><p>ការផ្លាស់ប្តូររាងកាយសំខាន់ៗ</p></div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-dot">✨</div>
-          <div class="tl-body"><div class="age">អាយុ ១៦–១៨ឆ្នាំ+</div><p>បន្តការអភិវឌ្ឍ</p></div>
+      <div class="g-card reveal">
+        <div class="g-head"><div class="g-num">3</div><p class="g-title">តើចាប់ផ្តើមនៅពេលណា?</p><span class="g-en"></span></div>
+        <div class="g-age-track"><div class="g-age-fill" style="left:0%; width:35%;"></div></div>
+        <div class="g-age-labels"><span>8</span><span>10</span><span>12</span><span>14</span><span>16+</span></div>
+        <p style="text-align:center; margin-bottom:10px;"><span class="g-chip">ភ្លេងស្រី៖ ៨ – ១៣ ឆ្នាំ</span></p>
+        <div class="g-body"><p>មនុស្សគ្រប់រូបលូតលាស់ខុសគ្នា។ អ្នកខ្លះចាប់ផ្តើមលឿន អ្នកខ្លះយឺត — ទាំងអស់សុទ្ធតែជារឿងធម្មតា។</p></div>
+      </div>
+      <div class="g-card reveal">
+        <div class="g-head"><div class="g-num">4</div><p class="g-title">ការផ្លាស់ប្តូរធម្មតានៅក្នុងស្រី</p><span class="g-en"></span></div>
+        <div class="g-changes-grid">
+          <div class="g-change-item"><div class="g-inner"><span class="em">👚</span><span>សុដន់ចាប់ផ្តើមលូតលាស់</span></div></div>
+          <div class="g-change-item"><div class="g-inner"><span class="em">🩸</span><span>ចាប់ផ្តើមមករដូវ</span></div></div>
+          <div class="g-change-item"><div class="g-inner"><span class="em">📏</span><span>កម្ពស់កើនឡើង</span></div></div>
+          <div class="g-change-item"><div class="g-inner"><span class="em">🦵</span><span>ដុះរោមក្លៀក/ជើង</span></div></div>
+          <div class="g-change-item"><div class="g-inner"><span class="em">🧴</span><span>អាចមានមុន</span></div></div>
+          <div class="g-change-item"><div class="g-inner"><span class="em">🩷</span><span>អារម្មណ៍ប្រែប្រួល</span></div></div>
         </div>
       </div>
-      <div class="story-explain">មនុស្សគ្រប់រូបលូតលាស់ខុសគ្នា។ អ្នកខ្លះផ្លាស់ប្តូរលឿន អ្នកខ្លះយឺត — ទាំងអស់សុទ្ធតែធម្មតា។</div>
-    </div>
- 
-    <div class="story-card reveal">
-      <div class="story-num">ជំហានទី៤</div>
-      <p class="story-q">តើការផ្លាស់ប្តូរអ្វីខ្លះជារឿងធម្មតា?</p>
-      <div class="normal-grid">
-        <div class="normal-card"><div class="head">🧴 ស្បែក</div><ul><li>ប្រេងលើស្បែកកើនឡើង</li><li>អាចមានមុន</li></ul></div>
-        <div class="normal-card"><div class="head">📏 កម្ពស់</div><ul><li>លូតលាស់លឿនជាងមុន</li></ul></div>
-        <div class="normal-card"><div class="head">💭 អារម្មណ៍</div><ul><li>អារម្មណ៍ប្រែប្រួល</li></ul></div>
-        <div class="normal-card"><div class="head">🩷 រាងកាយ</div><ul><li>ការអភិវឌ្ឍរាងកាយ</li></ul></div>
+      <div class="g-card reveal">
+        <div class="g-head"><div class="g-num">5</div><p class="g-title">អ្វីដែលគួរធ្វើ?</p><span class="g-en"></span></div>
+        <div class="g-do-list">
+          <div class="g-do-item" style="background:#FFF0F5;"><span class="em">💧</span> ផឹកទឹកឱ្យបានគ្រប់គ្រាន់</div>
+          <div class="g-do-item" style="background:#FFF0F5;"><span class="em">🥗</span> ញ៉ាំអាហារឱ្យមានតុល្យភាព</div>
+          <div class="g-do-item" style="background:#FFF0F5;"><span class="em">😴</span> គេងឱ្យបានគ្រប់គ្រាន់ (8–10 ម៉ោង)</div>
+          <div class="g-do-item" style="background:#FFF0F5;"><span class="em">🚿</span> ងូតទឹកជាប្រចាំ ថែរក្សាអនាម័យ</div>
+          <div class="g-do-item" style="background:#FFF0F5;"><span class="em">💬</span> និយាយជាមួយអ្នកដែលអ្នកទុកចិត្ត</div>
+        </div>
+      </div>
+      <div class="g-card reveal">
+        <div class="g-head"><div class="g-num">6</div><p class="g-title">ពេលណាគួរស្វែងរកជំនួយ?</p><span class="g-en"></span></div>
+        <div class="g-help-list">
+          <div class="g-help-item" style="background:#FFF0F5;"><i class="fa-solid fa-triangle-exclamation" style="color:var(--female-dark);"></i> ឈឺពោះខ្លាំង</div>
+          <div class="g-help-item" style="background:#FFF0F5;"><i class="fa-solid fa-triangle-exclamation" style="color:var(--female-dark);"></i> មករដូវមិនទៀងទាត់ (ក្រោយពេលមួយឆ្នាំមកហើយ)</div>
+          <div class="g-help-item" style="background:#FFF0F5;"><i class="fa-solid fa-circle-info" style="color:var(--female-dark);"></i> មានការព្រួយបារម្ភពីការលូតលាស់</div>
+          <div class="g-help-item" style="background:#FFF0F5;"><i class="fa-solid fa-heart-pulse" style="color:var(--female-dark);"></i> មានស្នាម ឬការឈឺចាប់ដែលមិនធម្មតា</div>
+        </div>
+      </div>
+      <div class="g-card reveal" style="background:linear-gradient(160deg,#FFE3EE,#FFF6FA);">
+        <div class="g-head"><div class="g-num">7</div><p class="g-title">ចំណាំសំខាន់</p><span class="g-en"></span></div>
+        <ul class="g-summary">
+          <li>💖 មនុស្សម្នាក់ៗលូតលាស់ខុសគ្នា និងទុសឆ្នាំគ្នា</li>
+          <li>🩷 ចាប់ផ្តើមមករដូវ ប្រកបដោយអារម្មណ៍ដែលធម្មតា</li>
+          <li>🤝 ប្រសិនបើមានចម្ងល់ សូមនិយាយជាមួយឪពុកម្តាយ ឬអ្នកជំនាញដែលអ្នកទុកចិត្ត</li>
+        </ul>
       </div>
     </div>
- 
-    <div class="story-card reveal">
-      <div class="story-num">ជំហានទី៥</div>
-      <p class="story-q">តើខ្ញុំគួរធ្វើអ្វី?</p>
-      <div class="action-list">
-        <div class="action-item"><span class="emo">💧</span> ផឹកទឹកឱ្យបានគ្រប់គ្រាន់</div>
-        <div class="action-item"><span class="emo">🥗</span> ញ៉ាំអាហារឱ្យមានតុល្យភាព</div>
-        <div class="action-item"><span class="emo">😴</span> គេងឱ្យបានគ្រប់គ្រាន់</div>
-        <div class="action-item"><span class="emo">🏃</span> ធ្វើលំហាត់ប្រាណជាប្រចាំ</div>
-        <div class="action-item"><span class="emo">💬</span> និយាយជាមួយអ្នកដែលអ្នកទុកចិត្ត</div>
+
+    <div class="gender-section boy-theme" id="sectionBoy">
+      <div class="g-card reveal">
+        <div class="g-head"><div class="g-num">1</div><p class="g-title">តើវាជាអ្វី?</p><span class="g-en">What is it?</span></div>
+        <div class="g-body"><p>ការលូតលាស់រាងកាយគឺជាដំណើរការធម្មជាតិដែលរាងកាយរបស់អ្នកជំទង់ប្រុស ផ្លាស់ប្តូរពីរូបរាងកុមារទៅជារូបរាងវ័យជំទង់។ រួមមាន កម្ពស់ សាច់ដុំ សំឡេង និងការអភិវឌ្ឍផ្សេងៗទៀត។</p></div>
+      </div>
+      <div class="g-card reveal">
+        <div class="g-head"><div class="g-num">2</div><p class="g-title">ហេតុអ្វីបានជាវាកើតឡើង?</p><span class="g-en"></span></div>
+        <div class="g-flow">
+          <div class="g-flow-step"><span class="em">🧠</span><span>ខួរក្បាល</span></div><span class="g-flow-arrow">→</span>
+          <div class="g-flow-step"><span class="em">🔬</span><span>Hormones អរម៉ូន</span></div><span class="g-flow-arrow">→</span>
+          <div class="g-flow-step"><span class="em">💪</span><span>ការផ្លាស់ប្តូររាងកាយ</span></div>
+        </div>
+        <div class="g-body"><p>នៅពេលចូលវ័យជំទង់ ខួរក្បាលបញ្ជូនសញ្ញាឲ្យរាងកាយចាប់ផ្តើមផលិតអរម៉ូន ដែលដឹកនាំរាងកាយឲ្យលូតលាស់ និងអភិវឌ្ឍតាមធម្មជាតិ។</p></div>
+      </div>
+      <div class="g-card reveal">
+        <div class="g-head"><div class="g-num">3</div><p class="g-title">តើចាប់ផ្តើមនៅពេលណា?</p><span class="g-en"></span></div>
+        <div class="g-age-track"><div class="g-age-fill" style="left:12%; width:38%;"></div></div>
+        <div class="g-age-labels"><span>9</span><span>11</span><span>13</span><span>15</span><span>16+</span></div>
+        <p style="text-align:center; margin-bottom:10px;"><span class="g-chip">ភ្លេងប្រុស៖ ៩ – ១៤ ឆ្នាំ</span></p>
+        <div class="g-body"><p>មនុស្សគ្រប់រូបលូតលាស់ខុសគ្នា។ អ្នកខ្លះចាប់ផ្តើមលឿន អ្នកខ្លះយឺត — ទាំងអស់សុទ្ធតែជារឿងធម្មតា។</p></div>
+      </div>
+      <div class="g-card reveal">
+        <div class="g-head"><div class="g-num">4</div><p class="g-title">ការផ្លាស់ប្តូរធម្មតានៅក្នុងប្រុស</p><span class="g-en"></span></div>
+        <div class="g-changes-grid">
+          <div class="g-change-item"><div class="g-inner"><span class="em">📏</span><span>កម្ពស់កើនឡើង</span></div></div>
+          <div class="g-change-item"><div class="g-inner"><span class="em">💪</span><span>សាច់ដុំរឹងមាំ</span></div></div>
+          <div class="g-change-item"><div class="g-inner"><span class="em">🔊</span><span>សំឡេងធ្ងន់ឡើង</span></div></div>
+          <div class="g-change-item"><div class="g-inner"><span class="em">🧔</span><span>ដុះពុកមាត់/រោម</span></div></div>
+          <div class="g-change-item"><div class="g-inner"><span class="em">🧴</span><span>អាចមានមុន</span></div></div>
+          <div class="g-change-item"><div class="g-inner"><span class="em">🌙</span><span>ការផ្លាស់ប្តូរពេលយប់ (ធម្មតា)</span></div></div>
+        </div>
+      </div>
+      <div class="g-card reveal">
+        <div class="g-head"><div class="g-num">5</div><p class="g-title">អ្វីដែលគួរធ្វើ?</p><span class="g-en"></span></div>
+        <div class="g-do-list">
+          <div class="g-do-item" style="background:#F0F7FF;"><span class="em">💧</span> ផឹកទឹកឱ្យបានគ្រប់គ្រាន់</div>
+          <div class="g-do-item" style="background:#F0F7FF;"><span class="em">🥗</span> ញ៉ាំអាហារឱ្យមានតុល្យភាព</div>
+          <div class="g-do-item" style="background:#F0F7FF;"><span class="em">😴</span> គេងឱ្យបានគ្រប់គ្រាន់ (8–10 ម៉ោង)</div>
+          <div class="g-do-item" style="background:#F0F7FF;"><span class="em">🏃</span> ធ្វើលំហាត់ប្រាណជាប្រចាំ</div>
+          <div class="g-do-item" style="background:#F0F7FF;"><span class="em">🚿</span> ងូតទឹកជាប្រចាំ ថែរក្សាអនាម័យ</div>
+        </div>
+      </div>
+      <div class="g-card reveal">
+        <div class="g-head"><div class="g-num">6</div><p class="g-title">ពេលណាគួរស្វែងរកជំនួយ?</p><span class="g-en"></span></div>
+        <div class="g-help-list">
+          <div class="g-help-item" style="background:#F0F7FF;"><i class="fa-solid fa-triangle-exclamation" style="color:var(--primary-dark);"></i> ឈឺពោះខ្លាំង</div>
+          <div class="g-help-item" style="background:#F0F7FF;"><i class="fa-solid fa-triangle-exclamation" style="color:var(--primary-dark);"></i> មានអារម្មណ៍ថប់ផ្លូវចិត្តមិនធម្មតា</div>
+          <div class="g-help-item" style="background:#F0F7FF;"><i class="fa-solid fa-circle-info" style="color:var(--primary-dark);"></i> មានការព្រួយបារម្ភពីការលូតលាស់</div>
+          <div class="g-help-item" style="background:#F0F7FF;"><i class="fa-solid fa-heart-pulse" style="color:var(--primary-dark);"></i> មានស្នាម ឬការឈឺចាប់ដែលមិនធម្មតា</div>
+        </div>
+      </div>
+      <div class="g-card reveal" style="background:linear-gradient(160deg,#DFF0FF,#F3F9FF);">
+        <div class="g-head"><div class="g-num">7</div><p class="g-title">ចំណាំសំខាន់</p><span class="g-en">Summary</span></div>
+        <ul class="g-summary">
+          <li>💙 មនុស្សម្នាក់ៗលូតលាស់ខុសគ្នា និងទុសឆ្នាំគ្នា</li>
+          <li>🔵 ការផ្លាស់ប្តូរសំឡេង និងសាច់ដុំ ជាផ្នែកនៃការវិវត្តធម្មតា</li>
+          <li>🤝 ប្រសិនបើមានចម្ងល់ សូមនិយាយជាមួយឪពុកម្តាយ ឬអ្នកជំនាញដែលអ្នកទុកចិត្ត</li>
+        </ul>
       </div>
     </div>
- 
-    <!-- Quiz -->
-    <div class="quiz-card reveal">
-      <div class="story-num" style="color:var(--orange-dark);">សាកល្បងចំណេះដឹង</div>
-      <p class="quiz-q">ហេតុអ្វីបានជាមុនកើតឡើងក្នុងវ័យជំទង់?</p>
-      <button class="quiz-opt" onclick="answerQuiz(this,false)">A. កខ្វក់តែប៉ុណ្ណោះ</button>
-      <button class="quiz-opt" onclick="answerQuiz(this,true)">B. ការផ្លាស់ប្តូរអរម៉ូន</button>
-      <button class="quiz-opt" onclick="answerQuiz(this,false)">C. ការផឹកទឹក</button>
-      <div class="quiz-feedback" id="quizFeedback"></div>
-    </div>
- 
   </div>
- 
-</main>
- 
+
+  <!-- ================= GENERIC THEMED TOPIC (8 categories, each with a gender toggle) ================= -->
+  <div id="genericTopicView">
+    <button class="back-btn" onclick="showHome()"><i class="fa-solid fa-arrow-left"></i></button>
+    <div class="topic-hero reveal" id="gtHero">
+      <div class="eyebrow" id="gtEyebrow"></div>
+      <h1 id="gtTitle"></h1>
+      <p id="gtIntro"></p>
+    </div>
+
+    <div class="gender-toggle reveal">
+      <button class="gtab girl active" id="gtTabGirl" onclick="switchGenericGender('girl')"><span class="gicon">👧</span> ស្រី</button>
+      <button class="gtab boy" id="gtTabBoy" onclick="switchGenericGender('boy')"><span class="gicon">👦</span> ប្រុស</button>
+    </div>
+
+    <div id="gtCards"></div>
+  </div>
+
+  </main>
+
 <script>
-  const zoneNames = {
-    brain: '🧠 ខួរក្បាល / អារម្មណ៍ — ស្ត្រេស, ការគេង, អារម្មណ៍',
-    skin: '🧴 ស្បែក — មុន, អរម៉ូន, អនាម័យ',
-    repro: '🩷 សុខភាពបន្តពូជ — វ័យជំទង់, ការមករដូវ',
-    body: '💪 រាងកាយ — ការលូតលាស់, លំហាត់ប្រាណ, អាហារូបត្ថម្ភ'
-  };
-  const zoneToCard = { brain:'cat-brain', skin:'cat-skin', repro:'cat-repro', body:'cat-body' };
- 
-  function selectZone(zone){
-    document.querySelectorAll('.hotspot').forEach(h=>h.classList.remove('active'));
-    document.querySelector(`.hotspot[data-zone="${zone}"]`).classList.add('active');
-    document.getElementById('zoneLabel').textContent = zoneNames[zone];
-    const card = document.getElementById(zoneToCard[zone]);
-    if(card){
-      card.scrollIntoView({behavior:'smooth', block:'center'});
-      card.classList.add('pulse');
-      setTimeout(()=>card.classList.remove('pulse'), 900);
-    }
-  }
- 
+  /* ---------- Home view interactions ---------- */
   function pickMood(el, mood){
     document.querySelectorAll('.mood-btn').forEach(b=>b.classList.remove('selected'));
     el.classList.add('selected');
@@ -448,41 +426,524 @@
       good: 'អស្ចារ្យ! សាកមើលអត្ថបទ "កសាងទំនុកចិត្តលើខ្លួនឯង" ថ្ងៃនេះ។',
       normal: 'ថ្ងៃធម្មតាក៏ល្អដែរ។ សាកអានគន្លឹះអំពី "អាហារូបត្ថម្ភល្អ"។',
       stressed: 'ការតានតឹងជារឿងធម្មតា។ សាកមើលប្រធានបទ "យល់ដឹងអារម្មណ៍" សម្រាប់វិធីសម្រាក។',
-      tired: 'ការគេងគឺសំខាន់ណាស់។ សាកអាន "ទម្លាប់គេងបានល្អ"។'
+      tired: 'ការគេងគឺសំខាន់ណាស់។ សាកអាន "ថែរក្សាខ្លួនឯង"។'
     };
     const r = document.getElementById('moodResult');
     r.textContent = msgs[mood];
     r.classList.add('show');
   }
- 
-  function openTopic(){
-    document.getElementById('homeView').style.display='none';
-    document.getElementById('topicView').style.display='block';
-    document.getElementById('backBtn').classList.add('show');
-    window.scrollTo({top:0, behavior:'smooth'});
-  }
+
+  /* ---------- Navigation ---------- */
   function showHome(){
     document.getElementById('topicView').style.display='none';
+    document.getElementById('genericTopicView').style.display='none';
     document.getElementById('homeView').style.display='block';
-    document.getElementById('backBtn').classList.remove('show');
     window.scrollTo({top:0, behavior:'smooth'});
   }
- 
-  function answerQuiz(el, isCorrect){
-    document.querySelectorAll('.quiz-opt').forEach(o=>o.disabled=true);
-    el.classList.add(isCorrect?'correct':'wrong');
-    if(!isCorrect){
-      document.querySelectorAll('.quiz-opt').forEach(o=>{
-        if(o.textContent.startsWith('B.')) o.classList.add('correct');
-      });
+  function switchGender(g){
+    document.getElementById('tabGirl').classList.toggle('active', g==='girl');
+    document.getElementById('tabBoy').classList.toggle('active', g==='boy');
+    document.getElementById('sectionGirl').classList.toggle('active', g==='girl');
+    document.getElementById('sectionBoy').classList.toggle('active', g==='boy');
+  }
+
+  /* ---------- Generic topic content (each category now has a girl & boy version) ---------- */
+  // Shared card sets reused by categories that don't need gender-specific wording
+  const EMOTIONS_CARDS = [
+    {type:'text', title:'តើអារម្មណ៍ជាអ្វី?', en:'What is it?', body:'អារម្មណ៍ជាការឆ្លើយតបធម្មជាតិរបស់រាងកាយ និងគំនិត ចំពោះហេតុការណ៍ជុំវិញខ្លួន។ អារម្មណ៍ទាំងអស់ សុទ្ធតែធម្មតា និងសំខាន់។'},
+    {type:'text', title:'ហេតុអ្វីវាប្រែប្រួល?', en:'Why does it change?', body:'ក្នុងវ័យជំទង់ អរម៉ូនប្រែប្រួលញឹកញាប់ ធ្វើឲ្យអារម្មណ៍ឡើងចុះលឿនជាងមុន — នេះជាផ្នែកមួយនៃការលូតលាស់ធម្មតា។'},
+    {type:'grid', title:'ប្រភេទអារម្មណ៍ទូទៅ', en:'Common emotions', items:[
+      {em:'😊', label:'រីករាយ'}, {em:'😢', label:'សោកសៅ'}, {em:'😠', label:'ខឹង'},
+      {em:'😰', label:'ព្រួយបារម្ភ'}, {em:'😳', label:'អៀនខ្មាស'}, {em:'🥱', label:'ធុញថប់'}
+    ]},
+    {type:'grid', title:'វិធីសម្រាកអារម្មណ៍ដោយសុវត្ថិភាព', en:'Healthy coping tools', items:[
+      {em:'📝', label:'សរសេរកំណត់ត្រា'}, {em:'🎨', label:'គូររូប/សិល្បៈ'}, {em:'🚶', label:'ដើរលេងក្រៅ'}
+    ]},
+    {type:'do', title:'អ្វីដែលគួរធ្វើ?', en:'What should I do?', items:[
+      {em:'🔎', text:'សម្គាល់ថាកំពុងមានអារម្មណ៍អ្វី ដោយមិនវិនិច្ឆ័យខ្លួនឯង'},
+      {em:'🌬️', text:'ដកដង្ហើមជ្រៅៗពេលមានអារម្មណ៍តានតឹង'},
+      {em:'🗣️', text:'និយាយពីអារម្មណ៍ជាមួយអ្នកដែលអ្នកទុកចិត្ត'},
+      {em:'😴', text:'សម្រាក និងគេងឲ្យបានគ្រប់គ្រាន់'}
+    ]},
+    {type:'help', title:'ពេលណាគួរស្វែងរកជំនួយ?', en:'When to seek help?', items:[
+      {icon:'fa-triangle-exclamation', text:'អារម្មណ៍សោកសៅ ឬថប់បារម្ភជាប់លាប់លើសពី ២សប្តាហ៍'},
+      {icon:'fa-circle-info', text:'បាត់បង់ចំណាប់អារម្មណ៍លើអ្វីៗដែលធ្លាប់ចូលចិត្ត'},
+      {icon:'fa-hand-holding-heart', text:'មានគំនិតធ្វើបាបខ្លួនឯង — ត្រូវប្រាប់អ្នកធំដែលទុកចិត្តបានភ្លាមៗ'}
+    ]},
+    {type:'summary', title:'ចំណាំសំខាន់', en:'Summary', items:[
+      'អារម្មណ៍ទាំងអស់សុទ្ធតែជារឿងធម្មតា មិនមានអារម្មណ៍ណាខុសទេ',
+      'ការនិយាយពីអារម្មណ៍ជួយឲ្យស្រាលចិត្ត',
+      'ការសុំជំនួយ គឺជាការក្លាហាន មិនមែនភាពទន់ខ្សោយទេ'
+    ], note:'ចំណាំ៖ ប្រធានបទនេះជាប្រធានបទរសើប។ ប្រសិនបើអ្នក ឬមិត្តអ្នកកំពុងជួបការលំបាកផ្លូវចិត្ត សូមនិយាយជាមួយឪពុកម្តាយ គ្រូបង្រៀន ឬអ្នកជំនាញភ្លាមៗ។'}
+  ];
+
+  const PROTECTION_CARDS = [
+    {type:'text', title:'តើការពារខ្លួនជាអ្វី?', en:'What is it?', body:'ការពារខ្លួន មានន័យថា ដឹងពីវិធីរក្សាសុវត្ថិភាពរបស់ខ្លួន ទាំងផ្លូវកាយ និងផ្លូវចិត្ត។'},
+    {type:'text', title:'ហេតុអ្វីវាសំខាន់?', en:'Why does it matter?', body:'ការចេះការពារខ្លួនជួយឲ្យអ្នកមានទំនុកចិត្ត និងចេះសម្រេចចិត្តត្រឹមត្រូវក្នុងស្ថានភាពមិនប្រក្រតី។'},
+    {type:'grid', title:'គោលការណ៍មូលដ្ឋាន', en:'Core safety rules', items:[
+      {em:'🙅', label:'ខ្ញុំមានសិទ្ធិនិយាយ "ទេ"'},
+      {em:'👥', label:'នៅជិតមនុស្សដែលទុកចិត្តបាន'},
+      {em:'🗣️', label:'ប្រាប់ភ្លាមប្រសិនបើមានអ្វីមិនប្រក្រតី'},
+      {em:'📵', label:'ប្រយ័ត្នព័ត៌មានផ្ទាល់ខ្លួនលើអនឡាញ'}
+    ]},
+    {type:'grid', title:'អ្នកដែលអាចទុកចិត្តបាន', en:'Trusted circle', items:[
+      {em:'👨‍👩‍👧', label:'ឪពុកម្តាយ'}, {em:'👩‍🏫', label:'គ្រូបង្រៀន'}, {em:'👮', label:'អ្នកជំនាញសង្គមកិច្ច'}
+    ]},
+    {type:'do', title:'អ្វីដែលគួរធ្វើ?', en:'What should I do?', items:[
+      {em:'🧭', text:'រៀនស្គាល់អ្នកដែលអាចទុកចិត្តបានក្នុងជីវិត'},
+      {em:'❤️', text:'ជឿទុកចិត្តលើអារម្មណ៍ខ្លួនឯង ប្រសិនបើមានអារម្មណ៍មិនស្រួល'},
+      {em:'💬', text:'រក្សាទំនាក់ទំនងបើកចំហជាមួយគ្រួសារ'},
+      {em:'🚫', text:'ជៀសវាងចែករំលែកព័ត៌មានឯកជនជាមួយមនុស្សចម្លែក'}
+    ]},
+    {type:'help', title:'ពេលណាគួរស្វែងរកជំនួយ?', en:'When to seek help?', items:[
+      {icon:'fa-triangle-exclamation', text:'មានអារម្មណ៍មិនស្រួល ឬខ្លាចចំពោះនរណាម្នាក់'},
+      {icon:'fa-user-secret', text:'មានអ្នកណាម្នាក់ស្នើសុំរក្សាការសម្ងាត់ដែលធ្វើឲ្យអ្នកមិនស្រួល'},
+      {icon:'fa-shield-halved', text:'ត្រូវបានគំរាមកំហែង — ត្រូវប្រាប់អ្នកធំដែលទុកចិត្តបានភ្លាមៗ'}
+    ]},
+    {type:'summary', title:'ចំណាំសំខាន់', en:'Summary', items:[
+      'អារម្មណ៍របស់អ្នកសំខាន់ណាស់ ជឿលើវា',
+      'គ្មាននរណាម្នាក់គួរធ្វើឲ្យអ្នកមិនស្រួលទេ',
+      'ការសុំជំនួយគឺជាការក្លាហាន មិនមែនជាកំហុសទេ'
+    ]}
+  ];
+
+  const COMMUNICATION_CARDS = [
+    {type:'text', title:'តើទំនាក់ទំនងល្អជាអ្វី?', en:'What is it?', body:'ទំនាក់ទំនងល្អ មានន័យថា ចេះស្តាប់ និងបញ្ចេញមតិយ៉ាងច្បាស់លាស់ ដោយគោរពគ្នាទៅវិញទៅមក។'},
+    {type:'text', title:'ហេតុអ្វីវាសំខាន់?', en:'Why does it matter?', body:'ជំនាញទំនាក់ទំនងជួយឲ្យអ្នកបង្កើតមិត្តភាព និងទំនាក់ទំនងគ្រួសារបានល្អប្រសើរ និងជៀសវាងភាពយល់ច្រឡំ។'},
+    {type:'grid', title:'ជំនាញសំខាន់ៗ', en:'Key skills', items:[
+      {em:'👂', label:'ស្តាប់ដោយចិត្ត'}, {em:'🗣️', label:'និយាយអ្វីដែលគិត ដោយសុភាព'}, {em:'🤝', label:'គោរពគំនិតខុសគ្នា'}
+    ]},
+    {type:'grid', title:'ទំនាក់ទំនងល្អ vs មិនល្អ', en:'Healthy vs unhealthy', items:[
+      {em:'✅', label:'គោរពគ្នា ស្តាប់មតិគ្នា'},
+      {em:'❌', label:'បង្ខំចិត្ត មិនស្តាប់មតិ'},
+      {em:'✋', label:'ចេះកំណត់ព្រំដែន'}
+    ]},
+    {type:'do', title:'អ្វីដែលគួរធ្វើ?', en:'What should I do?', items:[
+      {em:'💭', text:'និយាយត្រង់ៗអំពីអារម្មណ៍ខ្លួនឯង'},
+      {em:'❓', text:'សួរឲ្យច្បាស់ មុនចាត់ទុកជាការពិត'},
+      {em:'⏸️', text:'ជៀសវាងការជជែកគ្នាពេលកំពុងខឹង'},
+      {em:'🙏', text:'ចេះសុំទោសពេលធ្វើខុស'}
+    ]},
+    {type:'help', title:'ពេលណាគួរស្វែងរកជំនួយ?', en:'When to seek help?', items:[
+      {icon:'fa-triangle-exclamation', text:'មិត្តភាព ឬទំនាក់ទំនងធ្វើឲ្យអ្នកមិនស្រួលជានិច្ច'},
+      {icon:'fa-shield-halved', text:'មានការគំរាមកំហែង ឬបង្ខិតបង្ខំ — ត្រូវប្រាប់អ្នកធំដែលទុកចិត្តបាន'}
+    ]},
+    {type:'summary', title:'ចំណាំសំខាន់', en:'Summary', items:[
+      'ការទំនាក់ទំនងល្អចាប់ផ្តើមពីការស្តាប់',
+      'ការគោរពគឺមានពីរទិសទៅវិញទៅមក',
+      'កុំខ្លាចនិយាយពីអារម្មណ៍ខ្លួនឯង'
+    ]}
+  ];
+
+  const CHILDSAFETY_CARDS = [
+    {type:'text', title:'តើសុវត្ថិភាពកុមារជាអ្វី?', en:'What is it?', body:'សុវត្ថិភាពកុមារ សំដៅលើការចេះការពារខ្លួន និងស្គាល់ព្រំដែនត្រឹមត្រូវជាមួយអ្នកដទៃ ទាំងក្នុងជីវិតពិត និងលើអនឡាញ។'},
+    {type:'text', title:'ហេតុអ្វីវាសំខាន់?', en:'Why does it matter?', body:'កុមារ និងក្មេងជំទង់មានសិទ្ធិមានសុវត្ថិភាព ហើយការយល់ដឹងជួយឲ្យអ្នកសម្គាល់ស្ថានភាពមិនប្រក្រតីបានលឿន។'},
+    {type:'grid', title:'គោលការណ៍សុវត្ថិភាព', en:'Safety rules', items:[
+      {em:'🔐', label:'រក្សាព័ត៌មានផ្ទាល់ខ្លួនជាសម្ងាត់លើអនឡាញ'},
+      {em:'🙅', label:'និយាយ "ទេ" ចំពោះអ្វីដែលធ្វើឲ្យមិនស្រួល'},
+      {em:'🗣️', label:'ប្រាប់អ្នកធំពីអ្វីៗគ្រប់យ៉ាង'},
+      {em:'🚫', label:'មិនជួបមនុស្សស្គាល់តាមអនឡាញតែម្នាក់ឯង'}
+    ]},
+    {type:'grid', title:'អ្នកធំដែលអាចទុកចិត្តបាន', en:'Trusted adults', items:[
+      {em:'👨‍👩‍👧', label:'ឪពុកម្តាយ'}, {em:'👩‍🏫', label:'គ្រូបង្រៀន'}, {em:'👮', label:'ប៉ូលិស/សង្គមកិច្ច'}
+    ]},
+    {type:'do', title:'អ្វីដែលគួរធ្វើ?', en:'What should I do?', items:[
+      {em:'💬', text:'រក្សាទំនាក់ទំនងបើកចំហជាមួយឪពុកម្តាយ'},
+      {em:'❤️', text:'ជឿទុកចិត្តលើអារម្មណ៍ខ្លួនឯង'},
+      {em:'📞', text:'រៀនស្គាល់លេខទូរស័ព្ទអាសន្នរបស់គ្រួសារ'},
+      {em:'🙅', text:'កុំរក្សាការសម្ងាត់ដែលធ្វើឲ្យអ្នកមិនស្រួល'}
+    ]},
+    {type:'help', title:'ពេលណាគួរស្វែងរកជំនួយ?', en:'When to seek help?', items:[
+      {icon:'fa-triangle-exclamation', text:'មានអ្នកណាម្នាក់ស្នើសុំរក្សាការសម្ងាត់ដែលធ្វើឲ្យអ្នកមិនស្រួល'},
+      {icon:'fa-shield-halved', text:'មានការប៉ះពាល់ដោយអ្នកមិនចង់'},
+      {icon:'fa-wifi', text:'មានការគំរាមកំហែងលើអនឡាញ'}
+    ], note:'ប្រសិនបើកើតឡើងភ្លាមៗ សូមទាក់ទងអ្នកធំដែលទុកចិត្តបាន ឬចូលទៅកាន់ទំព័រ "អាសន្ន" ក្នុងកម្មវិធីនេះ។'},
+    {type:'summary', title:'ចំណាំសំខាន់', en:'Summary', items:[
+      'សុវត្ថិភាពរបស់អ្នកជាការសំខាន់បំផុត',
+      'គ្មាននរណាម្នាក់គួរស្នើសុំសម្ងាត់ដែលធ្វើឲ្យអ្នកមិនស្រួល',
+      'ចូរប្រាប់អ្នកធំដែលទុកចិត្តបានជានិច្ច'
+    ]}
+  ];
+
+  const TOPICS = {
+    nutrition: {
+      theme:'theme-nutrition', heroA:'#2E9E5B', heroB:'#7BC79A',
+      eyebrow:'អាហារូបត្ថម្ភល្អ · Good Nutrition',
+      girl:{
+        title:'ញ៉ាំបានត្រឹមត្រូវ រាងកាយស្រីរឹងមាំ 🍎',
+        intro:'អាហារល្អផ្តល់ថាមពល និងជួយឲ្យរាងកាយ ជាពិសេសអំឡុងពេលមករដូវ អភិវឌ្ឍបានល្អ',
+        cards:[
+          {type:'text', title:'តើអាហារូបត្ថម្ភល្អជាអ្វី?', en:'What is it?', body:'អាហារូបត្ថម្ភល្អ មានន័យថា ញ៉ាំអាហារចម្រុះប្រភេទក្នុងបរិមាណសមស្រប ដើម្បីផ្តល់ថាមពល និងសារធាតុចិញ្ចឹមចាំបាច់ដល់រាងកាយ។'},
+          {type:'text', title:'ហេតុអ្វីវាសំខាន់សម្រាប់ស្រី?', en:'Why does it matter?', body:'ក្នុងវ័យជំទង់ រាងកាយស្រីត្រូវការជាតិដែក និងកាល់ស្យូមបន្ថែម ជាពិសេសបន្ទាប់ពីចាប់ផ្តើមមករដូវ ដើម្បីជំនួសឈាមដែលបាត់បង់ និងគាំទ្រការលូតលាស់ឆ្អឹង។'},
+          {type:'grid', title:'ក្រុមអាហារសំខាន់ៗ', en:'Key food groups', items:[
+            {em:'🍚', label:'កាបូអ៊ីដ្រាត — បាយ នំបុ័ង'},
+            {em:'🍗', label:'ប្រូតេអ៊ីន — សាច់ ត្រី សណ្តែក'},
+            {em:'🥬', label:'ជាតិដែក — ស្លឹកបៃតង សាច់ក្រហម (សំខាន់ពេលមករដូវ)'},
+            {em:'🥛', label:'ជាតិកាល់ស្យូម — ទឹកដោះគោ'},
+            {em:'🥑', label:'ខ្លាញ់ល្អ — គ្រាប់ ត្រី'},
+            {em:'💧', label:'ទឹកស្អាត ៦–៨ កែវ/ថ្ងៃ'}
+          ]},
+          {type:'grid', title:'សញ្ញាបង្ហាញអាហារូបត្ថម្ភល្អ', en:'Signs of good nutrition', items:[
+            {em:'⚡', label:'មានថាមពលពេញមួយថ្ងៃ'},
+            {em:'📏', label:'លូតលាស់ស្របតាមអាយុ'},
+            {em:'🩸', label:'មករដូវទៀងទាត់'}
+          ]},
+          {type:'do', title:'អ្វីដែលគួរធ្វើ?', en:'What should I do?', items:[
+            {em:'🍽️', text:'ញ៉ាំអាហារ ៣ពេលធំ និងអាហារសម្រន់ដែលមានប្រយោជន៍'},
+            {em:'🥬', text:'បន្ថែមអាហារមានជាតិដែកជាពិសេសកំឡុងសប្តាហ៍មករដូវ'},
+            {em:'🍬', text:'កំណត់អាហារផ្អែម និងភេសជ្ជៈមានស្ករ'},
+            {em:'⏰', text:'កុំរំលងអាហារពេលព្រឹក'}
+          ]},
+          {type:'help', title:'ពេលណាគួរស្វែងរកជំនួយ?', en:'When to seek help?', items:[
+            {icon:'fa-triangle-exclamation', text:'ទម្ងន់ធ្លាក់ ឬឡើងលឿនខុសពីធម្មតា'},
+            {icon:'fa-circle-info', text:'មិនចង់ញ៉ាំអាហារជាប្រចាំ ឬខ្លាចការញ៉ាំ'},
+            {icon:'fa-heart-pulse', text:'ដួលសន្លប់ ឬស្លាប់ខ្លួនញឹកញាប់ (អាចជាសញ្ញាខ្វះឈាម)'}
+          ]},
+          {type:'summary', title:'ចំណាំសំខាន់', en:'Summary', items:[
+            'អាហារចម្រុះគឺជាគន្លឹះនៃរាងកាយរឹងមាំ',
+            'ជាតិដែកសំខាន់ជាពិសេសក្នុងអំឡុងពេលមករដូវ',
+            'ប្រសិនបើមានចម្ងល់ សូមសួរឪពុកម្តាយ ឬអ្នកជំនាញអាហារូបត្ថម្ភ'
+          ]}
+        ]
+      },
+      boy:{
+        title:'ញ៉ាំបានត្រឹមត្រូវ រាងកាយប្រុសរឹងមាំ 🍎',
+        intro:'អាហារល្អផ្តល់ថាមពល និងជួយឲ្យរាងកាយ សាច់ដុំ និងកម្ពស់ អភិវឌ្ឍបានពេញលេញ',
+        cards:[
+          {type:'text', title:'តើអាហារូបត្ថម្ភល្អជាអ្វី?', en:'What is it?', body:'អាហារូបត្ថម្ភល្អ មានន័យថា ញ៉ាំអាហារចម្រុះប្រភេទក្នុងបរិមាណសមស្រប ដើម្បីផ្តល់ថាមពល និងសារធាតុចិញ្ចឹមចាំបាច់ដល់រាងកាយ។'},
+          {type:'text', title:'ហេតុអ្វីវាសំខាន់សម្រាប់ប្រុស?', en:'Why does it matter?', body:'ក្នុងវ័យជំទង់ រាងកាយប្រុសលូតលាស់លឿន និងត្រូវការប្រូតេអ៊ីន និងកាឡូរីច្រើនជាងធម្មតា ដើម្បីគាំទ្រការកើនកម្ពស់ និងសាច់ដុំ។'},
+          {type:'grid', title:'ក្រុមអាហារសំខាន់ៗ', en:'Key food groups', items:[
+            {em:'🍚', label:'កាបូអ៊ីដ្រាត — បាយ នំបុ័ង'},
+            {em:'🍗', label:'ប្រូតេអ៊ីនច្រើន — សាច់ ត្រី ស៊ុត សណ្តែក'},
+            {em:'🥦', label:'បន្លែ និងផ្លែឈើ'},
+            {em:'🥛', label:'ជាតិកាល់ស្យូម — ជួយឆ្អឹងរឹងមាំ'},
+            {em:'🥑', label:'ខ្លាញ់ល្អ — គ្រាប់ ត្រី'},
+            {em:'💧', label:'ទឹកស្អាត ៦–៨ កែវ/ថ្ងៃ'}
+          ]},
+          {type:'grid', title:'សញ្ញាបង្ហាញអាហារូបត្ថម្ភល្អ', en:'Signs of good nutrition', items:[
+            {em:'⚡', label:'មានថាមពលពេញមួយថ្ងៃ'},
+            {em:'📏', label:'លូតលាស់ស្របតាមអាយុ'},
+            {em:'💪', label:'សាច់ដុំមានកម្លាំង'}
+          ]},
+          {type:'do', title:'អ្វីដែលគួរធ្វើ?', en:'What should I do?', items:[
+            {em:'🍽️', text:'ញ៉ាំអាហារ ៣ពេលធំ និងអាហារសម្រន់ដែលមានប្រយោជន៍'},
+            {em:'🍗', text:'បន្ថែមប្រូតេអ៊ីនប្រសិនបើហាត់ប្រាណច្រើន'},
+            {em:'🍬', text:'កំណត់អាហារផ្អែម និងភេសជ្ជៈមានស្ករ'},
+            {em:'⏰', text:'កុំរំលងអាហារពេលព្រឹក'}
+          ]},
+          {type:'help', title:'ពេលណាគួរស្វែងរកជំនួយ?', en:'When to seek help?', items:[
+            {icon:'fa-triangle-exclamation', text:'ទម្ងន់ធ្លាក់ ឬឡើងលឿនខុសពីធម្មតា'},
+            {icon:'fa-circle-info', text:'មិនចង់ញ៉ាំអាហារជាប្រចាំ ឬខ្លាចការញ៉ាំ'},
+            {icon:'fa-heart-pulse', text:'ឈឺពោះញឹកញាប់ក្រោយពេលញ៉ាំ'}
+          ]},
+          {type:'summary', title:'ចំណាំសំខាន់', en:'Summary', items:[
+            'អាហារចម្រុះគឺជាគន្លឹះនៃរាងកាយរឹងមាំ',
+            'កុំប្រៀបធៀបខ្លួនអ្នកជាមួយអ្នកដទៃ រាងកាយម្នាក់ៗខុសគ្នា',
+            'ប្រសិនបើមានចម្ងល់ សូមសួរឪពុកម្តាយ ឬអ្នកជំនាញអាហារូបត្ថម្ភ'
+          ]}
+        ]
+      }
+    },
+
+    strength: {
+      theme:'theme-strength', heroA:'#D97C0B', heroB:'#F0B25C',
+      eyebrow:'កសាងកម្លាំង · Building Strength',
+      girl:{
+        title:'កម្លាំង និងភាពសកម្មសម្រាប់ស្រី 💪',
+        intro:'ការហាត់ប្រាណជាទៀងទាត់ជួយឲ្យឆ្អឹងរឹងមាំ រាងកាយបត់បែនល្អ និងចិត្តរឹងមាំ',
+        cards:[
+          {type:'text', title:'តើកសាងកម្លាំងជាអ្វី?', en:'What is it?', body:'កសាងកម្លាំង មានន័យថា ធ្វើសកម្មភាពរាងកាយជាទៀងទាត់ ដើម្បីពង្រឹងសាច់ដុំ ឆ្អឹង និងបេះដូង។'},
+          {type:'text', title:'ហេតុអ្វីវាសំខាន់?', en:'Why does it matter?', body:'ការធ្វើលំហាត់ប្រាណជួយឲ្យឆ្អឹងស្រីរឹងមាំ (ជួយកាត់បន្ថយហានិភ័យឆ្អឹងទន់នាពេលអនាគត) ព្រមទាំងជួយអារម្មណ៍ក្នុងអំឡុងពេលមករដូវ។'},
+          {type:'grid', title:'ប្រភេទសកម្មភាព', en:'Types of activity', items:[
+            {em:'🏃', label:'ការរត់ ឬដើរលឿន'}, {em:'🏊', label:'ហែលទឹក'}, {em:'💃', label:'រាំ'},
+            {em:'🧘', label:'យូហ្គា/ការទន់ភ្លន់'}, {em:'🚴', label:'ជិះកង់'}, {em:'⚽', label:'កីឡាជាក្រុម'}
+          ]},
+          {type:'grid', title:'គន្លឹះសម្រាប់ស្រី', en:'Tips for girls', items:[
+            {em:'👚', label:'ជ្រើសរើសសម្លៀកបំពាក់កីឡាដែលសមស្រប និងស្រួល'},
+            {em:'😊', label:'ធ្វើលំហាត់ប្រាណឲ្យសប្បាយចិត្ត មិនចាំបាច់ប្រកួតប្រជែងខ្លួនឯង'},
+            {em:'🩸', label:'ធ្វើសកម្មភាពស្រាលៗនៅថ្ងៃមករដូវក៏បានផងដែរ'}
+          ]},
+          {type:'do', title:'អ្វីដែលគួរធ្វើ?', en:'What should I do?', items:[
+            {em:'⏱️', text:'ធ្វើសកម្មភាពរាងកាយយ៉ាងហោចណាស់ ៦០នាទី/ថ្ងៃ'},
+            {em:'❤️', text:'ជ្រើសសកម្មភាពដែលអ្នកចូលចិត្តពិតប្រាកដ'},
+            {em:'🤸', text:'កក់ក្តៅរាងកាយមុនហាត់ជានិច្ច'},
+            {em:'💧', text:'ផឹកទឹកឱ្យបានគ្រប់គ្រាន់'}
+          ]},
+          {type:'help', title:'ពេលណាគួរស្វែងរកជំនួយ?', en:'When to seek help?', items:[
+            {icon:'fa-triangle-exclamation', text:'ឈឺសាច់ដុំ ឬសន្លាក់ខ្លាំងហួសហេតុ'},
+            {icon:'fa-lungs', text:'ដកដង្ហើមពិបាកពេលធ្វើសកម្មភាពស្រាល'},
+            {icon:'fa-heart-pulse', text:'ថប់ដង្ហើម ឬឈឺទ្រូងពេលហាត់ប្រាណ'}
+          ]},
+          {type:'summary', title:'ចំណាំសំខាន់', en:'Summary', items:[
+            'លំហាត់ប្រាណមិនចាំបាច់ពិបាកទេ គ្រាន់តែធ្វើឲ្យបានទៀងទាត់',
+            'ជ្រើសសកម្មភាពដែលធ្វើឲ្យអ្នកសប្បាយចិត្ត',
+            'ស្តាប់រាងកាយខ្លួនឯង សុវត្ថិភាពជាមុនសិន'
+          ]}
+        ]
+      },
+      boy:{
+        title:'កម្លាំង និងសកម្មភាពរាងកាយសម្រាប់ប្រុស 💪',
+        intro:'ការហាត់ប្រាណជាទៀងទាត់ជួយឲ្យសាច់ដុំ និងឆ្អឹងលូតលាស់ខ្លាំង',
+        cards:[
+          {type:'text', title:'តើកសាងកម្លាំងជាអ្វី?', en:'What is it?', body:'កសាងកម្លាំង មានន័យថា ធ្វើសកម្មភាពរាងកាយជាទៀងទាត់ ដើម្បីពង្រឹងសាច់ដុំ ឆ្អឹង និងបេះដូង។'},
+          {type:'text', title:'ហេតុអ្វីវាសំខាន់?', en:'Why does it matter?', body:'ក្នុងវ័យជំទង់ ការធ្វើលំហាត់ប្រាណជួយឲ្យឆ្អឹង និងសាច់ដុំរីកលូតលាស់ខ្លាំង ព្រមទាំងជួយអារម្មណ៍ និងគេងលក់ស្រួល។'},
+          {type:'grid', title:'ប្រភេទសកម្មភាព', en:'Types of activity', items:[
+            {em:'🏃', label:'ការរត់ ឬដើរលឿន'}, {em:'🏊', label:'ហែលទឹក'}, {em:'⚽', label:'កីឡាជាក្រុម'},
+            {em:'🏋️', label:'លំហាត់សាច់ដុំស្រាល'}, {em:'🚴', label:'ជិះកង់'}, {em:'🤸', label:'ការលេងសកម្ម'}
+          ]},
+          {type:'grid', title:'គន្លឹះសម្រាប់ប្រុស', en:'Tips for boys', items:[
+            {em:'⚠️', label:'ជៀសវាងលើកទម្ងន់ធ្ងន់ពេកមុនអាយុលូតលាស់ពេញលេញ'},
+            {em:'🤸', label:'ផ្តោតលើបច្ចេកទេសត្រឹមត្រូវ មិនមែនទម្ងន់ធ្ងន់'},
+            {em:'😊', label:'ធ្វើលំហាត់ប្រាណឲ្យសប្បាយចិត្ត មិនប្រកួតប្រជែងខ្លួនឯង'}
+          ]},
+          {type:'do', title:'អ្វីដែលគួរធ្វើ?', en:'What should I do?', items:[
+            {em:'⏱️', text:'ធ្វើសកម្មភាពរាងកាយយ៉ាងហោចណាស់ ៦០នាទី/ថ្ងៃ'},
+            {em:'❤️', text:'ជ្រើសសកម្មភាពដែលអ្នកចូលចិត្តពិតប្រាកដ'},
+            {em:'🤸', text:'កក់ក្តៅរាងកាយមុនហាត់ជានិច្ច'},
+            {em:'💧', text:'ផឹកទឹកឱ្យបានគ្រប់គ្រាន់'}
+          ]},
+          {type:'help', title:'ពេលណាគួរស្វែងរកជំនួយ?', en:'When to seek help?', items:[
+            {icon:'fa-triangle-exclamation', text:'ឈឺសាច់ដុំ ឬសន្លាក់ខ្លាំងហួសហេតុ'},
+            {icon:'fa-lungs', text:'ដកដង្ហើមពិបាកពេលធ្វើសកម្មភាពស្រាល'},
+            {icon:'fa-heart-pulse', text:'ថប់ដង្ហើម ឬឈឺទ្រូងពេលហាត់ប្រាណ'}
+          ]},
+          {type:'summary', title:'ចំណាំសំខាន់', en:'Summary', items:[
+            'លំហាត់ប្រាណមិនចាំបាច់ពិបាកទេ គ្រាន់តែធ្វើឲ្យបានទៀងទាត់',
+            'ជ្រើសសកម្មភាពដែលធ្វើឲ្យអ្នកសប្បាយចិត្ត',
+            'ស្តាប់រាងកាយខ្លួនឯង សុវត្ថិភាពជាមុនសិន'
+          ]}
+        ]
+      }
+    },
+
+    emotions: {
+      theme:'theme-emotions', heroA:'#7364C4', heroB:'#A79BE0',
+      eyebrow:'យល់ដឹងអារម្មណ៍ · Understanding Emotions',
+      girl:{ title:'អារម្មណ៍ខ្ញុំ ជារឿងធម្មតា 🧠', intro:'ស្គាល់ និងគ្រប់គ្រងអារម្មណ៍ ជាជំនាញសំខាន់មួយក្នុងជីវិត', cards: EMOTIONS_CARDS },
+      boy:{ title:'អារម្មណ៍ខ្ញុំ ជារឿងធម្មតា 🧠', intro:'ស្គាល់ និងគ្រប់គ្រងអារម្មណ៍ ជាជំនាញសំខាន់មួយក្នុងជីវិត', cards: EMOTIONS_CARDS }
+    },
+
+    privacy: {
+      theme:'theme-privacy', heroA:'#E8749A', heroB:'#F4A9C4',
+      eyebrow:'សុខភាពឯកជន · Private Health',
+      girl:{
+        title:'ថែរក្សារាងកាយឯកជនរបស់ស្រី 🩷',
+        intro:'រាងកាយអ្នកជាកម្មសិទ្ធិរបស់អ្នក ការថែទាំត្រឹមត្រូវជាការចាំបាច់',
+        cards:[
+          {type:'text', title:'តើសុខភាពឯកជនជាអ្វី?', en:'What is it?', body:'សុខភាពឯកជន សំដៅលើការថែរក្សាផ្នែករាងកាយឯកជនរបស់អ្នកឲ្យស្អាត និងមានសុខភាពល្អ។'},
+          {type:'text', title:'ហេតុអ្វីវាសំខាន់?', en:'Why does it matter?', body:'ផ្នែកទាំងនេះងាយនឹងមានមេរោគប្រសិនបើមិនបានថែទាំបានត្រឹមត្រូវ ជាពិសេសក្នុងអំឡុងពេលមករដូវ ហើយវាក៏ជាផ្នែកមួយនៃរាងកាយដែលអ្នកមានសិទ្ធិគ្រប់គ្រងទាំងស្រុង។'},
+          {type:'grid', title:'ការអនាម័យប្រចាំថ្ងៃ', en:'Daily hygiene habits', items:[
+            {em:'🧼', label:'លាងសម្អាតជារៀងរាល់ថ្ងៃ'},
+            {em:'👙', label:'ប្តូរខោក្នុងជារៀងរាល់ថ្ងៃ'},
+            {em:'🩸', label:'ប្តូរខ្សែរឿងរៀងរាល់ ៤–៦ ម៉ោងពេលមករដូវ'}
+          ]},
+          {type:'grid', title:'សិទ្ធិលើរាងកាយខ្លួនឯង', en:'Body autonomy', items:[
+            {em:'🚫', label:'គ្មាននរណាម្នាក់ប៉ះពាល់ដោយគ្មានការយល់ព្រម'},
+            {em:'🙋', label:'រាងកាយអ្នកជាកម្មសិទ្ធិរបស់អ្នក'},
+            {em:'🙅', label:'អ្នកមានសិទ្ធិនិយាយ "ទេ" នៅគ្រប់ពេល'}
+          ]},
+          {type:'do', title:'អ្វីដែលគួរធ្វើ?', en:'What should I do?', items:[
+            {em:'🧴', text:'ថែរក្សាអនាម័យប្រចាំថ្ងៃ'},
+            {em:'👕', text:'ពាក់ខោអាវស្អាត និងស្រួល'},
+            {em:'❓', text:'សួរអ្នកជំនាញ ឬឪពុកម្តាយប្រសិនបើមានចម្ងល់'},
+            {em:'😌', text:'កុំខ្មាសក្នុងការសួរសំណួរអំពីរាងកាយខ្លួនឯង'}
+          ]},
+          {type:'help', title:'ពេលណាគួរស្វែងរកជំនួយ?', en:'When to seek help?', items:[
+            {icon:'fa-triangle-exclamation', text:'ក្លិន ឬការរមាស់ខុសពីធម្មតា'},
+            {icon:'fa-heart-pulse', text:'ឈឺចាប់ ឬហូរឈាមខុសពីធម្មតា'},
+            {icon:'fa-shield-halved', text:'មានអ្នកណាម្នាក់ប៉ះពាល់អ្នកដោយអ្នកមិនចង់ — ត្រូវប្រាប់អ្នកធំដែលទុកចិត្តបានភ្លាមៗ'}
+          ]},
+          {type:'summary', title:'ចំណាំសំខាន់', en:'Summary', items:[
+            'ការថែរក្សាអនាម័យផ្នែកឯកជនគឺជារឿងធម្មតា',
+            'រាងកាយអ្នកជាកម្មសិទ្ធិរបស់អ្នកតែម្នាក់ឯង',
+            'កុំខ្មាសក្នុងការសួរសំណួរ ឬស្វែងរកជំនួយ'
+          ]}
+        ]
+      },
+      boy:{
+        title:'ថែរក្សារាងកាយឯកជនរបស់ប្រុស 🩷',
+        intro:'រាងកាយអ្នកជាកម្មសិទ្ធិរបស់អ្នក ការថែទាំត្រឹមត្រូវជាការចាំបាច់',
+        cards:[
+          {type:'text', title:'តើសុខភាពឯកជនជាអ្វី?', en:'What is it?', body:'សុខភាពឯកជន សំដៅលើការថែរក្សាផ្នែករាងកាយឯកជនរបស់អ្នកឲ្យស្អាត និងមានសុខភាពល្អ។'},
+          {type:'text', title:'ហេតុអ្វីវាសំខាន់?', en:'Why does it matter?', body:'ផ្នែកទាំងនេះងាយនឹងមានមេរោគប្រសិនបើមិនបានថែទាំបានត្រឹមត្រូវ ហើយវាក៏ជាផ្នែកមួយនៃរាងកាយដែលអ្នកមានសិទ្ធិគ្រប់គ្រងទាំងស្រុង។'},
+          {type:'grid', title:'ការអនាម័យប្រចាំថ្ងៃ', en:'Daily hygiene habits', items:[
+            {em:'🧼', label:'លាងសម្អាតជារៀងរាល់ថ្ងៃ'},
+            {em:'👙', label:'ប្តូរខោក្នុងជារៀងរាល់ថ្ងៃ'},
+            {em:'🚿', label:'ថែរក្សាអនាម័យបន្ទាប់ពីធ្វើលំហាត់ប្រាណ'}
+          ]},
+          {type:'grid', title:'សិទ្ធិលើរាងកាយខ្លួនឯង', en:'Body autonomy', items:[
+            {em:'🚫', label:'គ្មាននរណាម្នាក់ប៉ះពាល់ដោយគ្មានការយល់ព្រម'},
+            {em:'🙋', label:'រាងកាយអ្នកជាកម្មសិទ្ធិរបស់អ្នក'},
+            {em:'🙅', label:'អ្នកមានសិទ្ធិនិយាយ "ទេ" នៅគ្រប់ពេល'}
+          ]},
+          {type:'do', title:'អ្វីដែលគួរធ្វើ?', en:'What should I do?', items:[
+            {em:'🧴', text:'ថែរក្សាអនាម័យប្រចាំថ្ងៃ'},
+            {em:'👕', text:'ពាក់ខោអាវស្អាត និងស្រួល'},
+            {em:'❓', text:'សួរអ្នកជំនាញ ឬឪពុកម្តាយប្រសិនបើមានចម្ងល់'},
+            {em:'😌', text:'កុំខ្មាសក្នុងការសួរសំណួរអំពីរាងកាយខ្លួនឯង'}
+          ]},
+          {type:'help', title:'ពេលណាគួរស្វែងរកជំនួយ?', en:'When to seek help?', items:[
+            {icon:'fa-triangle-exclamation', text:'ក្លិន ឬការរមាស់ខុសពីធម្មតា'},
+            {icon:'fa-heart-pulse', text:'ឈឺចាប់ ឬហើមខុសពីធម្មតា'},
+            {icon:'fa-shield-halved', text:'មានអ្នកណាម្នាក់ប៉ះពាល់អ្នកដោយអ្នកមិនចង់ — ត្រូវប្រាប់អ្នកធំដែលទុកចិត្តបានភ្លាមៗ'}
+          ]},
+          {type:'summary', title:'ចំណាំសំខាន់', en:'Summary', items:[
+            'ការថែរក្សាអនាម័យផ្នែកឯកជនគឺជារឿងធម្មតា',
+            'រាងកាយអ្នកជាកម្មសិទ្ធិរបស់អ្នកតែម្នាក់ឯង',
+            'កុំខ្មាសក្នុងការសួរសំណួរ ឬស្វែងរកជំនួយ'
+          ]}
+        ]
+      }
+    },
+
+    protection: {
+      theme:'theme-protection', heroA:'#D64545', heroB:'#EE8A8A',
+      eyebrow:'ការពារខ្លួន · Self-Protection',
+      girl:{ title:'ការពារខ្លួន និងសុវត្ថិភាព 🛡️', intro:'ការចេះការពារខ្លួន ជួយឲ្យអ្នកមានទំនុកចិត្ត និងសុវត្ថិភាព', cards: PROTECTION_CARDS },
+      boy:{ title:'ការពារខ្លួន និងសុវត្ថិភាព 🛡️', intro:'ការចេះការពារខ្លួន ជួយឲ្យអ្នកមានទំនុកចិត្ត និងសុវត្ថិភាព', cards: PROTECTION_CARDS }
+    },
+
+    communication: {
+      theme:'theme-communication', heroA:'#2F6CB5', heroB:'#6FAFEA',
+      eyebrow:'ទំនាក់ទំនងល្អ · Good Communication',
+      girl:{ title:'ស្តាប់គ្នា និយាយគ្នា ដោយគោរព 💬', intro:'ជំនាញទំនាក់ទំនងជួយបង្កើតមិត្តភាព និងគ្រួសារល្អ', cards: COMMUNICATION_CARDS },
+      boy:{ title:'ស្តាប់គ្នា និយាយគ្នា ដោយគោរព 💬', intro:'ជំនាញទំនាក់ទំនងជួយបង្កើតមិត្តភាព និងគ្រួសារល្អ', cards: COMMUNICATION_CARDS }
+    },
+
+    selfcare: {
+      theme:'theme-selfcare', heroA:'#1B9C8B', heroB:'#5FCDBB',
+      eyebrow:'ថែរក្សាខ្លួនឯង · Self-Care',
+      girl:{
+        title:'ស្រឡាញ់ខ្លួនឯង ថែរក្សាចិត្ត និងកាយ ✨',
+        intro:'ការចំណាយពេលថែទាំខ្លួនឯង ជាផ្នែកសំខាន់នៃសុខភាពល្អ',
+        cards:[
+          {type:'text', title:'តើថែរក្សាខ្លួនឯងជាអ្វី?', en:'What is it?', body:'ថែរក្សាខ្លួនឯង មានន័យថា ចំណាយពេលថែទាំទាំងរាងកាយ និងចិត្តរបស់អ្នកឲ្យបានសមស្រប។'},
+          {type:'text', title:'ហេតុអ្វីវាសំខាន់?', en:'Why does it matter?', body:'ការថែរក្សាខ្លួនឯងជួយកាត់បន្ថយស្ត្រេស និងបង្កើនទំនុកចិត្តលើខ្លួនឯង ជាពិសេសពេលរាងកាយកំពុងផ្លាស់ប្តូរច្រើន។'},
+          {type:'grid', title:'ផ្នែកសំខាន់ៗ', en:'Areas of self-care', items:[
+            {em:'🧴', label:'ថែស្បែក/ព្យាបាលមុន'}, {em:'💇', label:'ថែសក់'}, {em:'😴', label:'ការគេង'},
+            {em:'🧠', label:'សុខភាពចិត្ត'}, {em:'🩸', label:'ថែទាំពេលមករដូវ'}, {em:'🎨', label:'ចំណូលចិត្ត'}
+          ]},
+          {type:'grid', title:'ទម្លាប់សាមញ្ញប្រចាំថ្ងៃ', en:'Simple daily habits', items:[
+            {em:'🧼', label:'លាងមុខព្រឹកល្ងាច'}, {em:'⏰', label:'ដេកឲ្យបានម៉ោង'}, {em:'🌳', label:'ចំណាយពេលក្រៅផ្ទះ'}
+          ]},
+          {type:'do', title:'អ្វីដែលគួរធ្វើ?', en:'What should I do?', items:[
+            {em:'🕰️', text:'កំណត់ពេលសម្រាកសម្រាប់ខ្លួនឯងជារៀងរាល់ថ្ងៃ'},
+            {em:'🎨', text:'ធ្វើសកម្មភាពដែលធ្វើឲ្យសប្បាយចិត្ត'},
+            {em:'🧴', text:'ថែរក្សាអនាម័យផ្ទាល់ខ្លួន និងស្បែក'},
+            {em:'✋', text:'ចេះនិយាយ "ទេ" នៅពេលចាំបាច់'}
+          ]},
+          {type:'help', title:'ពេលណាគួរស្វែងរកជំនួយ?', en:'When to seek help?', items:[
+            {icon:'fa-triangle-exclamation', text:'មានអារម្មណ៍អស់កម្លាំងជានិច្ច'},
+            {icon:'fa-circle-info', text:'បាត់បង់ចំណាប់អារម្មណ៍លើអ្វីៗ'},
+            {icon:'fa-bed', text:'គេងមិនលក់ជាប់លាប់'}
+          ]},
+          {type:'summary', title:'ចំណាំសំខាន់', en:'Summary', items:[
+            'ការថែរក្សាខ្លួនឯង មិនមែនជាភាពខ្ជិលច្រអូសទេ',
+            'វាជាផ្នែកសំខាន់នៃសុខភាព',
+            'ចាប់ផ្តើមពីជំហានតូចៗជារៀងរាល់ថ្ងៃ'
+          ]}
+        ]
+      },
+      boy:{
+        title:'ស្រឡាញ់ខ្លួនឯង ថែរក្សាចិត្ត និងកាយ ✨',
+        intro:'ការចំណាយពេលថែទាំខ្លួនឯង ជាផ្នែកសំខាន់នៃសុខភាពល្អ',
+        cards:[
+          {type:'text', title:'តើថែរក្សាខ្លួនឯងជាអ្វី?', en:'What is it?', body:'ថែរក្សាខ្លួនឯង មានន័យថា ចំណាយពេលថែទាំទាំងរាងកាយ និងចិត្តរបស់អ្នកឲ្យបានសមស្រប។'},
+          {type:'text', title:'ហេតុអ្វីវាសំខាន់?', en:'Why does it matter?', body:'ការថែរក្សាខ្លួនឯងជួយកាត់បន្ថយស្ត្រេស និងបង្កើនទំនុកចិត្តលើខ្លួនឯង ជាពិសេសពេលរាងកាយកំពុងផ្លាស់ប្តូរច្រើន។'},
+          {type:'grid', title:'ផ្នែកសំខាន់ៗ', en:'Areas of self-care', items:[
+            {em:'🧴', label:'ថែស្បែក/ព្យាបាលមុន'}, {em:'🪒', label:'កោរពុកមាត់/រោមដំបូង'}, {em:'😴', label:'ការគេង'},
+            {em:'🧠', label:'សុខភាពចិត្ត'}, {em:'🏃', label:'កាយសម្បទា'}, {em:'🎨', label:'ចំណូលចិត្ត'}
+          ]},
+          {type:'grid', title:'ទម្លាប់សាមញ្ញប្រចាំថ្ងៃ', en:'Simple daily habits', items:[
+            {em:'🧼', label:'លាងមុខព្រឹកល្ងាច'}, {em:'⏰', label:'ដេកឲ្យបានម៉ោង'}, {em:'🌳', label:'ចំណាយពេលក្រៅផ្ទះ'}
+          ]},
+          {type:'do', title:'អ្វីដែលគួរធ្វើ?', en:'What should I do?', items:[
+            {em:'🕰️', text:'កំណត់ពេលសម្រាកសម្រាប់ខ្លួនឯងជារៀងរាល់ថ្ងៃ'},
+            {em:'🎨', text:'ធ្វើសកម្មភាពដែលធ្វើឲ្យសប្បាយចិត្ត'},
+            {em:'🧴', text:'ថែរក្សាអនាម័យផ្ទាល់ខ្លួន'},
+            {em:'✋', text:'ចេះនិយាយ "ទេ" នៅពេលចាំបាច់'}
+          ]},
+          {type:'help', title:'ពេលណាគួរស្វែងរកជំនួយ?', en:'When to seek help?', items:[
+            {icon:'fa-triangle-exclamation', text:'មានអារម្មណ៍អស់កម្លាំងជានិច្ច'},
+            {icon:'fa-circle-info', text:'បាត់បង់ចំណាប់អារម្មណ៍លើអ្វីៗ'},
+            {icon:'fa-bed', text:'គេងមិនលក់ជាប់លាប់'}
+          ]},
+          {type:'summary', title:'ចំណាំសំខាន់', en:'Summary', items:[
+            'ការថែរក្សាខ្លួនឯង មិនមែនជាភាពខ្ជិលច្រអូសទេ',
+            'វាជាផ្នែកសំខាន់នៃសុខភាព',
+            'ចាប់ផ្តើមពីជំហានតូចៗជារៀងរាល់ថ្ងៃ'
+          ]}
+        ]
+      }
+    },
+
+    childsafety: {
+      theme:'theme-childsafety', heroA:'#D9731A', heroB:'#F0A75C',
+      eyebrow:'សុវត្ថិភាពកុមារ · Child Safety',
+      girl:{ title:'សុវត្ថិភាពរបស់អ្នកជាការសំខាន់ 🔒', intro:'ស្គាល់ព្រំដែនត្រឹមត្រូវ និងអ្នកដែលអាចទុកចិត្តបាន', cards: CHILDSAFETY_CARDS },
+      boy:{ title:'សុវត្ថិភាពរបស់អ្នកជាការសំខាន់ 🔒', intro:'ស្គាល់ព្រំដែនត្រឹមត្រូវ និងអ្នកដែលអាចទុកចិត្តបាន', cards: CHILDSAFETY_CARDS }
     }
-    const fb = document.getElementById('quizFeedback');
-    fb.innerHTML = isCorrect
-      ? 'ត្រឹមត្រូវ! អរម៉ូនគឺជាមូលហេតុចម្បង។<div class="badge-win">🏅 +10 ពិន្ទុ — ចាប់បានផ្លាកសញ្ញា "អ្នកចេះខ្លួនឯង"</div>'
-      : 'ជិតត្រូវហើយ — ចម្លើយត្រឹមត្រូវគឺ B: ការផ្លាស់ប្តូរអរម៉ូន។<div class="badge-win">🏅 +5 ពិន្ទុ សម្រាប់ការសាកល្បង</div>';
-    fb.classList.add('show');
+  };
+
+  function cardHTML(c, idx){
+    const num = idx+1;
+    const head = `<div class="t-head"><div class="t-num">${num}</div><p class="t-title">${c.title}</p><span class="t-en">${c.en||''}</span></div>`;
+    let body = '';
+    if(c.type==='text'){
+      body = `<div class="t-body"><p>${c.body}</p></div>`;
+    } else if(c.type==='grid'){
+      body = `<div class="t-grid">${c.items.map(i=>`<div class="t-grid-item"><span class="em">${i.em}</span><span>${i.label}</span></div>`).join('')}</div>`;
+    } else if(c.type==='do'){
+      body = `<div class="t-list">${c.items.map(i=>`<div class="t-do-item"><span class="em">${i.em}</span> ${i.text}</div>`).join('')}</div>`;
+    } else if(c.type==='help'){
+      body = `<div class="t-list">${c.items.map(i=>`<div class="t-help-item"><i class="fa-solid ${i.icon}"></i> ${i.text}</div>`).join('')}</div>` + (c.note?`<div class="t-note">${c.note}</div>`:'');
+    } else if(c.type==='summary'){
+      body = `<ul class="t-summary">${c.items.map(i=>`<li>${i}</li>`).join('')}</ul>` + (c.note?`<div class="t-note">${c.note}</div>`:'');
+    }
+    return `<div class="t-card reveal">${head}${body}</div>`;
+  }
+
+  let currentGenericId = null;
+  let currentGenericGender = 'girl';
+
+  function renderGenericTopic(){
+    const t = TOPICS[currentGenericId];
+    const g = t[currentGenericGender];
+    const view = document.getElementById('genericTopicView');
+    view.className = t.theme;
+    document.getElementById('gtHero').style.setProperty('--hero-a', t.heroA);
+    document.getElementById('gtHero').style.setProperty('--hero-b', t.heroB);
+    document.getElementById('gtEyebrow').textContent = t.eyebrow;
+    document.getElementById('gtTitle').textContent = g.title;
+    document.getElementById('gtIntro').textContent = g.intro;
+    document.getElementById('gtCards').innerHTML = g.cards.map(cardHTML).join('');
+  }
+
+  function switchGenericGender(g){
+    currentGenericGender = g;
+    document.getElementById('gtTabGirl').classList.toggle('active', g==='girl');
+    document.getElementById('gtTabBoy').classList.toggle('active', g==='boy');
+    renderGenericTopic();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function openTopic(id){
+    document.getElementById('homeView').style.display='none';
+    if(id==='growing'){
+      document.getElementById('genericTopicView').style.display='none';
+      document.getElementById('topicView').style.display='block';
+    } else {
+      document.getElementById('topicView').style.display='none';
+      currentGenericId = id;
+      currentGenericGender = 'girl';
+      document.getElementById('gtTabGirl').classList.add('active');
+      document.getElementById('gtTabBoy').classList.remove('active');
+      renderGenericTopic();
+      document.getElementById('genericTopicView').style.display='block';
+    }
+    window.scrollTo({top:0, behavior:'smooth'});
   }
 </script>
- 
+
 </body>
 </html>

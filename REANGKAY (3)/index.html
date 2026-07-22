@@ -21,7 +21,6 @@
 <body>
 
 <!-- Loading Screen -->
-<div class="loading-screen"><div class="logo-pulse"></div></div>
 
 <!-- ============================= TOP NAV (Desktop) ============================= -->
 <header class="topnav">
@@ -33,7 +32,8 @@
       <a href="specialists.html" class="nav-link">អ្នកឯកទេស</a>
       <a href="games.html" class="nav-link">ល្បែង</a>
       <a href="emergency.html" class="nav-link">អាសន្ន</a>
-      <a href="feedback.html" class="nav-link">មតិ</a>
+      <a href="anon.html" class="nav-link">ប្រអប់ចម្ងល់</a>
+      <!-- <a href="feedback.html" class="nav-link">មតិ</a> -->
     </nav>
     <div class="d-flex align-items-center gap-2">
       <button class="btn-icon-circle position-relative" id="notifBell">
@@ -49,28 +49,25 @@
 <main class="container-app py-4">
 
   <!-- Greeting Hero -->
-  <section class="hero-greeting mb-4 fade-in">
-    <div class="d-flex justify-content-between align-items-start">
-      <div>
-        <p class="mb-1" style="opacity:.8;font-size:.9rem;">សួស្តីថ្ងៃត្រង់ 👋</p>
-        <h3 class="text-white mb-2">សួស្តី ស្រីមុំ</h3>
-        <!-- <span class="streak-pill"><i class="fa-solid fa-fire"></i> ៧ ថ្ងៃជាប់គ្នា</span>
-      </div>
-      <div class="text-end">
-        <div class="badge-r" style="background:rgba(255,255,255,.15);color:#fff;"><i class="fa-solid fa-star"></i> ៣២០ ពិន្ទុ</div>
-      </div>
-    </div> -->
-          <!-- XP progress ring -->
-      <div class="xp-ring">
-        <svg viewBox="0 0 74 74">
-          <circle class="track" cx="37" cy="37" r="31"></circle>
-          <circle class="prog" cx="37" cy="37" r="31" stroke-dasharray="194.8" stroke-dashoffset="49"></circle>
-        </svg>
-        <div class="val">320<small>ពិន្ទុ</small></div>
-      </div>
+ <div class="hero">
+  <!-- If you have a motif background, keep it here -->
+  <div class="hero-top">
+    <div>
+      <p class="hero-greet">សួស្តីថ្ងៃត្រង់ 👋</p>
+      <h1 class="hero-name">សួស្ដី Zaoo zaooo</h1>
+      <!-- Streak info can go here -->
     </div>
-  </section>
-  </section>
+    
+    <!-- MOVE THE RING HERE (Inside hero-top) -->
+    <div class="xp-ring">
+      <svg>
+        <circle class="track" cx="37" cy="37" r="31"></circle>
+        <circle class="prog" cx="37" cy="37" r="31" stroke-dasharray="194" stroke-dashoffset="50"></circle>
+      </svg>
+      <div class="val">320<small>ពិន្ទុ</small></div>
+    </div>
+  </div>
+</div>
 
   <!-- Health Tip -->
   <section class="card-r tip-card p-3 mb-4 slide-up">
