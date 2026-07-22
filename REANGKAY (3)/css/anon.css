@@ -9,11 +9,20 @@
 /* --------------------------------------------------------------------------
    Page-level layout
    -------------------------------------------------------------------------- */
-.ps-wrap{
+*{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Kantumruy Pro','Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:96px;
+  }
+   .ps-wrap{
   padding-top: 22px;
   max-width: 880px;
 }
-
+/* 
 .ps-section{
   margin: 34px 0;
   opacity: 0;
@@ -24,7 +33,7 @@
 .ps-section-sub{
   font-size: .88rem;
   margin-bottom: 16px;
-}
+} */
 
 .fade-up{
   opacity: 0;
