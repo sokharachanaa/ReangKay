@@ -126,24 +126,161 @@
 }
 
 
-.rank-user{
+/* ---------- Podium (Top 3) ---------- */
 
+.podium-row{
     display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(255,255,255,.18);
-    padding:12px;
-    border-radius:12px;
-    margin-top:10px;
-
+    align-items:flex-end;
+    justify-content:center;
+    gap:10px;
+    margin-top:22px;
 }
 
+.podium-col{
+    flex:1;
+    max-width:130px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
 
-.my-rank{
+.podium-crown{
+    font-size:1.3rem;
+    margin-bottom:2px;
+    animation:podium-float 2.2s ease-in-out infinite;
+}
 
+@keyframes podium-float{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-4px); }
+}
+
+.podium-avatar-wrap{
+    position:relative;
+    margin-bottom:8px;
+}
+
+.podium-avatar{
+    border-radius:50%;
+    object-fit:cover;
+    background:rgba(255,255,255,.25);
+}
+
+.podium-medal{
+    position:absolute;
+    bottom:-6px;
+    right:-4px;
+    font-size:1.1rem;
+    background:white;
+    border-radius:50%;
+    width:26px;
+    height:26px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:var(--shadow-sm);
+}
+
+.podium-name{
+    font-weight:700;
+    font-size:.85rem;
+    margin-bottom:2px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    max-width:120px;
+}
+
+.podium-xp{
+    font-size:.78rem;
+    font-weight:800;
+    opacity:.95;
+    margin-bottom:10px;
+}
+
+.podium-bar{
+    width:100%;
+    border-radius:14px 14px 0 0;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    padding-top:8px;
+    font-weight:800;
+    font-size:1.1rem;
+}
+
+.podium-col.p1 .podium-avatar{ width:74px; height:74px; border:3px solid #FFD166; }
+.podium-col.p2 .podium-avatar{ width:60px; height:60px; border:3px solid #E2E8F0; }
+.podium-col.p3 .podium-avatar{ width:60px; height:60px; border:3px solid #E8A87C; }
+
+.podium-col.p1 .podium-bar{ height:88px; background:linear-gradient(180deg,#FFD166,#F5B93F); color:#7A5200; }
+.podium-col.p2 .podium-bar{ height:62px; background:rgba(255,255,255,.35); color:#fff; }
+.podium-col.p3 .podium-bar{ height:48px; background:rgba(255,255,255,.22); color:#fff; }
+
+.podium-col.p1{ order:2; }
+.podium-col.p2{ order:1; }
+.podium-col.p3{ order:3; }
+
+/* ---------- Rank list (4th place onward) ---------- */
+
+.rank-list{
+    margin-top:16px;
+    background:rgba(255,255,255,.12);
+    border-radius:16px;
+    padding:6px 14px;
+}
+
+.rank-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:11px 0;
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.rank-row:last-child{
+    border-bottom:none;
+}
+
+.rank-num{
+    width:22px;
+    text-align:center;
+    font-weight:800;
+    opacity:.85;
+    font-size:.82rem;
+}
+
+.rank-row .rank-avatar{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.rank-row .rank-name{
+    flex:1;
+    font-size:.86rem;
+    font-weight:600;
+}
+
+.rank-row .rank-xp{
+    font-size:.84rem;
+    font-weight:800;
+}
+
+.rank-row.my-rank{
     background:white;
     color:var(--primary-dark);
+    border-radius:12px;
+    padding:11px 12px;
+    margin:4px 0;
+}
 
+.rank-row.my-rank .rank-num,
+.rank-row.my-rank .rank-name,
+.rank-row.my-rank .rank-xp{
+    color:var(--primary-dark);
 }
 
 
@@ -158,6 +295,8 @@
     height:100%;
     border:1px solid var(--border);
     transition:.25s;
+    cursor:pointer;
+    position:relative;
 
 }
 
@@ -199,7 +338,27 @@
 
     height:100%;
     border-radius:20px;
+    transition:width .5s ease;
 
+}
+
+
+.challenge-cta{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:14px;
+    font-size:.8rem;
+    font-weight:700;
+    color:var(--primary);
+}
+
+.challenge-cta i{
+    transition:.2s;
+}
+
+.challenge-card:hover .challenge-cta i{
+    transform:translateX(4px);
 }
 
 
@@ -210,6 +369,131 @@
     border-radius:20px;
     text-align:center;
 
+}
+
+
+/* ---------- Quiz Modal ---------- */
+
+.quiz-head{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:18px;
+}
+
+.quiz-head-icon{
+    width:46px;
+    height:46px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.4rem;
+    flex-shrink:0;
+}
+
+.quiz-head-title{
+    font-weight:800;
+    font-size:1.02rem;
+    margin:0;
+    color:var(--text);
+}
+
+.quiz-progress-dots{
+    display:flex;
+    gap:6px;
+    margin-bottom:16px;
+}
+
+.quiz-dot{
+    height:6px;
+    flex:1;
+    border-radius:6px;
+    background:var(--border);
+    transition:.25s;
+}
+
+.quiz-dot.filled{ background:var(--primary); }
+.quiz-dot.correct{ background:var(--green-dark); }
+.quiz-dot.wrong{ background:var(--red-dark); }
+
+.quiz-question{
+    font-size:1.02rem;
+    font-weight:700;
+    color:var(--text);
+    margin-bottom:16px;
+    line-height:1.6;
+}
+
+.quiz-options{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.quiz-option-btn{
+    text-align:left;
+    padding:13px 16px;
+    border-radius:var(--radius-sm);
+    border:2px solid var(--border);
+    background:#fff;
+    font-family:inherit;
+    font-size:.92rem;
+    font-weight:600;
+    color:var(--text);
+    transition:.18s ease;
+    cursor:pointer;
+}
+
+.quiz-option-btn:hover:not(:disabled){
+    border-color:var(--primary);
+    background:var(--bg);
+}
+
+.quiz-option-btn:disabled{
+    cursor:default;
+}
+
+.quiz-option-btn.is-correct{
+    border-color:var(--green-dark);
+    background:var(--green);
+    color:var(--green-dark);
+}
+
+.quiz-option-btn.is-wrong{
+    border-color:var(--red-dark);
+    background:var(--red);
+    color:var(--red-dark);
+}
+
+.quiz-result{
+    text-align:center;
+    padding:10px 0 6px;
+}
+
+.quiz-result-emoji{
+    font-size:2.6rem;
+    margin-bottom:10px;
+}
+
+.quiz-result-score{
+    font-size:1.3rem;
+    font-weight:800;
+    color:var(--text);
+    margin-bottom:4px;
+}
+
+.quiz-result-xp{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:var(--orange);
+    color:var(--orange-dark);
+    font-weight:800;
+    padding:6px 16px;
+    border-radius:20px;
+    font-size:.85rem;
+    margin:10px 0 18px;
 }
 
 </style>
@@ -442,47 +726,81 @@ Health Champion
 </div>
 
 
+<!-- Podium: Top 3 -->
+<div class="podium-row">
 
-<div class="rank-user">
+  <div class="podium-col p2">
+    <div class="podium-avatar-wrap">
+      <img src="https://i.pravatar.cc/100?img=32" class="podium-avatar" alt="">
+      <span class="podium-medal">🥈</span>
+    </div>
+    <div class="podium-name">ពន្លឺ ស.</div>
+    <div class="podium-xp">980 XP</div>
+    <div class="podium-bar">2</div>
+  </div>
 
-<span>
-🥇 ដារ៉ា ក.
-</span>
+  <div class="podium-col p1">
+    <div class="podium-crown">👑</div>
+    <div class="podium-avatar-wrap">
+      <img src="https://i.pravatar.cc/100?img=15" class="podium-avatar" alt="">
+      <span class="podium-medal">🥇</span>
+    </div>
+    <div class="podium-name">ដារ៉ា ក.</div>
+    <div class="podium-xp">1250 XP</div>
+    <div class="podium-bar">1</div>
+  </div>
 
-<b>
-1250 XP
-</b>
-
-</div>
-
-
-
-<div class="rank-user">
-
-<span>
-🥈 ពន្លឺ ស.
-</span>
-
-<b>
-980 XP
-</b>
-
-</div>
-
-
-
-<div class="rank-user my-rank">
-
-<span>
-🚀 អ្នក #8
-</span>
-
-<b>
-320 XP
-</b>
+  <div class="podium-col p3">
+    <div class="podium-avatar-wrap">
+      <img src="https://i.pravatar.cc/100?img=48" class="podium-avatar" alt="">
+      <span class="podium-medal">🥉</span>
+    </div>
+    <div class="podium-name">សុគន្ធ ម.</div>
+    <div class="podium-xp">750 XP</div>
+    <div class="podium-bar">3</div>
+  </div>
 
 </div>
 
+<!-- Ranks 4+ -->
+<div class="rank-list">
+
+  <div class="rank-row">
+    <span class="rank-num">4</span>
+    <img src="https://i.pravatar.cc/60?img=21" class="rank-avatar" alt="">
+    <span class="rank-name">សុវណ្ណ ច.</span>
+    <span class="rank-xp">620 XP</span>
+  </div>
+
+  <div class="rank-row">
+    <span class="rank-num">5</span>
+    <img src="https://i.pravatar.cc/60?img=25" class="rank-avatar" alt="">
+    <span class="rank-name">ចាន់ថា ព.</span>
+    <span class="rank-xp">540 XP</span>
+  </div>
+
+  <div class="rank-row">
+    <span class="rank-num">6</span>
+    <img src="https://i.pravatar.cc/60?img=36" class="rank-avatar" alt="">
+    <span class="rank-name">សុភាព ដ.</span>
+    <span class="rank-xp">470 XP</span>
+  </div>
+
+  <div class="rank-row">
+    <span class="rank-num">7</span>
+    <img src="https://i.pravatar.cc/60?img=41" class="rank-avatar" alt="">
+    <span class="rank-name">សំណាង ហ.</span>
+    <span class="rank-xp">395 XP</span>
+  </div>
+
+  <div class="rank-row my-rank">
+    <span class="rank-num">8</span>
+    <img src="https://i.pravatar.cc/60?img=47" class="rank-avatar" alt="">
+    <span class="rank-name">🚀 អ្នក</span>
+    <span class="rank-xp">320 XP</span>
+  </div>
+
+</div>
 
 
 <p class="mt-3 mb-0">
@@ -501,7 +819,7 @@ Health Champion
 
 
 <h2 class="section-title mb-3">
-🗺️ Health Challenge
+🗺️ បេសកកម្មសុខភាព
 </h2>
 
 
@@ -510,7 +828,7 @@ Health Champion
 
 <div class="col-md-4">
 
-<div class="challenge-card">
+<div class="challenge-card" onclick="openQuiz('nutrition')">
 
 <div class="challenge-icon"
 style="background:var(--green)">
@@ -519,7 +837,7 @@ style="background:var(--green)">
 
 
 <h5>
-Nutrition Forest
+ព្រៃឈើអាហារូបត្ថម្ភ
 </h5>
 
 
@@ -530,10 +848,15 @@ Nutrition Forest
 
 <div class="progress-box">
 
-<div class="progress-fill"
+<div class="progress-fill" id="progress-nutrition"
 style="width:60%;background:var(--green-dark)">
 </div>
 
+</div>
+
+<div class="challenge-cta">
+<span>ចាប់ផ្តើមសំណួរ</span>
+<i class="fa-solid fa-arrow-right"></i>
 </div>
 
 
@@ -546,7 +869,7 @@ style="width:60%;background:var(--green-dark)">
 
 <div class="col-md-4">
 
-<div class="challenge-card">
+<div class="challenge-card" onclick="openQuiz('mind')">
 
 <div class="challenge-icon"
 style="background:var(--orange)">
@@ -555,7 +878,7 @@ style="background:var(--orange)">
 
 
 <h5>
-Mind Mountain
+ភ្នំសុខភាពចិត្ត
 </h5>
 
 
@@ -566,10 +889,15 @@ Mind Mountain
 
 <div class="progress-box">
 
-<div class="progress-fill"
+<div class="progress-fill" id="progress-mind"
 style="width:30%;background:var(--orange-dark)">
 </div>
 
+</div>
+
+<div class="challenge-cta">
+<span>ចាប់ផ្តើមសំណួរ</span>
+<i class="fa-solid fa-arrow-right"></i>
 </div>
 
 
@@ -583,7 +911,7 @@ style="width:30%;background:var(--orange-dark)">
 
 <div class="col-md-4">
 
-<div class="challenge-card">
+<div class="challenge-card" onclick="openQuiz('body')">
 
 <div class="challenge-icon"
 style="background:var(--male)">
@@ -592,7 +920,7 @@ style="background:var(--male)">
 
 
 <h5>
-Body Valley
+ជ្រលងភ្នំរាងកាយ
 </h5>
 
 
@@ -603,10 +931,15 @@ Body Valley
 
 <div class="progress-box">
 
-<div class="progress-fill"
+<div class="progress-fill" id="progress-body"
 style="width:10%;background:var(--primary)">
 </div>
 
+</div>
+
+<div class="challenge-cta">
+<span>ចាប់ផ្តើមសំណួរ</span>
+<i class="fa-solid fa-arrow-right"></i>
 </div>
 
 
@@ -626,7 +959,7 @@ style="width:10%;background:var(--primary)">
 <div class="reward-box">
 
 <h4>
-🎁 Weekly Reward
+🎁 រង្វាន់ប្រចាំសប្ដាហ៍
 </h4>
 
 <p class="mb-0">

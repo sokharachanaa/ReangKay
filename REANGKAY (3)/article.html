@@ -74,7 +74,9 @@
     <div class="card-r p-3 mb-3" style="background:var(--male);border:none;">
       <p class="mb-0 small"><i class="fa-solid fa-circle-info me-2"></i>ចង់និយាយជាមួយនរណាម្នាក់អំពីរឿងនេះ? <a href="consultation.html" class="fw-bold" style="color:var(--primary);">ចាប់ផ្តើមជជែកអនាមិក →</a></p>
     </div>
+    
   </article>
+  
 
   <!-- Related Articles -->
   <h2 class="section-title mt-5 mb-3">អត្ថបទពាក់ព័ន្ធ</h2>
@@ -113,5 +115,173 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/navigation.js"></script>
+<script>const id = new URLSearchParams(location.search).get("id");
+const article = healthArticles.find(a => a.id == id);
+
+document.querySelector("#title").innerHTML = article.title;
+document.querySelector("#content").innerHTML = article.content;</script>
+<script>
+  
+  const healthArticles = [
+  {
+    id: 1,
+    title: "ការផ្លាស់ប្តូររាងកាយនៅវ័យជំទង់",
+    category: "ការលូតលាស់",
+    image: "assets/news/puberty.jpg",
+    author: "UNICEF Cambodia",
+    date: "2025-05-28",
+    source: "https://www.unicef.org/cambodia/reports/growth-and-changes",
+    description: "ស្វែងយល់ពីការផ្លាស់ប្តូររាងកាយ និងអារម្មណ៍នៅពេលឈានចូលវ័យជំទង់។",
+    content: `
+<h2>ការផ្លាស់ប្តូររាងកាយ</h2>
+
+<p>នៅពេលឈានចូលវ័យជំទង់ រាងកាយនឹងចាប់ផ្តើមផ្លាស់ប្តូរជាច្រើន ដូចជា កម្ពស់កើនឡើង សម្លេងប្រែប្រួល ការលូតលាស់សាច់ដុំ និងការកើតមុន។</p>
+
+<p>ការផ្លាស់ប្តូរទាំងនេះគឺជារឿងធម្មតា ហើយកើតឡើងខុសគ្នាតាមមនុស្សម្នាក់ៗ។</p>
+
+<h3>អ្វីដែលគួរធ្វើ</h3>
+
+<ul>
+<li>គេងឱ្យបាន ៨–១០ ម៉ោង</li>
+<li>ញ៉ាំអាហារមានជីវជាតិ</li>
+<li>ហាត់ប្រាណជាប្រចាំ</li>
+<li>ថែរក្សាអនាម័យរាងកាយ</li>
+</ul>
+`
+  },
+
+  {
+    id:2,
+    title:"ហេតុអ្វីបានជាកើតមុន?",
+    category:"ស្បែក",
+    image:"assets/news/acne.jpg",
+    author:"UNICEF Cambodia",
+    date:"2025-03-10",
+    source:"https://www.unicef.org/cambodia/reports/become-young-man",
+    description:"ស្វែងយល់អំពីមូលហេតុនៃការកើតមុន និងរបៀបថែរក្សាស្បែក។",
+    content:"..."
+  },
+
+  {
+    id:3,
+    title:"របៀបគេងឱ្យបានគ្រប់គ្រាន់",
+    category:"ការគេង",
+    image:"assets/news/sleep.jpg",
+    author:"WHO",
+    date:"2025-04-11",
+    source:"https://www.who.int/cambodia",
+    description:"ការគេងល្អជួយដល់ការលូតលាស់ និងការចងចាំ។",
+    content:"..."
+  },
+
+  {
+    id:4,
+    title:"អាហារជួយឱ្យកម្ពស់លូតលាស់",
+    category:"អាហារូបត្ថម្ភ",
+    image:"assets/news/food.jpg",
+    author:"WHO",
+    date:"2025-02-01",
+    source:"https://www.who.int/cambodia",
+    description:"អាហារដែលមានប្រូតេអ៊ីន កាល់ស្យូម និងវីតាមីន D។",
+    content:"..."
+  },
+
+  {
+    id:5,
+    title:"ហាត់ប្រាណប៉ុន្មាននាទីក្នុងមួយថ្ងៃ?",
+    category:"លំហាត់ប្រាណ",
+    image:"assets/news/exercise.jpg",
+    author:"WHO",
+    date:"2025-01-20",
+    source:"https://www.who.int/cambodia",
+    description:"លំហាត់ប្រាណជួយបេះដូង និងសាច់ដុំរឹងមាំ។",
+    content:"..."
+  },
+
+  {
+    id:6,
+    title:"ការថែរក្សាអនាម័យខ្លួនប្រាណ",
+    category:"អនាម័យ",
+    image:"assets/news/hygiene.jpg",
+    author:"UNICEF Cambodia",
+    date:"2025-03-15",
+    source:"https://www.unicef.org/cambodia/reports/become-young-man",
+    description:"របៀបថែរក្សាអនាម័យនៅវ័យជំទង់។",
+    content:"..."
+  },
+
+  {
+    id:7,
+    title:"ការមករដូវជាលើកដំបូង",
+    category:"សុខភាពក្មេងស្រី",
+    image:"assets/news/period.jpg",
+    author:"UNICEF Cambodia",
+    date:"2025-05-28",
+    source:"https://www.unicef.org/cambodia/stories/lets-talk-about-periods",
+    description:"អ្វីដែលក្មេងស្រីគួរដឹងអំពីការមករដូវ។",
+    content:"..."
+  },
+
+  {
+    id:8,
+    title:"របៀបថែរក្សាអារម្មណ៍នៅវ័យជំទង់",
+    category:"សុខភាពផ្លូវចិត្ត",
+    image:"assets/news/mental.jpg",
+    author:"UNICEF Cambodia",
+    date:"2025-06-01",
+    source:"https://www.unicef.org/cambodia/mental-health",
+    description:"គន្លឹះគ្រប់គ្រងស្ត្រេស និងអារម្មណ៍។",
+    content:"..."
+  },
+
+  {
+    id:9,
+    title:"ហេតុអ្វីត្រូវផឹកទឹកឱ្យបានគ្រប់គ្រាន់?",
+    category:"សុខភាពទូទៅ",
+    image:"assets/news/water.jpg",
+    author:"WHO",
+    date:"2025-04-08",
+    source:"https://www.who.int/cambodia",
+    description:"ទឹកជួយរក្សាសុខភាព និងថាមពល។",
+    content:"..."
+  },
+
+  {
+    id:10,
+    title:"អាហារពេលព្រឹកសំខាន់យ៉ាងដូចម្តេច?",
+    category:"អាហារូបត្ថម្ភ",
+    image:"assets/news/breakfast.jpg",
+    author:"WHO",
+    date:"2025-03-05",
+    source:"https://www.who.int/cambodia",
+    description:"កុំរំលងអាហារពេលព្រឹក។",
+    content:"..."
+  },
+
+  {
+    id:11,
+    title:"តើកម្ពស់អាចលូតលាស់ដល់អាយុប៉ុន្មាន?",
+    category:"ការលូតលាស់",
+    image:"assets/news/height.jpg",
+    author:"UNICEF Cambodia",
+    date:"2025-04-20",
+    source:"https://www.unicef.org/cambodia/reports/become-young-man",
+    description:"ការលូតលាស់កម្ពស់ក្នុងវ័យជំទង់។",
+    content:"..."
+  },
+
+  {
+    id:12,
+    title:"វិធីថែរក្សាសុខភាពប្រចាំថ្ងៃ",
+    category:"សុខភាពទូទៅ",
+    image:"assets/news/healthy.jpg",
+    author:"WHO",
+    date:"2025-05-10",
+    source:"https://www.who.int/cambodia",
+    description:"គន្លឹះសម្រាប់រស់នៅប្រកបដោយសុខភាពល្អ។",
+    content:"..."
+  }
+];
+</script>
 </body>
 </html>
