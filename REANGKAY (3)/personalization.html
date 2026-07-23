@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ផ្ទាល់ខ្លួនបទពិសោធន៍របស់អ្នក | REANGKAY</title>
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- App styles -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/personalize.css">
+
+</head>
+<body>
+
+<div class="container-app py-4 py-md-5">
+
+  <!-- Progress Indicator -->
+  <div class="wizard-progress mb-4" id="wizardProgress" aria-hidden="false">
+    <div class="wizard-progress-track">
+      <div class="wizard-progress-fill" id="progressFill"></div>
+    </div>
+    <div class="wizard-progress-steps" id="progressSteps">
+      <span class="progress-dot active" data-step="1"></span>
+      <span class="progress-dot" data-step="2"></span>
+      <span class="progress-dot" data-step="3"></span>
+      <span class="progress-dot" data-step="4"></span>
+      <span class="progress-dot" data-step="5"></span>
+    </div>
+  </div>
+
+  <div class="wizard-stage" id="wizardStage">
+
+    <!-- STEP 1 : Welcome -->
+    <section class="wizard-step active" data-step="1" id="step1">
+      <div class="card-r hero hero-top text-center step-hero">
+        <div class="welcome-emoji">👋</div>
+        <h1 class="section-title mb-2">សូមស្វាគមន៍!</h1>
+        <p class="step-subtitle">មកធ្វើឱ្យបទពិសោធន៍របស់អ្នកផ្ទាល់ខ្លួន។</p>
+        <p class="step-note"><i class="fa-regular fa-clock me-1"></i>វាចំណាយពេលប្រហែលមួយនាទីប៉ុណ្ណោះ។</p>
+        <button type="button" class="btn-r btn-primary-r btn-lg mt-4" id="btnGetStarted">
+          ចាប់ផ្តើម <i class="fa-solid fa-arrow-right ms-2"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- STEP 2 : Choose Profile -->
+    <section class="wizard-step" data-step="2" id="step2">
+      <div class="card-r step-card">
+        <h2 class="section-title text-center mb-1">ជ្រើសរើសប្រវត្តិរូបរបស់អ្នក</h2>
+        <p class="step-subtitle text-center mb-4">វាជួយឱ្យយើងប្តូរផ្លូវដំណើររបស់អ្នក។</p>
+
+        <div class="row g-3 profile-grid" role="group" aria-label="Choose your profile">
+          <div class="col-12 col-md-4">
+            <button type="button" class="select-card select-card--girl" data-value="girl" data-group="gender">
+              <span class="select-card-icon"><i class="fa-solid fa-person-dress"></i></span>
+              <span class="select-card-label">ក្មេងស្រី</span>
+              <span class="select-check"><i class="fa-solid fa-circle-check"></i></span>
+            </button>
+          </div>
+          <div class="col-12 col-md-4">
+            <button type="button" class="select-card select-card--boy" data-value="boy" data-group="gender">
+              <span class="select-card-icon"><i class="fa-solid fa-person"></i></span>
+              <span class="select-card-label">ក្មេងប្រុស</span>
+              <span class="select-check"><i class="fa-solid fa-circle-check"></i></span>
+            </button>
+          </div>
+          <div class="col-12 col-md-4">
+            <button type="button" class="select-card select-card--neutral" data-value="neutral" data-group="gender">
+              <span class="select-card-icon"><i class="fa-solid fa-user"></i></span>
+              <span class="select-card-label">មិនចង់បង្ហាញ</span>
+              <span class="select-check"><i class="fa-solid fa-circle-check"></i></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="wizard-nav">
+          <button type="button" class="btn-r btn-back-r" data-action="back"><i class="fa-solid fa-arrow-left me-2"></i>ថយក្រោយ</button>
+          <button type="button" class="btn-r btn-primary-r" data-action="next" data-step-target="2" disabled>បន្ទាប់ <i class="fa-solid fa-arrow-right ms-2"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 3 : Choose Age -->
+    <section class="wizard-step" data-step="3" id="step3">
+      <div class="card-r step-card">
+        <h2 class="section-title text-center mb-1">អាយុប៉ុន្មាន?</h2>
+        <p class="step-subtitle text-center mb-4">យើងនឹងផ្គូផ្គងមាតិកាតាមក្រុមអាយុ។</p>
+
+        <div class="row g-3 age-grid" role="group" aria-label="Choose your age range">
+          <div class="col-12 col-md-4">
+            <button type="button" class="select-card select-card--age" data-value="13-14" data-group="age">
+              <span class="select-card-icon"><i class="fa-solid fa-seedling"></i></span>
+              <span class="select-card-label">១៣–១៤</span>
+              <span class="select-check"><i class="fa-solid fa-circle-check"></i></span>
+            </button>
+          </div>
+          <div class="col-12 col-md-4">
+            <button type="button" class="select-card select-card--age" data-value="15-16" data-group="age">
+              <span class="select-card-icon"><i class="fa-solid fa-leaf"></i></span>
+              <span class="select-card-label">១៥–១៦</span>
+              <span class="select-check"><i class="fa-solid fa-circle-check"></i></span>
+            </button>
+          </div>
+          <div class="col-12 col-md-4">
+            <button type="button" class="select-card select-card--age" data-value="17-19" data-group="age">
+              <span class="select-card-icon"><i class="fa-solid fa-tree"></i></span>
+              <span class="select-card-label">១៧–១៩</span>
+              <span class="select-check"><i class="fa-solid fa-circle-check"></i></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="wizard-nav">
+          <button type="button" class="btn-r btn-back-r" data-action="back"><i class="fa-solid fa-arrow-left me-2"></i>ថយក្រោយ</button>
+          <button type="button" class="btn-r btn-primary-r" data-action="next" data-step-target="3" disabled>បន្ទាប់ <i class="fa-solid fa-arrow-right ms-2"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 4 : Dynamic Questions -->
+    <section class="wizard-step" data-step="4" id="step4">
+      <div class="card-r step-card">
+        <h2 class="section-title text-center mb-1">ប្រាប់យើងបន្តិចទៀត</h2>
+        <p class="step-subtitle text-center mb-4">ចម្លើយរបស់អ្នកស្ថិតក្នុងភាពឯកជន ហើយជួយឱ្យយើងណែនាំអ្នក។</p>
+
+        <div id="step4Content"><!-- populated by JS depending on gender --></div>
+
+        <div class="wizard-nav">
+          <button type="button" class="btn-r btn-back-r" data-action="back"><i class="fa-solid fa-arrow-left me-2"></i>ថយក្រោយ</button>
+          <button type="button" class="btn-r btn-primary-r" data-action="next" data-step-target="4">បន្ទាប់ <i class="fa-solid fa-arrow-right ms-2"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 5 : Personalized Journey -->
+        <!-- STEP 5 : Personalized Journey -->
+    <section class="wizard-step" data-step="5" id="step5">
+      <div class="card-r step-card">
+        <div class="text-center mb-4">
+          <span class="badge-r journey-badge"><i class="fa-solid fa-sparkles me-1"></i>ផែនការរបស់អ្នករួចរាល់ហើយ</span>
+          <h2 class="section-title mt-3 mb-1" id="journeyGreeting">សូមស្វាគមន៍!</h2>
+          <p class="step-subtitle" id="journeySubtitle">យោងតាមអ្វីដែលអ្នកបានចែករំលែក នេះជាផ្លូវដំណើរ​រៀនរបស់អ្នក។</p>
+        </div>
+
+        <div class="timeline" id="journeyTimeline"><!-- populated by JS --></div>
+
+        <div class="text-center mt-4">
+          <button type="button" class="btn-r btn-primary-r btn-lg" id="btnStartJourney">
+            ចាប់ផ្តើមដំណើររបស់ខ្ញុំ <i class="fa-solid fa-rocket ms-2"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/personalize.js"></script>
+<script>
+document.getElementById("btnStartJourney").addEventListener("click", function () {
+    localStorage.setItem("personalized", "true");
+    window.location.href = "index.html";
+});
+</script>
+
+</body>
+</html>

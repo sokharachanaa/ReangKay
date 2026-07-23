@@ -17,7 +17,9 @@
 
 <header class="topnav">
   <div class="container-app d-flex align-items-center justify-content-between w-100">
-    <a href="index.html" class="brand"><span class="logo-dot">រ</span> REANGKAY</a>
+    <div class="logo-dot">
+          <img src="images/logo.png" alt="ReangKay"><a href="index.html" class="brand"> REANGKAY</a>
+      </div>
     <nav class="d-none d-lg-flex gap-1">
       <a href="index.html" class="nav-link">ទំព័រដើម</a>
       <a href="information.html" class="nav-link">រៀន</a>
@@ -27,7 +29,13 @@
       <a href="anon.html" class="nav-link">ប្រអប់ចម្ងល់</a>
       <!-- <a href="feedback.html" class="nav-link">មតិ</a> -->
     </nav>
-    <a href="profile.html"><img src="https://i.pravatar.cc/60?img=47" class="rounded-circle" width="40" height="40" alt="profile"></a>
+    <div class="d-flex align-items-center gap-2">
+      <button class="btn-icon-circle position-relative" id="notifBell">
+        <i class="fa-regular fa-bell"></i>
+        <span class="notif-dot" style="position:absolute;top:8px;right:8px;width:8px;height:8px;background:var(--red-dark);border-radius:50%;"></span>
+      </button>
+      <a href="profile.html"><img src="https://i.pravatar.cc/60?img=47" class="rounded-circle" width="40" height="40" alt="profile"></a>
+    </div>
   </div>
 </header>
 
@@ -98,15 +106,44 @@
   </div>
 </main>
 
-<nav class="bottomnav">
+  <footer>
+    <nav class="bottomnav">
   <div class="bn-items">
-    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>ទំព័រដើម</a>
-    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>រៀន</a>
-    <a href="consultation.html" class="bn-item"><div class="fab-wrap"><i class="fa-solid fa-comment-medical"></i></div></a>
-    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>ល្បែង</a>
-    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>ប្រវត្តិរូប</a>
+
+    <a href="index.html" class="bn-item">
+      <i class="fa-solid fa-house"></i>
+      <span>ទំព័រដើម</span>
+    </a>
+
+    <a href="information.html" class="bn-item">
+      <i class="fa-solid fa-book-open"></i>
+      <span>រៀន</span>
+    </a>
+
+    <a href="games.html" class="bn-item">
+      <i class="fa-solid fa-gamepad"></i>
+      <span>ល្បែង</span>
+    </a>
+
+    <a href="consultation.html" class="bn-item fab-item">
+      <div class="fab-wrap">
+        <i class="fa-solid fa-comment-medical"></i>
+      </div>
+    </a>
+
+    <a href="emergency.html" class="bn-item">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <span>អាសន្ន</span>
+    </a>
+
+    <a href="profile.html" class="bn-item">
+      <i class="fa-solid fa-user"></i>
+      <span>គណនី</span>
+    </a>
+
   </div>
 </nav>
+  </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>

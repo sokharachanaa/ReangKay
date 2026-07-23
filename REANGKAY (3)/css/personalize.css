@@ -1,0 +1,507 @@
+/* ==========================================================================
+   personalize.css
+   Wizard-specific styles for personalize.html.
+   Reuses existing REANGKAY tokens/classes from style.css:
+   (card-r, btn-r, btn-primary-r, hero, hero-top, container-app,
+   section-title, quick-access-icon, badge-r, CSS variables).
+   Fallback values are provided via var(--token, fallback) so this file
+   still renders correctly if style.css variables are named slightly
+   differently — update the fallbacks to match your actual tokens.
+   ========================================================================== */
+
+:root {
+  --r-primary: var(--primary-color, #4F8DD8);
+  --r-primary-dark: var(--primary-dark, #3d70b0);
+  --r-pink: var(--accent-pink, #F58AAE);
+  --r-neutral: var(--accent-neutral, #8A93A6);
+  --r-bg-soft: var(--bg-soft, #F4F8FD);
+  --r-text: var(--text-dark, #22314A);
+  --r-text-muted: var(--text-muted, #6B7A93);
+  --r-radius-lg: var(--radius-lg, 24px);
+  --r-radius-md: var(--radius-md, 16px);
+  --r-shadow: var(--shadow-soft, 0 10px 30px rgba(79, 141, 216, 0.12));
+  --r-font: 'Kantumruy Pro', 'Segoe UI', sans-serif;
+}
+
+body {
+  font-family: var(--r-font);
+  background: var(--r-bg-soft);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Progress indicator                                                      */
+/* ---------------------------------------------------------------------- */
+
+.wizard-progress {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wizard-progress-track {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(79, 141, 216, 0.15);
+  overflow: hidden;
+  position: relative;
+}
+
+.wizard-progress-fill {
+  height: 100%;
+  width: 20%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--r-primary), var(--r-primary-dark));
+  transition: width 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.wizard-progress-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 0 2px;
+}
+
+.progress-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(79, 141, 216, 0.25);
+  transition: all 0.3s ease;
+}
+
+.progress-dot.active,
+.progress-dot.completed {
+  background: var(--r-primary);
+  transform: scale(1.15);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Wizard stage / step transitions                                         */
+/* ---------------------------------------------------------------------- */
+
+.wizard-stage {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.wizard-step {
+  display: none;
+  opacity: 1;
+}
+
+.wizard-step.active {
+  display: block;
+  opacity: 1;
+}
+
+.wizard-step.enter-forward {
+  animation: stepInForward 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.wizard-step.enter-backward {
+  animation: stepInBackward 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.wizard-step.exit-forward {
+  animation: stepOutForward 0.3s ease forwards;
+}
+
+.wizard-step.exit-backward {
+  animation: stepOutBackward 0.3s ease forwards;
+}
+
+@keyframes stepInForward {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes stepInBackward {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes stepOutForward {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(-40px); }
+}
+@keyframes stepOutBackward {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(40px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wizard-step.enter-forward,
+  .wizard-step.enter-backward,
+  .wizard-step.exit-forward,
+  .wizard-step.exit-backward {
+    animation: none !important;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Step card shell                                                         */
+/* ---------------------------------------------------------------------- */
+
+.step-card {
+  border-radius: var(--r-radius-lg);
+  box-shadow: var(--r-shadow);
+  padding: 2rem;
+}
+
+.step-hero {
+  border-radius: var(--r-radius-lg);
+  padding: 3rem 2rem;
+}
+
+.welcome-emoji {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  animation: wave 1.8s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  45% { transform: rotate(14deg); }
+  60% { transform: rotate(0deg); }
+}
+
+.step-subtitle {
+  color: var(--r-text-muted);
+  font-size: 1.05rem;
+}
+
+.step-note {
+  color: var(--r-text-muted);
+  font-size: 0.9rem;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Selectable cards (profile / age)                                        */
+/* ---------------------------------------------------------------------- */
+
+.select-card {
+  position: relative;
+  width: 100%;
+  border: 2px solid rgba(79, 141, 216, 0.15);
+  background: #fff;
+  border-radius: var(--r-radius-md);
+  padding: 1.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  font-family: var(--r-font);
+}
+
+.select-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(79, 141, 216, 0.15);
+}
+
+.select-card:active {
+  transform: translateY(-1px);
+}
+
+.select-card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  background: rgba(79, 141, 216, 0.1);
+  color: var(--r-primary);
+  transition: all 0.2s ease;
+}
+
+.select-card--girl .select-card-icon { background: rgba(245, 138, 174, 0.15); color: var(--r-pink); }
+.select-card--boy .select-card-icon { background: rgba(79, 141, 216, 0.15); color: var(--r-primary); }
+.select-card--neutral .select-card-icon { background: rgba(138, 147, 166, 0.15); color: var(--r-neutral); }
+
+.select-card-label {
+  font-weight: 600;
+  color: var(--r-text);
+}
+
+.select-check {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 1.1rem;
+  color: var(--r-primary);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.2s ease;
+}
+
+.select-card.selected {
+  border-color: var(--r-primary);
+  background: rgba(79, 141, 216, 0.06);
+}
+
+.select-card--girl.selected { border-color: var(--r-pink); background: rgba(245, 138, 174, 0.08); }
+.select-card--girl.selected .select-check { color: var(--r-pink); }
+
+.select-card.selected .select-check {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Step 4 - question blocks                                                */
+/* ---------------------------------------------------------------------- */
+
+.question-block {
+  margin-bottom: 1.75rem;
+}
+
+.question-label {
+  font-weight: 600;
+  color: var(--r-text);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.radio-pill-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.radio-pill {
+  border: 2px solid rgba(79, 141, 216, 0.18);
+  border-radius: 999px;
+  padding: 0.55rem 1.4rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--r-text);
+  background: #fff;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.radio-pill:hover {
+  border-color: var(--r-primary);
+}
+
+.radio-pill.selected {
+  background: var(--r-primary);
+  border-color: var(--r-primary);
+  color: #fff;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--r-bg-soft);
+  border-radius: var(--r-radius-md);
+  padding: 1rem 1.25rem;
+}
+
+.toggle-row-label {
+  font-weight: 500;
+  color: var(--r-text);
+}
+
+.r-switch {
+  position: relative;
+  width: 48px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.r-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.r-switch-slider {
+  position: absolute;
+  inset: 0;
+  background: #d8e2f0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.r-switch-slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.r-switch input:checked + .r-switch-slider {
+  background: var(--r-primary);
+}
+
+.r-switch input:checked + .r-switch-slider::before {
+  transform: translateX(22px);
+}
+
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.chip-r {
+  border: 2px solid rgba(79, 141, 216, 0.18);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--r-text);
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.chip-r:hover {
+  border-color: var(--r-primary);
+  transform: translateY(-2px);
+}
+
+.chip-r.selected {
+  background: rgba(79, 141, 216, 0.12);
+  border-color: var(--r-primary);
+  color: var(--r-primary-dark);
+  font-weight: 600;
+}
+
+.chip-r.selected i { color: var(--r-primary); }
+
+/* ---------------------------------------------------------------------- */
+/* Navigation                                                               */
+/* ---------------------------------------------------------------------- */
+
+.wizard-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.btn-back-r {
+  background: transparent;
+  color: var(--r-text-muted);
+  border: 2px solid rgba(79, 141, 216, 0.2);
+  border-radius: 999px;
+  padding: 0.65rem 1.4rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-back-r:hover {
+  border-color: var(--r-primary);
+  color: var(--r-primary);
+}
+
+.btn-r:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Step 5 - Journey timeline                                                */
+/* ---------------------------------------------------------------------- */
+.journey-badge {
+  background: rgba(79, 141, 216, 0.12);
+  color: var(--r-primary-dark);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  padding-left: 0.15rem;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: var(--r-bg-soft);
+  border-radius: var(--r-radius-md);
+  padding: 0.85rem 1rem;
+  position: relative;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: timelineIn 0.45s ease forwards;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.05s; }
+.timeline-item:nth-child(2) { animation-delay: 0.15s; }
+.timeline-item:nth-child(3) { animation-delay: 0.25s; }
+.timeline-item:nth-child(4) { animation-delay: 0.35s; }
+
+@keyframes timelineIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.timeline-icon {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  background: rgba(79, 141, 216, 0.14);
+  color: var(--r-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+}
+
+.timeline-week {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--r-primary);
+  margin-bottom: 0.1rem;
+}
+
+.timeline-title {
+  font-weight: 600;
+  color: var(--r-text);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Responsive                                                               */
+/* ---------------------------------------------------------------------- */
+
+@media (max-width: 576px) {
+  .step-card {
+    padding: 1.5rem 1.1rem;
+  }
+  .step-hero {
+    padding: 2.25rem 1.25rem;
+  }
+  .wizard-nav {
+    flex-direction: column-reverse;
+  }
+  .wizard-nav .btn-r {
+    width: 100%;
+    text-align: center;
+  }
+}

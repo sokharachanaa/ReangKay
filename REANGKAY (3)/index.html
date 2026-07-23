@@ -16,16 +16,25 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/animation.css">
-<link rel="stylesheet" href="feedback.html">
+<!-- <link rel="stylesheet" href="feedback.html"> -->
+<link rel="stylesheet" href="css/personalize.css">
+
 </head>
 <body>
+  <script>
+if (!localStorage.getItem("personalized")) {
+    window.location.replace("personalize.html");
+}
+</script>
 
 <!-- Loading Screen -->
 
 <!-- ============================= TOP NAV (Desktop) ============================= -->
 <header class="topnav">
   <div class="container-app d-flex align-items-center justify-content-between w-100">
-    <a href="index.html" class="brand"><span class="logo-dot">រ</span> REANGKAY</a>
+    <div class="logo-dot">
+          <img src="images/logo.png" alt="ReangKay"><a href="index.html" class="brand"> REANGKAY</a>
+      </div>
     <nav class="d-none d-lg-flex gap-1">
       <a href="index.html" class="nav-link">ទំព័រដើម</a>
       <a href="information.html" class="nav-link">រៀន</a>
@@ -55,6 +64,7 @@
     <div>
       <p class="hero-greet">សួស្តីថ្ងៃត្រង់ 👋</p>
       <h1 class="hero-name">សួស្ដី Zaoo zaooo</h1>
+      
       <!-- Streak info can go here -->
     </div>
     
@@ -70,7 +80,7 @@
 </div>
 
   <!-- Health Tip -->
-  <section class="card-r tip-card p-3 mb-4 slide-up">
+  <!-- <section class="card-r tip-card p-3 mb-4 slide-up">
     <div class="d-flex align-items-center gap-3">
       <div class="quick-access-icon" style="background:var(--green);color:var(--green-dark);"><i class="fa-solid fa-lightbulb"></i></div>
       <div>
@@ -78,7 +88,28 @@
         <p class="mb-0 text-muted-r small">ការផឹកទឹកឱ្យបានគ្រប់គ្រាន់ជួយដល់ស្បែក ការផ្តោតអារម្មណ៍ និងអារម្មណ៍របស់អ្នក — គោលដៅ ៦–៨ កែវក្នុងមួយថ្ងៃ។</p>
       </div>
     </div>
-  </section>
+  </section>  -->
+  <section class="card-r step-card p-3 mb-4 slide-up" data-step="5" id="step5">
+  <div class="text-center mb-3">
+    <h2 class="section-title mt-3 mb-1" id="journeyGreeting">
+      Welcome!
+    </h2>
+
+    <p class="step-subtitle" id="journeySubtitle">
+      Based on what you've shared, here's your learning journey.
+    </p>
+  </div>
+
+  <div class="timeline" id="journeyTimeline">
+    <!-- populated by JS -->
+  </div>
+
+  <div class="text-center mt-3">
+    <button type="button" class="btn-r btn-primary-r" id="btnStartJourney">
+      Start My Journey <i class="fa-solid fa-rocket ms-2"></i>
+    </button>
+  </div>
+</section>
 
   <!-- Quick Access -->
   <section class="mb-4">
@@ -105,26 +136,6 @@
     </div>
   </section>
 
-  <!-- Featured Article -->
-  <section class="mb-4">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h2 class="section-title">អត្ថបទពិសេស</h2>
-      <a href="information.html" class="see-all">មើលទាំងអស់ <i class="fa-solid fa-chevron-right"></i></a>
-    </div>
-    <a href="article.html" class="card-r hoverable d-block overflow-hidden reveal">
-      <div class="row g-0">
-        <div class="col-md-5">
-          <div style="height:180px;background:url('https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?w=600&q=60') center/cover;" class="rounded-top rounded-md-start"></div>
-        </div>
-        <div class="col-md-7 p-3">
-          <span class="badge-r badge-female mb-2">វ័យជំទង់</span>
-          <h5 class="mb-2">ការស្វែងយល់អំពីការផ្លាស់ប្តូររាងកាយក្នុងវ័យជំទង់</h5>
-          <p class="text-muted-r small mb-2">អ្វីៗគ្រប់យ៉ាងដែលអ្នកគួរដឹងអំពីការផ្លាស់ប្តូរដែលរាងកាយអ្នកឆ្លងកាត់ — ពន្យល់យ៉ាងសាមញ្ញ និងគ្មានការវិនិច្ឆ័យ។</p>
-          <p class="text-soft-r small mb-0"><i class="fa-regular fa-clock"></i> អាន ៥ នាទី · ដោយ លោកគ្រូពេទ្យ សុភាព</p>
-        </div>
-      </div>
-    </a>
-  </section>
 
   <!-- Categories -->
   <section class="mb-4">
@@ -184,7 +195,7 @@
     </div>
   </section>
 
-  <!-- Bookmarks preview -->
+  <!-- Bookmarks preview
   <section class="mb-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
       <h2 class="section-title">ចំណាំរបស់អ្នក</h2>
@@ -204,10 +215,30 @@
         </a>
       </div>
     </div>
+  </section> -->
+<!-- Featured Article -->
+  <section class="mb-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="section-title">អត្ថបទពិសេស</h2>
+      <a href="information.html" class="see-all">មើលទាំងអស់ <i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+    <a href="information.html" class="card-r hoverable d-block overflow-hidden reveal">
+      <div class="row g-0">
+        <div class="col-md-5">
+          <div style="height:180px;background:url('https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?w=600&q=60') center/cover;" class="rounded-top rounded-md-start"></div>
+        </div>
+        <div class="col-md-7 p-3">
+          <span class="badge-r badge-female mb-2">វ័យជំទង់</span>
+          <h5 class="mb-2">ការស្វែងយល់អំពីការផ្លាស់ប្តូររាងកាយក្នុងវ័យជំទង់</h5>
+          <p class="text-muted-r small mb-2">អ្វីៗគ្រប់យ៉ាងដែលអ្នកគួរដឹងអំពីការផ្លាស់ប្តូរដែលរាងកាយអ្នកឆ្លងកាត់ — ពន្យល់យ៉ាងសាមញ្ញ និងគ្មានការវិនិច្ឆ័យ។</p>
+          <p class="text-soft-r small mb-0"><i class="fa-regular fa-clock"></i> អាន ៥ នាទី · ដោយ លោកគ្រូពេទ្យ សុភាព</p>
+        </div>
+      </div>
+    </a>
   </section>
-
 </main>
 
+  
 <!-- ============================= FOOTER (Desktop) ============================= -->
 <footer class="site-footer d-none d-lg-block">
   <div class="container-app">
@@ -244,16 +275,46 @@
 <!-- ============================= BOTTOM NAV (Mobile) ============================= -->
 <nav class="bottomnav">
   <div class="bn-items">
-    <a href="index.html" class="bn-item"><i class="fa-solid fa-house"></i>ទំព័រដើម</a>
-    <a href="information.html" class="bn-item"><i class="fa-solid fa-book-open"></i>រៀន</a>
-    <a href="consultation.html" class="bn-item"><div class="fab-wrap"><i class="fa-solid fa-comment-medical"></i></div></a>
-    <a href="games.html" class="bn-item"><i class="fa-solid fa-gamepad"></i>ល្បែង</a>
-    <a href="profile.html" class="bn-item"><i class="fa-solid fa-user"></i>ប្រវត្តិរូប</a>
+
+    <a href="index.html" class="bn-item">
+      <i class="fa-solid fa-house"></i>
+      <span>ទំព័រដើម</span>
+    </a>
+
+    <a href="information.html" class="bn-item">
+      <i class="fa-solid fa-book-open"></i>
+      <span>រៀន</span>
+    </a>
+
+    <a href="games.html" class="bn-item">
+      <i class="fa-solid fa-gamepad"></i>
+      <span>ល្បែង</span>
+    </a>
+
+    <a href="consultation.html" class="bn-item fab-item">
+      <div class="fab-wrap">
+        <i class="fa-solid fa-comment-medical"></i>
+      </div>
+    </a>
+
+    <a href="emergency.html" class="bn-item">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <span>អាសន្ន</span>
+    </a>
+
+    <a href="profile.html" class="bn-item">
+      <i class="fa-solid fa-user"></i>
+      <span>គណនី</span>
+    </a>
+
   </div>
 </nav>
 <!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
 <script src="js/main.js"></script>
 <script src="js/navigation.js"></script>
+<script src="js/personalize.js"></script>
+
 </body>
 </html>

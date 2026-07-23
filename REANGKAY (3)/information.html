@@ -11,12 +11,15 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/animation.css">
+
 </head>
 <body>
 
 <header class="topnav">
   <div class="container-app d-flex align-items-center justify-content-between w-100">
-    <a href="index.html" class="brand"><span class="logo-dot">រ</span> REANGKAY</a>
+    <div class="logo-dot">
+          <img src="images/logo.png" alt="ReangKay"><a href="index.html" class="brand"> REANGKAY</a>
+      </div>
     <nav class="d-none d-lg-flex gap-1">
       <a href="index.html" class="nav-link">ទំព័រដើម</a>
       <a href="information.html" class="nav-link">រៀន</a>
@@ -26,10 +29,15 @@
       <a href="anon.html" class="nav-link">ប្រអប់ចម្ងល់</a>
       <!-- <a href="feedback.html" class="nav-link">មតិ</a> -->
     </nav>
-    <a href="profile.html"><img src="https://i.pravatar.cc/60?img=47" class="rounded-circle" width="40" height="40" alt="profile"></a>
+    <div class="d-flex align-items-center gap-2">
+      <button class="btn-icon-circle position-relative" id="notifBell">
+        <i class="fa-regular fa-bell"></i>
+        <span class="notif-dot" style="position:absolute;top:8px;right:8px;width:8px;height:8px;background:var(--red-dark);border-radius:50%;"></span>
+      </button>
+      <a href="profile.html"><img src="https://i.pravatar.cc/60?img=47" class="rounded-circle" width="40" height="40" alt="profile"></a>
+    </div>
   </div>
 </header>
-
 <style>
   :root{
   --primary:#4F8DD8; --primary-light:#6FAFEA; --primary-dark:#2F6CB5;
@@ -50,7 +58,6 @@
   .sec-title{ font-size:1.15rem; font-weight:700; margin:0; }
   .sec-sub{ font-size:.82rem; color:var(--text-muted); margin:2px 0 0; }
   .brand{ display:flex; align-items:center; gap:8px; font-weight:700; font-size:1.05rem; color:var(--primary-dark); }
-  .logo-dot{ width:34px; height:34px; border-radius:10px; background:var(--primary-dark); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; }
   .back-btn{ width:40px; height:40px; border-radius:50%; border:1px solid var(--border); background:var(--card); display:flex; align-items:center; justify-content:center; color:var(--primary-dark); cursor:pointer; margin-bottom:10px; }
 
   /* ---- Explore Your Body ---- */
@@ -185,6 +192,89 @@
 .explore-text{
     flex:1;
 }
+
+  .info-hero{
+    border-radius:24px;
+    padding:26px;
+    margin:20px 16px 28px; /* top | left/right | bottom */
+    color:#fff;
+    background:linear-gradient(155deg, var(--primary-dark) 0%, var(--primary) 80%);
+  }
+
+  .info-hero h1{
+    font-size:1.35rem;
+    margin:0 0 10px;
+  }
+
+  .info-hero p{
+    font-size:.85rem;
+    opacity:.9;
+    margin:0;
+    max-width:44ch;
+  }
+.cat-chip-row {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 8px 16px 12px;
+  margin: 0 0 26px;
+  scrollbar-width: none;
+}
+  .cat-chip-row::-webkit-scrollbar{
+    display:none;
+  }
+
+  .cat-chip{
+    border:1.5px solid var(--border);
+    background:#fff;
+    color:var(--text-muted);
+    cursor:pointer;
+    white-space: nowrap;
+    font-weight:600;
+    transition:.2s;
+    padding:10px 17px;
+    border-radius:20px;
+    font-size: 0.95rem;
+  }
+  
+
+  .cat-chip:hover{
+    border-color:var(--primary);
+    color:var(--primary-dark);
+  }
+
+  .cat-chip.active{
+    background:var(--primary);
+    border-color:var(--primary);
+    color:#fff;
+  }
+
+  .info-empty{
+    display:none;
+    text-align:center;
+    padding:60px 20px;
+    margin:20px;
+  }
+
+  .info-empty-icon{
+    width:70px;
+    height:70px;
+    margin:0 auto 18px;
+    border-radius:50%;
+    background:var(--male);
+    color:var(--primary-dark);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.6rem;
+  }
+
+  /* detail page spacing */
+  #detailView{
+    display:none;
+    margin:20px 16px;
+  }
+
 </style>
 
 <main class="container-app" style="padding-top:6px;">
@@ -245,7 +335,7 @@
       </div>
     </section>
     <br>
-    <section>
+    <!-- <section>
       <div class="check-card">
         <div class="sec-title" style="font-size:1rem;">ថ្ងៃនេះអ្នកមានអារម្មណ៍យ៉ាងណា?</div>
         <div class="mood-row">
@@ -256,6 +346,69 @@
         </div>
         <div class="mood-result" id="moodResult"></div>
       </div>
+    </section> -->
+    <section>
+
+  <!-- =========================================================
+       LIST VIEW — every article, with category filter chipssec-title
+  ========================================================= -->
+  <div id="listView">
+    <!-- <section class="info-hero fade-in">
+      <h1>រៀនអំពីសុខភាពរបស់អ្នក 📚</h1>
+      <p>អត្ថបទខ្លីៗ សរសេរដោយអ្នកជំនាញ ដើម្បីជួយអ្នកយល់កាន់តែច្បាស់អំពីរាងកាយ អារម្មណ៍ និងសុខភាពប្រចាំថ្ងៃ។</p>
+    </section> -->
+<!-- <div class="explore-text">
+              <h1>អត្ថបទទាំងអស់</h2>
+              <p>ចុចលើអត្ថបទណាមួយនៃរាងកាយ ដើម្បីស្វែងយល់បន្ថែម</p>
+          </div> -->
+    <p class="sec-title">អត្ថបទទាំងអស់</p>
+    <p class="sec-sub" id="articleCount"></p>
+
+    <div class="cat-chip-row" id="categoryChips"><!-- rendered by js/article.js --></div>
+
+    <div class="article-grid" id="articleGrid"><!-- rendered by js/article.js --></div>
+
+    <div class="info-empty" id="articleEmpty">
+      <div class="info-empty-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <h3 class="mb-2">គ្មានអត្ថបទក្នុងប្រភេទនេះទេ</h3>
+      <p class="text-muted-r small mb-0">សូមសាកល្បងជ្រើសរើសប្រភេទផ្សេងទៀត។</p>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       DETAIL VIEW — single article, rendered on demand
+  ========================================================= -->
+  <div id="detailView">
+    <a href="#" id="backToList" class="text-muted-r small mb-3 d-inline-block">
+      <i class="fa-solid fa-arrow-left me-1"></i> ត្រឡប់ទៅរៀន
+    </a>
+
+    <div class="article-banner mb-4 fade-in" id="articleBanner">
+      <div class="position-absolute bottom-0 start-0 p-4">
+        <span class="badge-r badge-female mb-2" id="articleBadge"></span>
+        <h2 class="text-white mb-0" id="articleTitle"></h2>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+      <div class="d-flex align-items-center gap-2">
+        <img src="https://i.pravatar.cc/60?img=32" class="rounded-circle" width="40" height="40" alt="author">
+        <div>
+          <p class="mb-0 fw-semibold small" id="articleAuthor"></p>
+          <p class="mb-0 text-soft-r" style="font-size:.78rem;" id="articleMeta"></p>
+        </div>
+      </div>
+      <div class="d-flex gap-2">
+        <button class="btn-icon-circle ripple" id="bookmarkBtn"><i class="fa-regular fa-bookmark"></i></button>
+        <button class="btn-icon-circle ripple" onclick="showToast('បានចម្លងតំណភ្ជាប់','fa-share-nodes')"><i class="fa-solid fa-share-nodes"></i></button>
+      </div>
+    </div>
+
+    <article class="article-body reveal" id="articleContent"><!-- injected by js/article.js --></article>
+
+    
+    </div> 
+  </div>
     </section>
 
   </div>
@@ -271,8 +424,8 @@
     </div>
 
     <div class="gender-toggle reveal">
-      <button class="gtab girl active" id="tabGirl" onclick="switchGender('girl')"><span class="gicon">👧</span> ស្រី</button>
-      <button class="gtab boy" id="tabBoy" onclick="switchGender('boy')"><span class="gicon">👦</span> ប្រុស</button>
+      <button class="gtab girl active" id="gtTabGirl" onclick="switchGenericGender('girl')"><span class="gicon"><i class="fa-solid fa-person-dress"></i></span> ស្រី</button>
+      <button class="gtab boy" id="gtTabBoy" onclick="switchGenericGender('boy')"><span class="gicon"><i class="fa-solid fa-person"></i></span> ប្រុស</button>
     </div>
 
     <div class="gender-section girl-theme active" id="sectionGirl">
@@ -408,10 +561,10 @@
     </div>
 
     <div class="gender-toggle reveal">
-      <button class="gtab girl active" id="gtTabGirl" onclick="switchGenericGender('girl')"><span class="gicon">👧</span> ស្រី</button>
-      <button class="gtab boy" id="gtTabBoy" onclick="switchGenericGender('boy')"><span class="gicon">👦</span> ប្រុស</button>
+      <button class="gtab girl active" id="gtTabGirl" onclick="switchGenericGender('girl')"><span class="gicon"><i class="fa-solid fa-person-dress"></i></span> ស្រី</button>
+      <button class="gtab boy" id="gtTabBoy" onclick="switchGenericGender('boy')"><span class="gicon"><i class="fa-solid fa-person"></i></span> ប្រុស</button>
     </div>
-    <div class="row g-3">
+    <!-- <div class="row g-3">
         <div class="col-6">
           <input type="radio" name="gender" id="genderBoy" value="boy" class="gender-input">
           <label for="genderBoy" class="gender-card card-r g-boy">
@@ -428,14 +581,57 @@
             <span class="gender-check"><i class="fa-solid fa-circle-check"></i></span>
           </label>
         </div>
-      </div>
+      </div> -->
 
     <div id="gtCards"></div>
+    
   </div>
+  <footer>
+    <nav class="bottomnav">
+  <div class="bn-items">
+
+    <a href="index.html" class="bn-item ">
+      <i class="fa-solid fa-house"></i>
+      <span>ទំព័រដើម</span>
+    </a>
+
+    <a href="information.html" class="bn-item">
+      <i class="fa-solid fa-book-open"></i>
+      <span>រៀន</span>
+    </a>
+
+    <a href="games.html" class="bn-item">
+      <i class="fa-solid fa-gamepad"></i>
+      <span>ល្បែង</span>
+    </a>
+
+    <a href="consultation.html" class="bn-item fab-item">
+      <div class="fab-wrap">
+        <i class="fa-solid fa-comment-medical"></i>
+      </div>
+    </a>
+
+    <a href="emergency.html" class="bn-item">
+      <i class="fa-solid fa-triangle-exclamation"></i>
+      <span>អាសន្ន</span>
+    </a>
+
+    <a href="profile.html" class="bn-item">
+      <i class="fa-solid fa-user"></i>
+      <span>គណនី</span>
+    </a>
+
+  </div>
+</nav>
+  </footer>
 
   </main>
-
+<script src="js/articles-data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/article.js"></script>
 <script>
+  
   /* ---------- Home view interactions ---------- */
   function pickMood(el, mood){
     document.querySelectorAll('.mood-btn').forEach(b=>b.classList.remove('selected'));

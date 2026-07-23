@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>REANGKAY | ចូលគណនី</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -11,63 +12,50 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/animation.css">
+<link rel="stylesheet" href="css/onboarding.css">
 </head>
-<body>
+<body class="onb-body">
 
+  <div class="onb-shell">
+    <div class="onb-logo"><span class="logo-dot">រ</span> REANGKAY</div>
 
-<div class="auth-shell">
-  <div class="card-r auth-card fade-in">
-    <div class="text-center mb-4">
-      <div class="auth-logo">រ</div>
-      <h3 class="mb-1">សូមស្វាគមន៍ការមកវិញ</h3>
-      <p class="text-muted-r small">ចូលគណនីដើម្បីបន្តដំណើរសុខភាពរបស់អ្នក</p>
+    <div class="onb-card">
+      <div class="onb-eyebrow"><a href="welcome.html" style="color:inherit;text-decoration:none;"><i class="fa-solid fa-arrow-left"></i> ត្រឡប់ក្រោយ</a></div>
+      <h1 class="onb-title">ចូលគណនី</h1>
+      <p class="onb-sub" id="loginSub">សូមចូលគណនី ដើម្បីបន្ត។</p>
+
+      <form id="loginForm">
+        <div class="onb-field">
+          <label for="liEmail">អ៊ីមែល</label>
+          <input type="email" id="liEmail" placeholder="you@example.com" required>
+        </div>
+        <div class="onb-field">
+          <label for="liPassword">ពាក្យសម្ងាត់</label>
+          <input type="password" id="liPassword" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="onb-btn onb-btn-primary">ចូលគណនី <i class="fa-solid fa-arrow-right"></i></button>
+      </form>
     </div>
 
-    <form data-mock-submit="សូមស្វាគមន៍ការមកវិញ ស្រីមុំ!" data-redirect="index.html">
-      <div class="mb-3">
-        <label class="form-label small fw-semibold">ឈ្មោះអ្នកប្រើប្រាស់</label>
-        <div class="input-icon-wrap">
-          <i class="fa-solid fa-user"></i>
-          <input type="text" class="form-control form-control-r" placeholder="បញ្ចូលឈ្មោះអ្នកប្រើប្រាស់របស់អ្នក" required>
-        </div>
-      </div>
-      <div class="mb-2">
-        <label class="form-label small fw-semibold">ពាក្យសម្ងាត់</label>
-        <div class="input-icon-wrap">
-          <i class="fa-solid fa-lock"></i>
-          <input type="password" class="form-control form-control-r" placeholder="បញ្ចូលពាក្យសម្ងាត់របស់អ្នក" required>
-          <button type="button" class="toggle-pass"><i class="fa-solid fa-eye"></i></button>
-        </div>
-      </div>
-      <div class="text-end mb-3">
-        <a href="#" class="small fw-semibold" style="color:var(--male-dark);">ភ្លេចពាក្យសម្ងាត់?</a>
-      </div>
-      <button type="submit" class="btn btn-primary-r btn-lg-touch w-100 ripple">ចូលគណនី</button>
-    </form>
-
-    <div class="divider-text">ឬបន្តជាមួយ</div>
-
-    <div class="row g-2">
-      <div class="col-6">
-        <button class="social-btn w-100 ripple" onclick="showToast('ចូលគណនីតាម Google — សម្រាប់គំរូតែប៉ុណ្ណោះ','fa-circle-info')">
-          <i class="fa-brands fa-google" style="color:#EA4335;"></i> Google
-        </button>
-      </div>
-      <div class="col-6">
-        <button class="social-btn w-100 ripple" onclick="showToast('ចូលគណនីតាម Facebook — សម្រាប់គំរូតែប៉ុណ្ណោះ','fa-circle-info')">
-          <i class="fa-brands fa-facebook-f" style="color:#1877F2;"></i> Facebook
-        </button>
-      </div>
-    </div>
-
-    <p class="text-center small text-muted-r mt-4 mb-0">
-      មិនទាន់មានគណនីមែនទេ? <a href="register.html" class="fw-bold" style="color:var(--primary);">បង្កើតគណនីថ្មី</a>
-    </p>
+    <p class="onb-foot-link">មិនទាន់មានគណនី? <a href="signup.html">បង្កើតគណនីថ្មី</a></p>
   </div>
-</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-<script src="js/main.js"></script>
-<script src="js/navigation.js"></script>
+  <script src="js/onboarding.js"></script>
+  <script>
+    // If the user arrived here from the "Personalize" card on the homepage,
+    // show a short explanatory note.
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('from') === 'personalize') {
+      document.getElementById('loginSub').textContent =
+        'សូមចូលគណនី ដើម្បីប្រើមុខងារធ្វើឲ្យបទពិសោធន៍ផ្ទាល់ខ្លួន និងឧបករណ៍តាមដានសុខភាព។';
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      Reangkay.setAuth('user');
+      var hasProfile = !!Reangkay.getProfile();
+      window.location.href = hasProfile ? 'index.html' : 'onboarding.html';
+    });
+  </script>
 </body>
 </html>
